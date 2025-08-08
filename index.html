@@ -28,16 +28,18 @@
 </head>
 
 <body>
-  <!-- Skip link for keyboard users -->
-  <a href="#maincontent" class="skip-link">Skip to main content</a>
-
-  <header>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header role="banner">
     <h1>Jeet Patel</h1>
     <p>Statistics & Economics Major | Computer Science Minor | Aspiring Data Analyst</p>
   </header>
 
-  <nav id="navbar" aria-label="Primary navigation">
-    <ul>
+  <nav id="navbar" role="navigation" aria-label="Primary navigation">
+    <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      &#9776;
+    </button>
+    <ul id="nav-menu">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#blog">Blog</a></li>
@@ -47,7 +49,7 @@
     </ul>
   </nav>
 
-  <main id="maincontent">
+  <main id="main-content" role="main">
     <section id="about">
       <h2>About Me</h2>
       <p>
@@ -81,44 +83,44 @@
     <section id="projects">
       <h2>Projects</h2>
 
-      <article class="project-card">
+      <div class="project-card">
         <h3>Factors Influencing Diabetes Progression</h3>
         <p>
           A comprehensive statistical analysis project that examines key predictors of diabetes progression using multiple linear regression. The study includes assumption checks, multicollinearity assessment, variable selection, and model validation using ANOVA. Though primarily a written research paper, it demonstrates strong applied statistical skills in health data analysis.
         </p>
-        <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for Factors Influencing Diabetes Progression project">GitHub Repo</a>
-      </article>
+        <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+      </div>
 
-      <article class="project-card">
+      <div class="project-card">
         <h3>AWS Cloud-Based User System</h3>
         <p>
           A full-stack Flask web application deployed on AWS EC2 with a MySQL database hosted on AWS RDS. Features include secure user registration, login, session management, and an admin panel for user search. The project showcases cloud deployment, backend development, and integration with AWS services, tested using Postman.
         </p>
-        <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for AWS Cloud-Based User System project">GitHub Repo</a>
-      </article>
+        <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+      </div>
 
-      <article class="project-card">
+      <div class="project-card">
         <h3>Customer API</h3>
         <p>
           Developed a RESTful API using C# and ASP.NET Core with full CRUD functionality connected to an Azure SQL database. This project features automated CI/CD deployment pipelines with GitHub Actions, API testing/documentation with Swagger UI and Postman, providing hands-on experience with modern cloud DevOps practices.
         </p>
-        <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for Customer API project">GitHub Repo</a>
-      </article>
+        <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+      </div>
 
-      <article class="project-card">
+      <div class="project-card">
         <h3>Gym Data Analysis with Simple Linear Regression and ANOVA</h3>
         <p>
           An R Markdown project analyzing gym member data to understand how workout habits and physical traits influence calories burned and water intake. Applied simple and multiple linear regression and ANOVA techniques, highlighting the importance of personalized fitness strategies supported by statistical modeling and data visualization.
         </p>
-        <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for Gym Data Analysis project">GitHub Repo</a>
-      </article>
+        <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+      </div>
 
-      <article class="project-card">
+      <div class="project-card">
         <h3>Machine Learning Model for Risk Prediction <em>(Coming Soon)</em></h3>
         <p>
           Currently developing a machine learning model to predict clinical outcomes using real-world healthcare data. This project focuses on data cleaning, exploratory data analysis, feature engineering, and building supervised models like logistic regression and random forests in R and Python. The analysis and modeling pipeline will be fully documented in reproducible formats such as R Markdown and Jupyter Notebooks, with an emphasis on clear methodology and clinical interpretation.
         </p>
-      </article>
+      </div>
     </section>
 
     <section id="blog">
@@ -127,13 +129,13 @@
       <article>
         <h3>Building a Customer REST API with Azure CI/CD</h3>
         <p>Walkthrough of building a C# API, Azure pipeline setup, and deployment lessons.</p>
-        <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer" aria-label="Read more about Building a Customer REST API with Azure CI/CD">Read More</a>
+        <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer">Read More</a>
       </article>
 
       <article>
         <h3>Analyzing Gym Data Using Regression</h3>
         <p>Explained my process using R for simple linear regression and ANOVA testing.</p>
-        <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer" aria-label="Read more about Analyzing Gym Data Using Regression">Read More</a>
+        <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer">Read More</a>
       </article>
     </section>
 
@@ -141,16 +143,16 @@
       <h2>Contact Me</h2>
       <form id="contact-form" action="https://formspree.io/f/mjkopqaj" method="POST">
         <label for="name">Name</label><br />
-        <input type="text" id="name" name="name" required aria-required="true" /><br /><br />
+        <input type="text" id="name" name="name" required /><br /><br />
 
         <label for="email">Email</label><br />
-        <input type="email" id="email" name="_replyto" required aria-required="true" /><br /><br />
+        <input type="email" id="email" name="_replyto" required /><br /><br />
 
         <label for="message">Message</label><br />
-        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea><br /><br />
+        <textarea id="message" name="message" rows="5" required></textarea><br /><br />
 
         <button type="submit">Send</button>
-        <p id="form-success" style="display:none; color: green; margin-top: 10px;" aria-live="polite">
+        <p id="form-success" style="display:none; color: green; margin-top: 10px;">
           Thanks! Your message has been sent.
         </p>
       </form>
@@ -172,6 +174,7 @@
   </footer>
 
   <script>
+    // Contact form submission handler
     const form = document.getElementById('contact-form');
     const successMessage = document.getElementById('form-success');
 
@@ -192,6 +195,37 @@
       } else {
         alert('Oops! Something went wrong.');
       }
+    });
+
+    // Highlight nav links on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('#nav-menu li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80; // offset for fixed navbar height
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Mobile hamburger toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('show');
     });
   </script>
 </body>
