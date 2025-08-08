@@ -7,6 +7,7 @@ body {
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
+  padding-top: 60px; /* Prevent content hidden under navbar */
 }
 
 /* Header styling */
@@ -62,11 +63,6 @@ h2 {
   border-radius: 4px;
 }
 
-/* To prevent content hidden under navbar */
-body {
-  padding-top: 60px;
-}
-
 /* Project cards */
 .project-card {
   background: white;
@@ -93,26 +89,6 @@ footer {
   margin-top: 3rem;
   font-size: 0.9rem;
   color: #666;
-}
-
-/* Social icons */
-#social-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 40px 0 20px;
-}
-
-#social-links a img {
-  width: 30px;
-  height: 30px;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-  vertical-align: middle;
-}
-
-#social-links a:hover img {
-  filter: none;
 }
 
 /* Contact form styling */
@@ -171,21 +147,41 @@ button[type="submit"]:hover {
     margin: 10px 0;
   }
 
-  #social-links {
+  .social-links {
     gap: 15px;
   }
 }
 
 /* Font Awesome Social Icons */
-#social-links a {
-  font-size: 28px;
-  color: #333;
-  transition: color 0.3s ease, transform 0.3s ease;
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
 }
 
-#social-links a:hover {
-  color: #0077cc;
+.social-links a {
+  font-size: 32px;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.3s ease;
+  color: #333;
+}
+
+.social-links a:hover {
   transform: scale(1.2);
+}
+
+/* Specific brand hover colors */
+.social-links a.github:hover {
+  color: #000000; /* GitHub black */
+}
+
+.social-links a.linkedin:hover {
+  color: #0a66c2; /* LinkedIn blue */
+}
+
+.social-links a.instagram:hover {
+  color: #e1306c; /* Instagram pink */
 }
 
 /* Smooth scroll for nav links */
@@ -210,8 +206,7 @@ section {
     padding: 0.8rem;
   }
 
-  #social-links a {
+  .social-links a {
     font-size: 24px;
   }
 }
-
