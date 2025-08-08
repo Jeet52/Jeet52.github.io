@@ -210,4 +210,63 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  gap
+  gap: 20px;
+}
+
+.social-links a {
+  font-size: 32px;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.3s ease;
+  color: #333;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+/* Specific brand hover colors */
+.social-links a.github:hover {
+  color: #000000; /* GitHub black */
+}
+
+.social-links a.linkedin:hover {
+  color: #0a66c2; /* LinkedIn blue */
+}
+
+.social-links a.instagram:hover {
+  color: #e1306c; /* Instagram pink */
+}
+
+/* Smooth scroll for nav links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Highlight active nav link on scroll */
+#nav-menu li a.active {
+  background-color: #005fa3;
+  border-radius: 4px;
+}
+
+/* Extra spacing for fixed navbar overlap */
+section {
+  padding-top: 70px;
+  scroll-margin-top: 80px; /* offset for fixed navbar */
+}
+
+/* Make project cards responsive */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 0.8rem;
+  }
+
+  .social-links a {
+    font-size: 24px;
+  }
+}
+
+/* Keyboard focus styles */
+:focus-visible {
+  outline: 3px solid #2980b9;
+  outline-offset: 2px;
+}
