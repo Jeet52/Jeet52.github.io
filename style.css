@@ -58,9 +58,31 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-#navbar ul li a:hover {
+#navbar ul li a:hover,
+#navbar ul li a:focus {
   background-color: #005fa3;
   border-radius: 4px;
+  outline: none;
+}
+
+/* Skip link styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0077cc;
+  color: white;
+  padding: 8px 12px;
+  z-index: 100;
+  transition: top 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: none;
 }
 
 /* Project cards */
@@ -79,8 +101,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
+  outline: none;
 }
 
 /* Footer */
@@ -112,6 +136,14 @@ textarea {
   border-radius: 4px;
   resize: vertical;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #2980b9;
+  outline: none;
 }
 
 button[type="submit"] {
@@ -125,8 +157,10 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+button[type="submit"]:focus {
   background-color: #005fa3;
+  outline: none;
 }
 
 /* Success message */
@@ -167,20 +201,25 @@ button[type="submit"]:hover {
   color: #333;
 }
 
-.social-links a:hover {
+.social-links a:hover,
+.social-links a:focus {
   transform: scale(1.2);
+  outline: none;
 }
 
 /* Specific brand hover colors */
-.social-links a.github:hover {
+.social-links a.github:hover,
+.social-links a.github:focus {
   color: #000000; /* GitHub black */
 }
 
-.social-links a.linkedin:hover {
+.social-links a.linkedin:hover,
+.social-links a.linkedin:focus {
   color: #0a66c2; /* LinkedIn blue */
 }
 
-.social-links a.instagram:hover {
+.social-links a.instagram:hover,
+.social-links a.instagram:focus {
   color: #e1306c; /* Instagram pink */
 }
 
@@ -209,4 +248,10 @@ section {
   .social-links a {
     font-size: 24px;
   }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
 }
