@@ -4,50 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeet Patel | Data Analyst Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    h1 {
-      color: #2c3e50;
-      margin-bottom: 0.2rem;
-    }
-    h2 {
-      border-bottom: 2px solid #2980b9;
-      padding-bottom: 0.2rem;
-      color: #2980b9;
-    }
-    .project-card {
-      background: white;
-      border: 1px solid #ddd;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -55,15 +11,16 @@
     <p>Statistics & Economics Major | Computer Science Minor | Aspiring Data Analyst</p>
   </header>
 
-  <nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
+  <nav id="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <section id="about">
     <h2>About Me</h2>
@@ -79,127 +36,133 @@
   </section>
 
   <section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Programming Languages:</strong> Python, R, SAS, SQL, C++, C#, Kotlin, HTML, CSS</li>
-    <li><strong>Frameworks & Tools:</strong> Flask, .NET 8, ASP.NET Core Web API, Azure Functions</li>
-    <li><strong>Cloud & DevOps:</strong> AWS EC2, AWS RDS, Azure SQL Database, Azure App Services, GitHub Actions</li>
-    <li><strong>Databases & Data Tools:</strong> MySQL, OMOP CDM, SDTM, ERD Modeling, Power BI, Tableau, Excel</li>
-  </ul>
-</section>
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Programming Languages:</strong> Python, R, SAS, SQL, C++, C#, Kotlin, HTML, CSS</li>
+      <li><strong>Frameworks & Tools:</strong> Flask, .NET 8, ASP.NET Core Web API, Azure Functions</li>
+      <li><strong>Cloud & DevOps:</strong> AWS EC2, AWS RDS, Azure SQL Database, Azure App Services, GitHub Actions</li>
+      <li><strong>Databases & Data Tools:</strong> MySQL, OMOP CDM, SDTM, ERD Modeling, Power BI, Tableau, Excel</li>
+    </ul>
+  </section>
 
   <section id="resume">
-  <h2>Resume</h2>
-  <p>
-    <a href="JeetPatel_Resume.pdf" target="_blank" download>Download my resume (PDF)</a>
-  </p>
-</section>
+    <h2>Resume</h2>
+    <p>
+      <a href="JeetPatel_Resume.pdf" target="_blank" download rel="noopener noreferrer">Download my resume (PDF)</a>
+    </p>
+  </section>
 
   <section id="projects">
-  <h2>Projects</h2>
+    <h2>Projects</h2>
 
-  <div class="project-card">
-    <h3>Factors Influencing Diabetes Progression</h3>
-    <p>
-      A comprehensive statistical analysis project that examines key predictors of diabetes progression using multiple linear regression. The study includes assumption checks, multicollinearity assessment, variable selection, and model validation using ANOVA. Though primarily a written research paper, it demonstrates strong applied statistical skills in health data analysis.
-    </p>
-    <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-  </div>
+    <div class="project-card">
+      <h3>Factors Influencing Diabetes Progression</h3>
+      <p>
+        A comprehensive statistical analysis project that examines key predictors of diabetes progression using multiple linear regression. The study includes assumption checks, multicollinearity assessment, variable selection, and model validation using ANOVA. Though primarily a written research paper, it demonstrates strong applied statistical skills in health data analysis.
+      </p>
+      <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </div>
 
-  <div class="project-card">
-    <h3>AWS Cloud-Based User System</h3>
-    <p>
-      A full-stack Flask web application deployed on AWS EC2 with a MySQL database hosted on AWS RDS. Features include secure user registration, login, session management, and an admin panel for user search. The project showcases cloud deployment, backend development, and integration with AWS services, tested using Postman.
-    </p>
-    <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-  </div>
+    <div class="project-card">
+      <h3>AWS Cloud-Based User System</h3>
+      <p>
+        A full-stack Flask web application deployed on AWS EC2 with a MySQL database hosted on AWS RDS. Features include secure user registration, login, session management, and an admin panel for user search. The project showcases cloud deployment, backend development, and integration with AWS services, tested using Postman.
+      </p>
+      <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </div>
 
-  <div class="project-card">
-    <h3>Customer API</h3>
-    <p>
-      Developed a RESTful API using C# and ASP.NET Core with full CRUD functionality connected to an Azure SQL database. This project features automated CI/CD deployment pipelines with GitHub Actions, API testing/documentation with Swagger UI and Postman, providing hands-on experience with modern cloud DevOps practices.
-    </p>
-    <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-  </div>
+    <div class="project-card">
+      <h3>Customer API</h3>
+      <p>
+        Developed a RESTful API using C# and ASP.NET Core with full CRUD functionality connected to an Azure SQL database. This project features automated CI/CD deployment pipelines with GitHub Actions, API testing/documentation with Swagger UI and Postman, providing hands-on experience with modern cloud DevOps practices.
+      </p>
+      <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </div>
 
-  <div class="project-card">
-    <h3>Gym Data Analysis with Simple Linear Regression and ANOVA</h3>
-    <p>
-      An R Markdown project analyzing gym member data to understand how workout habits and physical traits influence calories burned and water intake. Applied simple and multiple linear regression and ANOVA techniques, highlighting the importance of personalized fitness strategies supported by statistical modeling and data visualization.
-    </p>
-    <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-  </div>
+    <div class="project-card">
+      <h3>Gym Data Analysis with Simple Linear Regression and ANOVA</h3>
+      <p>
+        An R Markdown project analyzing gym member data to understand how workout habits and physical traits influence calories burned and water intake. Applied simple and multiple linear regression and ANOVA techniques, highlighting the importance of personalized fitness strategies supported by statistical modeling and data visualization.
+      </p>
+      <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </div>
 
-  <div class="project-card">
-    <h3>Machine Learning Model for Risk Prediction <em>(Coming Soon)</em></h3>
-    <p>
-      Currently developing a machine learning model to predict clinical outcomes using real-world healthcare data. This project focuses on data cleaning, exploratory data analysis, feature engineering, and building supervised models like logistic regression and random forests in R and Python. The analysis and modeling pipeline will be fully documented in reproducible formats such as R Markdown and Jupyter Notebooks, with an emphasis on clear methodology and clinical interpretation.
-    </p>
-  </div>
-</section>
+    <div class="project-card">
+      <h3>Machine Learning Model for Risk Prediction <em>(Coming Soon)</em></h3>
+      <p>
+        Currently developing a machine learning model to predict clinical outcomes using real-world healthcare data. This project focuses on data cleaning, exploratory data analysis, feature engineering, and building supervised models like logistic regression and random forests in R and Python. The analysis and modeling pipeline will be fully documented in reproducible formats such as R Markdown and Jupyter Notebooks, with an emphasis on clear methodology and clinical interpretation.
+      </p>
+    </div>
+  </section>
 
   <section id="blog">
-  <h2>Blog & Writeups</h2>
+    <h2>Blog & Writeups</h2>
 
-  <article>
-    <h3>Building a Customer REST API with Azure CI/CD</h3>
-    <p>Walkthrough of building a C# API, Azure pipeline setup, and deployment lessons.</p>
-    <a href="https://github.com/Jeet52/Customer-API">Read More</a>
-  </article>
+    <article>
+      <h3>Building a Customer REST API with Azure CI/CD</h3>
+      <p>Walkthrough of building a C# API, Azure pipeline setup, and deployment lessons.</p>
+      <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer">Read More</a>
+    </article>
 
-  <article>
-    <h3>Analyzing Gym Data Using Regression</h3>
-    <p>Explained my process using R for simple linear regression and ANOVA testing.</p>
-    <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA">Read More</a>
-  </article>
-</section>
+    <article>
+      <h3>Analyzing Gym Data Using Regression</h3>
+      <p>Explained my process using R for simple linear regression and ANOVA testing.</p>
+      <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer">Read More</a>
+    </article>
+  </section>
 
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form" action="https://formspree.io/f/mjkopqaj" method="POST">
+      <label for="name">Name</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/mjkopqaj" method="POST">
-    <label for="name">Name</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+      <label for="email">Email</label><br />
+      <input type="email" id="email" name="_replyto" required /><br /><br />
 
-    <label for="email">Email</label><br>
-    <input type="email" id="email" name="_replyto" required><br><br>
+      <label for="message">Message</label><br />
+      <textarea id="message" name="message" rows="5" required></textarea><br /><br />
 
-    <label for="message">Message</label><br>
-    <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-    <button type="submit">Send</button>
-  </form>
-</section>
-
-  <script>
-  const form = document.getElementById('contact-form');
-  const successMessage = document.getElementById('form-success');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-
-    if (response.ok) {
-      form.reset();
-      successMessage.style.display = 'block';
-    } else {
-      alert('Oops! Something went wrong.');
-    }
-  });
-</script>
-
-
-
+      <button type="submit">Send</button>
+      <p id="form-success" style="display:none; color: green; margin-top: 10px;">
+        Thanks! Your message has been sent.
+      </p>
+    </form>
+  </section>
 
   <footer>
-    <p>Contact me: <a href="mailto:jpate307@uic.edu">jpate307@uic.edu</a> | <a href="https://linkedin.com/in/jeetpatel52" target="_blank" rel="noopener noreferrer">LinkedIn</a> | <a href="https://github.com/Jeet52" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    <div id="social-links">
+      <a href="https://github.com/Jeet52" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" />
+      </a>
+      <a href="https://linkedin.com/in/jeetpatel52" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+    </div>
   </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('form-success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMessage.style.display = 'block';
+      } else {
+        alert('Oops! Something went wrong.');
+      }
+    });
+  </script>
 </body>
 </html>
