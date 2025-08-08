@@ -175,3 +175,43 @@ button[type="submit"]:hover {
     gap: 15px;
   }
 }
+
+/* Font Awesome Social Icons */
+#social-links a {
+  font-size: 28px;
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#social-links a:hover {
+  color: #0077cc;
+  transform: scale(1.2);
+}
+
+/* Smooth scroll for nav links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Highlight active nav link on scroll */
+#navbar ul li a.active {
+  background-color: #005fa3;
+  border-radius: 4px;
+}
+
+/* Extra spacing for fixed navbar overlap */
+section {
+  padding-top: 70px;
+}
+
+/* Make project cards responsive */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 0.8rem;
+  }
+
+  #social-links a {
+    font-size: 24px;
+  }
+}
+
