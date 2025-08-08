@@ -10,23 +10,23 @@ body {
   padding-top: 60px; /* Prevent content hidden under navbar */
 }
 
-/* Skip link */
+/* Skip link styling */
 .skip-link {
   position: absolute;
   top: -40px;
-  left: 10px;
-  background: #2980b9;
+  left: 0;
+  background: #0077cc;
   color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  z-index: 10000;
+  padding: 8px 16px;
+  z-index: 100;
   transition: top 0.3s ease;
-  font-weight: 600;
   text-decoration: none;
+  font-weight: bold;
 }
+
 .skip-link:focus {
-  top: 10px;
-  outline: none;
+  top: 0;
+  outline: 2px solid #fff;
 }
 
 /* Header styling */
@@ -54,40 +54,21 @@ h2 {
   background-color: #0077cc;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
-  height: 50px;
 }
 
-/* Hamburger button */
-#nav-toggle {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 15px 10px;
-  margin-left: auto;
-}
-
-/* Nav menu styles */
-#nav-menu {
+#navbar ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-grow: 1;
 }
 
-#nav-menu li {
+#navbar ul li {
   margin: 0 20px;
 }
 
-#nav-menu li a {
+#navbar ul li a {
   display: block;
   padding: 15px 10px;
   color: white;
@@ -96,10 +77,11 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-#nav-menu li a:hover,
-#nav-menu li a.active {
+#navbar ul li a:hover,
+#navbar ul li a:focus-visible {
   background-color: #005fa3;
   border-radius: 4px;
+  outline: none;
 }
 
 /* Project cards */
@@ -118,8 +100,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
   text-decoration: underline;
+  outline: none;
 }
 
 /* Footer */
@@ -164,8 +148,10 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
   background-color: #005fa3;
+  outline: none;
 }
 
 /* Success message */
@@ -177,27 +163,13 @@ button[type="submit"]:hover {
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
-  #nav-toggle {
-    display: block;
-  }
-
-  #nav-menu {
-    display: none;
+  #navbar ul {
     flex-direction: column;
-    background-color: #0077cc;
-    width: 100%;
-    position: absolute;
-    top: 50px;
-    left: 0;
+    align-items: center;
   }
 
-  #nav-menu.show {
-    display: flex;
-  }
-
-  #nav-menu li {
+  #navbar ul li {
     margin: 10px 0;
-    text-align: center;
   }
 
   .social-links {
@@ -220,20 +192,25 @@ button[type="submit"]:hover {
   color: #333;
 }
 
-.social-links a:hover {
+.social-links a:hover,
+.social-links a:focus-visible {
   transform: scale(1.2);
+  outline: none;
 }
 
 /* Specific brand hover colors */
-.social-links a.github:hover {
+.social-links a.github:hover,
+.social-links a.github:focus-visible {
   color: #000000; /* GitHub black */
 }
 
-.social-links a.linkedin:hover {
+.social-links a.linkedin:hover,
+.social-links a.linkedin:focus-visible {
   color: #0a66c2; /* LinkedIn blue */
 }
 
-.social-links a.instagram:hover {
+.social-links a.instagram:hover,
+.social-links a.instagram:focus-visible {
   color: #e1306c; /* Instagram pink */
 }
 
@@ -243,7 +220,7 @@ html {
 }
 
 /* Highlight active nav link on scroll */
-#nav-menu li a.active {
+#navbar ul li a.active {
   background-color: #005fa3;
   border-radius: 4px;
 }
@@ -251,7 +228,6 @@ html {
 /* Extra spacing for fixed navbar overlap */
 section {
   padding-top: 70px;
-  scroll-margin-top: 80px; /* offset for fixed navbar */
 }
 
 /* Make project cards responsive */
@@ -263,10 +239,4 @@ section {
   .social-links a {
     font-size: 24px;
   }
-}
-
-/* Keyboard focus styles */
-:focus-visible {
-  outline: 3px solid #2980b9;
-  outline-offset: 2px;
 }
