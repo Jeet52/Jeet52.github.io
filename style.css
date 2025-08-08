@@ -190,6 +190,7 @@ button[type="submit"]:focus-visible {
   text-decoration: none;
   transition: transform 0.2s ease, color 0.3s ease;
   color: #333;
+  cursor: pointer;
 }
 
 .social-links a:hover,
@@ -212,6 +213,14 @@ button[type="submit"]:focus-visible {
 .social-links a.instagram:hover,
 .social-links a.instagram:focus-visible {
   color: #e1306c; /* Instagram pink */
+}
+
+/* Make the social icons images visible with fixed size */
+.social-links img {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Smooth scroll for nav links */
