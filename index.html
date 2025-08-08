@@ -6,9 +6,7 @@
   <title>Jeet Patel | Data Analyst Portfolio</title>
   
   <meta name="description" content="Jeet Patel - Undergraduate student at UIC specializing in Statistics, Economics, and Computer Science. Aspiring Data Analyst with skills in Python, R, SQL, Cloud, and Data Science projects." />
-  
   <meta name="keywords" content="Jeet Patel, Data Analyst, Statistics, Economics, Computer Science, Python, R, SQL, AWS, Azure, Data Science Portfolio, UIC" />
-  
   <meta name="author" content="Jeet Patel" />
   
   <!-- Open Graph for social sharing -->
@@ -23,23 +21,41 @@
   <meta name="twitter:title" content="Jeet Patel | Data Analyst Portfolio" />
   <meta name="twitter:description" content="Aspiring Data Analyst with projects and skills in statistics, programming, and cloud technologies." />
   <meta name="twitter:image" content="https://jeet52.github.io/Images/Patel_Jeet.jpg" />
-  
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jeet Patel",
+    "url": "https://jeet52.github.io",
+    "sameAs": [
+      "https://github.com/Jeet52",
+      "https://linkedin.com/in/jeetpatel52",
+      "https://www.instagram.com/YourInstagram"
+    ],
+    "jobTitle": "Aspiring Data Analyst",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "University of Illinois at Chicago"
+    }
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Skip link for accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  
-  <header role="banner">
+
+  <header>
     <h1>Jeet Patel</h1>
     <p>Statistics & Economics Major | Computer Science Minor | Aspiring Data Analyst</p>
   </header>
 
   <nav id="navbar" role="navigation" aria-label="Primary navigation">
-    <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
-      &#9776;
-    </button>
-    <ul id="nav-menu">
+    <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#blog">Blog</a></li>
@@ -61,6 +77,10 @@
       <p>
         Currently, I’m seeking opportunities to grow as a data analyst and contribute to impactful data-driven projects.
       </p>
+      <picture>
+        <source srcset="Images/Patel_Jeet.webp" type="image/webp" />
+        <img src="Images/Patel_Jeet.jpg" alt="Portrait of Jeet Patel" loading="lazy" />
+      </picture>
     </section>
 
     <section id="skills">
@@ -174,7 +194,6 @@
   </footer>
 
   <script>
-    // Contact form submission handler
     const form = document.getElementById('contact-form');
     const successMessage = document.getElementById('form-success');
 
@@ -195,37 +214,6 @@
       } else {
         alert('Oops! Something went wrong.');
       }
-    });
-
-    // Highlight nav links on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('#nav-menu li a');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80; // offset for fixed navbar height
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // Mobile hamburger toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    navToggle.addEventListener('click', () => {
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !isExpanded);
-      navMenu.classList.toggle('show');
     });
   </script>
 </body>
