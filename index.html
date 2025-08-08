@@ -28,12 +28,15 @@
 </head>
 
 <body>
+  <!-- Skip link for keyboard users -->
+  <a href="#maincontent" class="skip-link">Skip to main content</a>
+
   <header>
     <h1>Jeet Patel</h1>
     <p>Statistics & Economics Major | Computer Science Minor | Aspiring Data Analyst</p>
   </header>
 
-  <nav id="navbar">
+  <nav id="navbar" aria-label="Primary navigation">
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -44,113 +47,115 @@
     </ul>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m Jeet Patel, a driven undergraduate student at the University of Illinois at Chicago, pursuing a BS in Statistics, a BA in Economics, and a minor in Computer Science. I have strong programming skills in Python, R, SQL, and C++, with hands-on experience in cloud platforms like AWS and Azure. 
-    </p>
-    <p>
-      Through internships and projects, I’ve applied my knowledge to real-world problems — including healthcare data analysis, web development, and statistical modeling. I’m passionate about using data to uncover insights and support decision-making in business and healthcare. 
-    </p>
-    <p>
-      Currently, I’m seeking opportunities to grow as a data analyst and contribute to impactful data-driven projects.
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Programming Languages:</strong> Python, R, SAS, SQL, C++, C#, Kotlin, HTML, CSS</li>
-      <li><strong>Frameworks & Tools:</strong> Flask, .NET 8, ASP.NET Core Web API, Azure Functions</li>
-      <li><strong>Cloud & DevOps:</strong> AWS EC2, AWS RDS, Azure SQL Database, Azure App Services, GitHub Actions</li>
-      <li><strong>Databases & Data Tools:</strong> MySQL, OMOP CDM, SDTM, ERD Modeling, Power BI, Tableau, Excel</li>
-    </ul>
-  </section>
-
-  <section id="resume">
-    <h2>Resume</h2>
-    <p>
-      <a href="JeetPatel_Resume.pdf" target="_blank" download rel="noopener noreferrer">Download my resume (PDF)</a>
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project-card">
-      <h3>Factors Influencing Diabetes Progression</h3>
+  <main id="maincontent">
+    <section id="about">
+      <h2>About Me</h2>
       <p>
-        A comprehensive statistical analysis project that examines key predictors of diabetes progression using multiple linear regression. The study includes assumption checks, multicollinearity assessment, variable selection, and model validation using ANOVA. Though primarily a written research paper, it demonstrates strong applied statistical skills in health data analysis.
+        I’m Jeet Patel, a driven undergraduate student at the University of Illinois at Chicago, pursuing a BS in Statistics, a BA in Economics, and a minor in Computer Science. I have strong programming skills in Python, R, SQL, and C++, with hands-on experience in cloud platforms like AWS and Azure. 
       </p>
-      <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-    </div>
-
-    <div class="project-card">
-      <h3>AWS Cloud-Based User System</h3>
       <p>
-        A full-stack Flask web application deployed on AWS EC2 with a MySQL database hosted on AWS RDS. Features include secure user registration, login, session management, and an admin panel for user search. The project showcases cloud deployment, backend development, and integration with AWS services, tested using Postman.
+        Through internships and projects, I’ve applied my knowledge to real-world problems — including healthcare data analysis, web development, and statistical modeling. I’m passionate about using data to uncover insights and support decision-making in business and healthcare. 
       </p>
-      <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Customer API</h3>
       <p>
-        Developed a RESTful API using C# and ASP.NET Core with full CRUD functionality connected to an Azure SQL database. This project features automated CI/CD deployment pipelines with GitHub Actions, API testing/documentation with Swagger UI and Postman, providing hands-on experience with modern cloud DevOps practices.
+        Currently, I’m seeking opportunities to grow as a data analyst and contribute to impactful data-driven projects.
       </p>
-      <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-    </div>
+    </section>
 
-    <div class="project-card">
-      <h3>Gym Data Analysis with Simple Linear Regression and ANOVA</h3>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Programming Languages:</strong> Python, R, SAS, SQL, C++, C#, Kotlin, HTML, CSS</li>
+        <li><strong>Frameworks & Tools:</strong> Flask, .NET 8, ASP.NET Core Web API, Azure Functions</li>
+        <li><strong>Cloud & DevOps:</strong> AWS EC2, AWS RDS, Azure SQL Database, Azure App Services, GitHub Actions</li>
+        <li><strong>Databases & Data Tools:</strong> MySQL, OMOP CDM, SDTM, ERD Modeling, Power BI, Tableau, Excel</li>
+      </ul>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
       <p>
-        An R Markdown project analyzing gym member data to understand how workout habits and physical traits influence calories burned and water intake. Applied simple and multiple linear regression and ANOVA techniques, highlighting the importance of personalized fitness strategies supported by statistical modeling and data visualization.
+        <a href="JeetPatel_Resume.pdf" target="_blank" download rel="noopener noreferrer">Download my resume (PDF)</a>
       </p>
-      <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-    </div>
+    </section>
 
-    <div class="project-card">
-      <h3>Machine Learning Model for Risk Prediction <em>(Coming Soon)</em></h3>
-      <p>
-        Currently developing a machine learning model to predict clinical outcomes using real-world healthcare data. This project focuses on data cleaning, exploratory data analysis, feature engineering, and building supervised models like logistic regression and random forests in R and Python. The analysis and modeling pipeline will be fully documented in reproducible formats such as R Markdown and Jupyter Notebooks, with an emphasis on clear methodology and clinical interpretation.
-      </p>
-    </div>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
 
-  <section id="blog">
-    <h2>Blog & Writeups</h2>
+      <article class="project-card">
+        <h3>Factors Influencing Diabetes Progression</h3>
+        <p>
+          A comprehensive statistical analysis project that examines key predictors of diabetes progression using multiple linear regression. The study includes assumption checks, multicollinearity assessment, variable selection, and model validation using ANOVA. Though primarily a written research paper, it demonstrates strong applied statistical skills in health data analysis.
+        </p>
+        <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for Factors Influencing Diabetes Progression project">GitHub Repo</a>
+      </article>
 
-    <article>
-      <h3>Building a Customer REST API with Azure CI/CD</h3>
-      <p>Walkthrough of building a C# API, Azure pipeline setup, and deployment lessons.</p>
-      <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer">Read More</a>
-    </article>
+      <article class="project-card">
+        <h3>AWS Cloud-Based User System</h3>
+        <p>
+          A full-stack Flask web application deployed on AWS EC2 with a MySQL database hosted on AWS RDS. Features include secure user registration, login, session management, and an admin panel for user search. The project showcases cloud deployment, backend development, and integration with AWS services, tested using Postman.
+        </p>
+        <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for AWS Cloud-Based User System project">GitHub Repo</a>
+      </article>
 
-    <article>
-      <h3>Analyzing Gym Data Using Regression</h3>
-      <p>Explained my process using R for simple linear regression and ANOVA testing.</p>
-      <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer">Read More</a>
-    </article>
-  </section>
+      <article class="project-card">
+        <h3>Customer API</h3>
+        <p>
+          Developed a RESTful API using C# and ASP.NET Core with full CRUD functionality connected to an Azure SQL database. This project features automated CI/CD deployment pipelines with GitHub Actions, API testing/documentation with Swagger UI and Postman, providing hands-on experience with modern cloud DevOps practices.
+        </p>
+        <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for Customer API project">GitHub Repo</a>
+      </article>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form" action="https://formspree.io/f/mjkopqaj" method="POST">
-      <label for="name">Name</label><br />
-      <input type="text" id="name" name="name" required /><br /><br />
+      <article class="project-card">
+        <h3>Gym Data Analysis with Simple Linear Regression and ANOVA</h3>
+        <p>
+          An R Markdown project analyzing gym member data to understand how workout habits and physical traits influence calories burned and water intake. Applied simple and multiple linear regression and ANOVA techniques, highlighting the importance of personalized fitness strategies supported by statistical modeling and data visualization.
+        </p>
+        <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for Gym Data Analysis project">GitHub Repo</a>
+      </article>
 
-      <label for="email">Email</label><br />
-      <input type="email" id="email" name="_replyto" required /><br /><br />
+      <article class="project-card">
+        <h3>Machine Learning Model for Risk Prediction <em>(Coming Soon)</em></h3>
+        <p>
+          Currently developing a machine learning model to predict clinical outcomes using real-world healthcare data. This project focuses on data cleaning, exploratory data analysis, feature engineering, and building supervised models like logistic regression and random forests in R and Python. The analysis and modeling pipeline will be fully documented in reproducible formats such as R Markdown and Jupyter Notebooks, with an emphasis on clear methodology and clinical interpretation.
+        </p>
+      </article>
+    </section>
 
-      <label for="message">Message</label><br />
-      <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+    <section id="blog">
+      <h2>Blog & Writeups</h2>
 
-      <button type="submit">Send</button>
-      <p id="form-success" style="display:none; color: green; margin-top: 10px;">
-        Thanks! Your message has been sent.
-      </p>
-    </form>
-  </section>
+      <article>
+        <h3>Building a Customer REST API with Azure CI/CD</h3>
+        <p>Walkthrough of building a C# API, Azure pipeline setup, and deployment lessons.</p>
+        <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer" aria-label="Read more about Building a Customer REST API with Azure CI/CD">Read More</a>
+      </article>
+
+      <article>
+        <h3>Analyzing Gym Data Using Regression</h3>
+        <p>Explained my process using R for simple linear regression and ANOVA testing.</p>
+        <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer" aria-label="Read more about Analyzing Gym Data Using Regression">Read More</a>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form id="contact-form" action="https://formspree.io/f/mjkopqaj" method="POST">
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" required aria-required="true" /><br /><br />
+
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="_replyto" required aria-required="true" /><br /><br />
+
+        <label for="message">Message</label><br />
+        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea><br /><br />
+
+        <button type="submit">Send</button>
+        <p id="form-success" style="display:none; color: green; margin-top: 10px;" aria-live="polite">
+          Thanks! Your message has been sent.
+        </p>
+      </form>
+    </section>
+  </main>
 
   <footer>
     <div class="social-links">
