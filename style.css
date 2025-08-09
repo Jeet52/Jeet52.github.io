@@ -256,7 +256,7 @@ section {
   flex-wrap: wrap;
   gap: 15px;
   margin: 10px 0 20px 0;
-  justify-content: flex-start; /* change to center if you want icons centered */
+  justify-content: flex-start;
   align-items: center;
 }
 
