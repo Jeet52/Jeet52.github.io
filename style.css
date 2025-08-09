@@ -63,18 +63,29 @@ h2 {
 #navbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  width: 100vw;
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   z-index: 1000;
+  padding: 0.75rem 0;
 }
+
 #navbar ul {
-  display: flex;
-  justify-content: center;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 700px;
   padding: 0;
   list-style: none;
+  display: flex;
+  justify-content: center;
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 #navbar ul li {
   margin: 0 10px;
 }
