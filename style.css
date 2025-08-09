@@ -13,13 +13,13 @@
 /* General body and typography */
 body {
   font-family: 'Roboto', Arial, sans-serif;
-  max-width: 700px;
+  max-width: 1100px; /* wider so grid fits better */
   margin: 2rem auto;
   padding: 0 1rem;
   background: linear-gradient(135deg, var(--color-bg) 25%, #e0f0ff 100%);
   color: var(--color-text);
   line-height: 1.6;
-  padding-top: 60px; /* Prevent content hidden under navbar */
+  padding-top: 80px; /* Prevent content hidden under navbar */
 }
 
 /* Skip link styling */
@@ -35,13 +35,12 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
-
 .skip-link:focus {
   top: 0;
   outline: 2px solid #fff;
 }
 
-/* Header styling */
+/* Header */
 header {
   text-align: center;
   margin-bottom: 2rem;
@@ -50,82 +49,76 @@ header {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 1.5rem;
 }
-
 h1 {
   color: var(--color-primary);
   margin-bottom: 0.2rem;
 }
-
 h2 {
   border-bottom: 2px solid var(--color-accent);
   padding-bottom: 0.2rem;
   color: var(--color-accent);
 }
 
-/* Navigation Bar */
+/* Navigation */
 #navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0.5rem 0; /* reduced vertical padding */
-  background: linear-gradient(90deg, #0077cc, #005fa3);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* lighter shadow */
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   z-index: 1000;
+}
+#navbar ul {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-#navbar ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 15px; /* use gap instead of margin for consistent spacing */
 }
-
 #navbar ul li {
-  margin: 0; /* remove margin to rely on gap */
+  margin: 0 10px;
 }
-
 #navbar ul li a {
   display: block;
-  padding: 12px 15px; /* smaller vertical padding */
+  padding: 15px 12px;
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem; /* slightly smaller font */
+  font-size: 1.05rem;
   border-radius: 6px;
   transition: all 0.3s ease;
-  line-height: 1; /* vertically center text */
 }
-
 #navbar ul li a:hover,
 #navbar ul li a:focus-visible {
-  background-color: #005fa3;
+  background-color: var(--color-primary-dark);
   filter: brightness(1.1);
   transform: translateY(-2px);
-  outline: none;
 }
 
-
-/* Project cards */
+/* Project Cards */
 .project-card {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   padding: 1rem;
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-bottom: 0; /* Removed bottom margin for grid layout */
 }
-
-/* Projects grid */
 #projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
+}
+
+/* Tech icons */
+.tech-icons-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+.tech-icon {
+  height: 40px;
+  width: auto;
 }
 
 /* Links */
@@ -134,16 +127,14 @@ a {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 a:hover,
 a:focus-visible {
   text-decoration: underline;
   filter: brightness(1.1);
   transform: translateY(-2px);
-  outline: none;
 }
 
-/* Resume link as button */
+/* Resume button */
 #resume a {
   display: inline-block;
   background-color: var(--color-primary);
@@ -154,22 +145,34 @@ a:focus-visible {
   box-shadow: 0 3px 6px rgba(26, 42, 108, 0.5);
   transition: all 0.3s ease;
 }
-
 #resume a:hover {
   background-color: var(--color-primary-dark);
   box-shadow: 0 5px 12px rgba(13, 26, 58, 0.7);
-  transform: translateY(-2px);
 }
 
-/* Footer */
+/* Footer & social icons */
 footer {
   text-align: center;
   margin-top: 3rem;
   font-size: 0.9rem;
   color: var(--color-text-muted);
 }
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+.social-links img {
+  height: 24px;
+  width: 24px;
+  transition: transform 0.3s ease;
+}
+.social-links img:hover {
+  transform: scale(1.2);
+}
 
-/* Contact form styling */
+/* Contact Form */
 form {
   max-width: 500px;
   margin: 0 auto 3rem;
@@ -178,13 +181,11 @@ form {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 1.5rem;
 }
-
 form label {
   font-weight: bold;
   margin-top: 1rem;
   display: block;
 }
-
 input[type="text"],
 input[type="email"],
 textarea {
@@ -199,7 +200,6 @@ textarea {
   color: var(--color-text);
   background: var(--color-bg-alt);
 }
-
 button[type="submit"] {
   background-color: var(--color-primary);
   color: white;
@@ -211,16 +211,11 @@ button[type="submit"] {
   transition: all 0.3s ease;
   width: 100%;
 }
-
 button[type="submit"]:hover,
 button[type="submit"]:focus-visible {
   background-color: var(--color-primary-dark);
-  filter: brightness(1.1);
   transform: translateY(-2px);
-  outline: none;
 }
-
-/* Success message */
 #form-success {
   font-weight: bold;
   color: var(--color-success);
