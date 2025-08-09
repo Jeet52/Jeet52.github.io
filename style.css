@@ -67,10 +67,13 @@ h2 {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0.75rem 0;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 0.5rem 0; /* reduced vertical padding */
+  background: linear-gradient(90deg, #0077cc, #005fa3);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* lighter shadow */
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #navbar ul {
@@ -79,30 +82,33 @@ h2 {
   list-style: none;
   display: flex;
   justify-content: center;
+  gap: 15px; /* use gap instead of margin for consistent spacing */
 }
 
 #navbar ul li {
-  margin: 0 20px;
+  margin: 0; /* remove margin to rely on gap */
 }
 
 #navbar ul li a {
   display: block;
-  padding: 18px 15px;
+  padding: 12px 15px; /* smaller vertical padding */
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem; /* slightly smaller font */
   border-radius: 6px;
   transition: all 0.3s ease;
+  line-height: 1; /* vertically center text */
 }
 
 #navbar ul li a:hover,
 #navbar ul li a:focus-visible {
-  background-color: var(--color-primary-dark);
+  background-color: #005fa3;
   filter: brightness(1.1);
   transform: translateY(-2px);
   outline: none;
 }
+
 
 /* Project cards */
 .project-card {
