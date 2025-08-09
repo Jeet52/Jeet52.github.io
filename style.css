@@ -249,3 +249,34 @@ section {
     font-size: 24px;
   }
 }
+
+/* Tech icons container */
+.tech-icons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 10px 0 20px 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Individual tech icon styling */
+.tech-icon {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.tech-icon:hover {
+  transform: scale(1.15);
+}
+
+/* Responsive tech icons */
+@media (max-width: 600px) {
+  .tech-icon {
+    width: 40px;
+  }
+}
