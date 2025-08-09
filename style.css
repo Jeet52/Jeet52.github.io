@@ -10,22 +10,30 @@
   --color-success: #2ecc71;        /* Success Green */
 }
 
-/* Reset margins and prevent horizontal overflow */
+/* Reset & global */
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* General body and typography */
 body {
   font-family: 'Roboto', Arial, sans-serif;
   max-width: 1100px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 0 1rem;
   background: linear-gradient(135deg, var(--color-bg) 25%, #e0f0ff 100%);
   color: var(--color-text);
   line-height: 1.6;
+}
+
+/* Section layout */
+section {
+  padding: 3rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+  scroll-margin-top: 80px; /* avoids navbar overlap */
 }
 
 /* Skip link styling */
@@ -67,8 +75,9 @@ h2 {
 
 /* Navigation */
 #navbar {
-  position: relative;
-  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 0.75rem 0;
@@ -81,14 +90,16 @@ h2 {
   list-style: none;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* allows wrap on small screens */
 }
 
 #navbar ul li {
   margin: 0 10px;
 }
+
 #navbar ul li a {
   display: block;
-  padding: 15px 12px;
+  padding: 10px 12px;
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -113,20 +124,21 @@ h2 {
 }
 #projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
-  align-items: stretch; /* consistent card height */
+  align-items: stretch;
 }
 
 /* Tech icons */
 .tech-icons-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 0.5rem;
 }
 .tech-icon {
-  height: 40px;
+  max-height: 32px;
   width: auto;
 }
 
@@ -143,8 +155,9 @@ a:focus-visible {
   transform: translateY(-2px);
 }
 
-/* Resume button */
-#resume a {
+/* Buttons */
+#resume a,
+.btn {
   display: inline-block;
   background-color: var(--color-primary);
   color: white;
@@ -154,7 +167,8 @@ a:focus-visible {
   box-shadow: 0 3px 6px rgba(26, 42, 108, 0.5);
   transition: all 0.3s ease;
 }
-#resume a:hover {
+#resume a:hover,
+.btn:hover {
   background-color: var(--color-primary-dark);
   box-shadow: 0 5px 12px rgba(13, 26, 58, 0.7);
 }
@@ -189,6 +203,7 @@ form {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 1.5rem;
+  box-sizing: border-box;
 }
 form label {
   font-weight: bold;
@@ -208,6 +223,7 @@ textarea {
   font-size: 1rem;
   color: var(--color-text);
   background: var(--color-bg-alt);
+  box-sizing: border-box;
 }
 button[type="submit"] {
   background-color: var(--color-primary);
@@ -229,4 +245,24 @@ button[type="submit"]:focus-visible {
   font-weight: bold;
   color: var(--color-success);
   margin-top: 10px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  body {
+    padding: 0 0.5rem;
+  }
+  header {
+    padding: 1rem;
+  }
+  #navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  #navbar ul li {
+    margin: 5px 0;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
 }
