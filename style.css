@@ -1,3 +1,11 @@
+/* Add page container to constrain everything except nav */
+.page-container {
+  max-width: 960px;      /* max width for page content */
+  margin: 0 auto;        /* center horizontally */
+  padding: 0 20px;       /* horizontal padding on smaller screens */
+  box-sizing: border-box;
+}
+
 /* Body & Text Colors */
 body {
   font-family: Arial, sans-serif;
@@ -31,6 +39,8 @@ header p {
   display: flex;
   justify-content: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 #navbar li {
   margin: 0 20px;
