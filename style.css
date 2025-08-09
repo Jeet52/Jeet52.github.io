@@ -10,6 +10,13 @@
   --color-success: #2ecc71;        /* Success Green */
 }
 
+/* Reset margins and prevent horizontal overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* General body and typography */
 body {
   font-family: 'Roboto', Arial, sans-serif;
@@ -60,14 +67,11 @@ h2 {
 
 /* Navigation */
 #navbar {
-  position: relative; /* Changed from fixed */
-  top: auto;
-  left: auto;
+  position: relative;
   width: 100%;
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 0.75rem 0;
-  margin: 0 auto;
 }
 
 #navbar ul {
@@ -77,12 +81,6 @@ h2 {
   list-style: none;
   display: flex;
   justify-content: center;
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
 }
 
 #navbar ul li {
@@ -118,7 +116,7 @@ body, html {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
-  align-items: stretch; /* makes card heights consistent */
+  align-items: stretch; /* consistent card height */
 }
 
 /* Tech icons */
