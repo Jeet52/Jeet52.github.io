@@ -43,6 +43,31 @@
   </script>
 
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Tech icons container */
+    .tech-icons-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 10px 0 20px 0;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .tech-icon {
+      width: 50px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+      transition: transform 0.2s ease;
+      cursor: default;
+    }
+
+    .tech-icon:hover {
+      transform: scale(1.15);
+    }
+  </style>
 </head>
 
 <body>
@@ -91,6 +116,11 @@
         <li><strong>Cloud & DevOps:</strong> AWS EC2, AWS RDS, Azure SQL Database, Azure App Services, GitHub Actions</li>
         <li><strong>Databases & Data Tools:</strong> MySQL, OMOP CDM, SDTM, ERD Modeling, Power BI, Tableau, Excel</li>
       </ul>
+      <!-- Icons under Skills -->
+      <div class="tech-icons-row">
+        <img src="Images/Excel.png" alt="Excel" title="Excel" class="tech-icon" />
+        <img src="Images/PowerBI.png" alt="Power BI" title="Power BI" class="tech-icon" />
+      </div>
     </section>
 
     <section id="resume">
@@ -98,6 +128,11 @@
       <p>
         <a href="JeetPatel_Resume.pdf" target="_blank" download rel="noopener noreferrer">Download my resume (PDF)</a>
       </p>
+      <!-- Icons under Resume -->
+      <div class="tech-icons-row">
+        <img src="Images/Kotlin.png" alt="Kotlin" title="Kotlin" class="tech-icon" />
+        <img src="Images/MySQL.png" alt="MySQL" title="MySQL" class="tech-icon" />
+      </div>
     </section>
 
     <section id="projects">
@@ -108,6 +143,10 @@
         <p>
           A comprehensive statistical analysis project that examines key predictors of diabetes progression using multiple linear regression. The study includes assumption checks, multicollinearity assessment, variable selection, and model validation using ANOVA. Though primarily a written research paper, it demonstrates strong applied statistical skills in health data analysis.
         </p>
+        <!-- Icons for this project -->
+        <div class="tech-icons-row">
+          <img src="Images/R.png" alt="R" title="R" class="tech-icon" />
+        </div>
         <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
       </div>
 
@@ -116,6 +155,13 @@
         <p>
           A full-stack Flask web application deployed on AWS EC2 with a MySQL database hosted on AWS RDS. Features include secure user registration, login, session management, and an admin panel for user search. The project showcases cloud deployment, backend development, and integration with AWS services, tested using Postman.
         </p>
+        <!-- Icons for this project -->
+        <div class="tech-icons-row">
+          <img src="Images/AWS.png" alt="AWS" title="AWS" class="tech-icon" />
+          <img src="Images/Python.png" alt="Python" title="Python" class="tech-icon" />
+          <img src="Images/HTML.png" alt="HTML" title="HTML" class="tech-icon" />
+          <img src="Images/CSS.png" alt="CSS" title="CSS" class="tech-icon" />
+        </div>
         <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
       </div>
 
@@ -124,6 +170,12 @@
         <p>
           Developed a RESTful API using C# and ASP.NET Core with full CRUD functionality connected to an Azure SQL database. This project features automated CI/CD deployment pipelines with GitHub Actions, API testing/documentation with Swagger UI and Postman, providing hands-on experience with modern cloud DevOps practices.
         </p>
+        <!-- Icons for this project -->
+        <div class="tech-icons-row">
+          <img src="Images/Net.png" alt=".NET" title=".NET" class="tech-icon" />
+          <img src="Images/Csharp.png" alt="C#" title="C#" class="tech-icon" />
+          <img src="Images/Azure.png" alt="Azure" title="Azure" class="tech-icon" />
+        </div>
         <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
       </div>
 
@@ -132,6 +184,10 @@
         <p>
           An R Markdown project analyzing gym member data to understand how workout habits and physical traits influence calories burned and water intake. Applied simple and multiple linear regression and ANOVA techniques, highlighting the importance of personalized fitness strategies supported by statistical modeling and data visualization.
         </p>
+        <!-- Icons for this project -->
+        <div class="tech-icons-row">
+          <img src="Images/R.png" alt="R" title="R" class="tech-icon" />
+        </div>
         <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
       </div>
 
@@ -140,6 +196,12 @@
         <p>
           Currently developing a machine learning model to predict clinical outcomes using real-world healthcare data. This project focuses on data cleaning, exploratory data analysis, feature engineering, and building supervised models like logistic regression and random forests in R and Python. The analysis and modeling pipeline will be fully documented in reproducible formats such as R Markdown and Jupyter Notebooks, with an emphasis on clear methodology and clinical interpretation.
         </p>
+        <!-- Icons for this project -->
+        <div class="tech-icons-row">
+          <img src="Images/R.png" alt="R" title="R" class="tech-icon" />
+          <img src="Images/Python.png" alt="Python" title="Python" class="tech-icon" />
+          <img src="Images/Jupyter.png" alt="Jupyter" title="Jupyter" class="tech-icon" />
+        </div>
       </div>
     </section>
 
