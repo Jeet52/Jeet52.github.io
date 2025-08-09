@@ -2,12 +2,13 @@
   --color-primary: #1A2A6C;        /* Navy Blue */
   --color-primary-dark: #0D1A3A;   /* Dark Navy */
   --color-bg: #F5F7FA;             /* Light Grey Background */
-  --color-bg-alt: #FFFFFF;         /* White for cards/forms */
+  --color-bg-alt: #e9ecef;         /* Soft Grey for cards/forms */
   --color-border: #B0B8C1;         /* Mid Grey Borders */
-  --color-text: #333333;           /* Dark Text */
+  --color-text: #222;              /* Darker Text */
   --color-text-muted: #666666;     /* Muted Text */
-  --color-accent: #3A50A0;         /* Accent Blue */
+  --color-accent: #1A2A6C;         /* Navy Blue Accent */
   --color-success: #2ecc71;        /* Success Green */
+  --color-black: #111;             /* Black for nav/footer/social */
 }
 
 /* Reset & global */
@@ -22,17 +23,20 @@ body {
   font-family: 'Roboto', Arial, sans-serif;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1rem;
-  background: linear-gradient(135deg, var(--color-bg) 25%, #e0f0ff 100%);
+  padding: 0 2.5rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-bg-alt) 100%);
   color: var(--color-text);
   line-height: 1.6;
 }
 
 /* Section layout */
 section {
-  padding: 3rem 1rem;
-  max-width: 1100px;
-  margin: auto;
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: var(--color-bg-alt);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(26,42,108,0.08);
   scroll-margin-top: 80px; /* avoids navbar overlap */
 }
 
@@ -78,7 +82,7 @@ h2 {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  background: var(--color-black);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 0.75rem 0;
 }
@@ -100,7 +104,7 @@ h2 {
 #navbar ul li a {
   display: block;
   padding: 10px 12px;
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05rem;
@@ -109,18 +113,19 @@ h2 {
 }
 #navbar ul li a:hover,
 #navbar ul li a:focus-visible {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+  color: var(--color-success);
   filter: brightness(1.1);
   transform: translateY(-2px);
 }
 
 /* Project Cards */
 .project-card {
-  background: var(--color-bg-alt);
+  background: #fff;
   border: 1px solid var(--color-border);
   padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(26,42,108,0.08);
 }
 #projects {
   display: grid;
@@ -144,7 +149,7 @@ h2 {
 
 /* Links */
 a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -159,7 +164,7 @@ a:focus-visible {
 #resume a,
 .btn {
   display: inline-block;
-  background-color: var(--color-primary);
+  background-color: var(--color-black);
   color: white;
   padding: 10px 20px;
   border-radius: 6px;
@@ -169,7 +174,7 @@ a:focus-visible {
 }
 #resume a:hover,
 .btn:hover {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
   box-shadow: 0 5px 12px rgba(13, 26, 58, 0.7);
 }
 
@@ -178,8 +183,8 @@ footer {
   text-align: center;
   margin-top: 3rem;
   font-size: 0.9rem;
-  color: var(--color-text-muted);
-  background: var(--color-bg-alt);
+  color: #fff;
+  background: var(--color-black);
   border-top: 1px solid var(--color-border);
   padding: 1.5rem 0 0.5rem 0;
   min-height: 80px;
@@ -189,26 +194,29 @@ footer {
   justify-content: center;
   gap: 15px;
   margin-top: 10px;
+  background: var(--color-black);
+  padding: 0.5rem 0;
 }
 .social-links img {
   height: 24px;
   width: 24px;
   transition: transform 0.3s ease;
   outline: none;
+  filter: invert(1);
 }
 .social-links img:hover,
 .social-links img:focus-visible {
   transform: scale(1.2);
-  box-shadow: 0 0 0 2px var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-primary);
 }
 
 /* Contact Form */
 form {
   max-width: 500px;
   margin: 0 auto 3rem;
-  background: var(--color-bg-alt);
+  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(26,42,108,0.08);
   padding: 1.5rem;
   box-sizing: border-box;
 }
@@ -233,7 +241,7 @@ textarea {
   box-sizing: border-box;
 }
 button[type="submit"] {
-  background-color: var(--color-primary);
+  background-color: var(--color-black);
   color: white;
   padding: 12px 20px;
   border: none;
@@ -245,7 +253,7 @@ button[type="submit"] {
 }
 button[type="submit"]:hover,
 button[type="submit"]:focus-visible {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
   transform: translateY(-2px);
 }
 #form-success {
