@@ -147,6 +147,7 @@ h2 {
   width: auto;
 }
 
+/* Project images */
 .project-img {
   width: 100%;
   height: auto;
@@ -305,6 +306,3 @@ button[type="submit"]:focus-visible {
     font-size: 0.85rem;
   }
 }
-
-\
-
