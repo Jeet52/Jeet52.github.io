@@ -147,6 +147,14 @@ h2 {
   width: auto;
 }
 
+.project-img {
+  width: 100%;
+  height: auto;
+  margin: 0.8rem 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(26,42,108,0.08);
+}
+
 /* Links */
 a {
   color: var(--color-primary);
@@ -297,3 +305,6 @@ button[type="submit"]:focus-visible {
     font-size: 0.85rem;
   }
 }
+
+\
+
