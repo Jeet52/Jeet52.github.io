@@ -1054,23 +1054,59 @@ footer {
 <!-- About Section -->
 <section id="about" class="animate-on-scroll">
   <h2 class="section-title">About Me</h2>
-  <div class="glass" style="padding: 3rem 2rem 2rem 2rem; text-align: center; border-radius: 20px; position: relative;">
+  <div class="about-container glass hover-glow" style="padding: 2rem; border-radius: 25px; position: relative; overflow: hidden; text-align: center;">
     
-    <!-- Centered Circular Image overlapping the container -->
-    <img src="Images/Patel_Jeet" alt="Jeet Patel" 
-         style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
-                position: absolute; top: -75px; left: 50%; transform: translateX(-50%);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+    <!-- Decorative gradient overlay -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-primary);"></div>
+    
+    <!-- Centered Circular Image inside the container -->
+    <div style="margin-bottom: 2rem;">
+      <img src="Images/Patel_Jeet.jpg" alt="Jeet Patel" 
+           style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
+                  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3); 
+                  border: 4px solid rgba(255, 255, 255, 0.15);
+                  transition: all 0.4s ease;"
+           onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 60px rgba(102, 126, 234, 0.5)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 40px rgba(102, 126, 234, 0.3)'">
+    </div>
 
-    <!-- Add extra top padding to prevent text from overlapping image -->
-    <div style="padding-top: 90px;">
-      <p style="font-size: 1.1rem; line-height: 1.6; color: var(--color-text-muted);">
-        I’m a <strong>UIC student</strong> graduating in May 2026 with a <strong>BS in Statistics</strong>, 
-        <strong>BA in Economics</strong>, and a <strong>minor in Computer Science</strong>. 
-        Aspiring <em>data analyst</em> with hands-on experience in <strong>healthcare analytics</strong>, 
-        <strong>cloud computing</strong>, and <strong>full-stack development</strong>. 
-        I enjoy transforming complex datasets into <strong>actionable insights</strong> that drive business decisions.
+    <!-- Main content with improved styling -->
+    <div>
+      <p style="font-size: 1.15rem; line-height: 1.9; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        I'm a <strong style="color: var(--color-text); font-weight: 600;">UIC student</strong> graduating in 
+        <span style="color: var(--color-primary); font-weight: 600;">May 2026</span> with a 
+        <strong style="color: var(--color-primary); position: relative;">BS in Statistics</strong>, 
+        <strong style="color: var(--color-primary);">BA in Economics</strong>, and a 
+        <strong style="color: var(--color-primary);">minor in Computer Science</strong>. 
       </p>
+      
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        Aspiring <em style="color: var(--color-accent); font-weight: 600; font-style: normal;">data analyst</em> with hands-on experience in 
+        <strong style="color: var(--color-success);">healthcare analytics</strong>, 
+        <strong style="color: var(--color-success);">cloud computing</strong>, and 
+        <strong style="color: var(--color-success);">full-stack development</strong>.
+      </p>
+
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        I enjoy transforming <strong style="color: var(--color-text);">complex datasets</strong> into 
+        <strong style="color: var(--color-accent);">actionable insights</strong> that drive business decisions.
+      </p>
+
+      <!-- Quick Stats/Highlights -->
+      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+        <div style="text-align: center; padding: 1rem;">
+          <div style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">3+</div>
+          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Internships</div>
+        </div>
+        <div style="text-align: center; padding: 1rem;">
+          <div style="font-size: 2rem; font-weight: 700; color: var(--color-success); margin-bottom: 0.5rem;">7+</div>
+          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Projects</div>
+        </div>
+        <div style="text-align: center; padding: 1rem;">
+          <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.5rem;">5+</div>
+          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Certifications</div>
+        </div>
+      </div>
     </div>
 
   </div>
