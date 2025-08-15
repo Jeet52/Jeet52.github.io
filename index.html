@@ -1205,299 +1205,271 @@ footer {
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="animate-on-scroll">
-    <h2 class="section-title">Featured Projects</h2>
-    
-    <div class="filter-controls">
-      <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects...">
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="Python">Python</button>
-        <button class="filter-btn" data-filter="R">R</button>
-        <button class="filter-btn" data-filter="AWS">AWS</button>
-        <button class="filter-btn" data-filter="Azure">Azure</button>
-        <button class="filter-btn" data-filter="Swift">Swift</button>
-        <button class="filter-btn" data-filter="C#">C#</button>
+<section id="projects" class="animate-on-scroll">
+  <h2 class="section-title">Featured Projects</h2>
+  
+  <div class="filter-controls">
+    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects...">
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="Python">Python</button>
+      <button class="filter-btn" data-filter="R">R</button>
+      <button class="filter-btn" data-filter="AWS">AWS</button>
+      <button class="filter-btn" data-filter="Azure">Azure</button>
+      <button class="filter-btn" data-filter="Swift">Swift</button>
+      <button class="filter-btn" data-filter="C#">C#</button>
+    </div>
+  </div>
+
+<!-- Weather App Project (Android + Kotlin) -->
+<div class="project-card glass hover-glow" data-tech="Kotlin Android Weather API Mobile">
+  <div class="project-header">
+    <div class="project-icon">
+      <i class="fas fa-cloud-sun"></i>
+    </div>
+    <div>
+      <div class="project-title">Weather App (Android + Kotlin)</div>
+      <div class="project-subtitle">Modern Android Weather Application</div>
+    </div>
+  </div>
+  <p class="project-description">
+    A clean, modern weather app built with Kotlin for Android. Users can enter a ZIP code to fetch and display 
+    real-time weather data using the OpenWeatherMap API — presented in a sleek, Samsung-inspired UI with Lottie 
+    animations, custom typography, and responsive Material Design components.
+  </p>
+  <div class="project-tech">
+    <span class="tech-tag">Kotlin</span>
+    <span class="tech-tag">Android</span>
+    <span class="tech-tag">Retrofit2</span>
+    <span class="tech-tag">ViewBinding</span>
+    <span class="tech-tag">Lottie</span>
+    <span class="tech-tag">OpenWeatherMap API</span>
+  </div>
+  <div class="project-links">
+    <a href="https://www.youtube.com/watch?v=PnPsRTGRr-o" class="project-link" target="_blank">
+      <i class="fab fa-youtube"></i>
+      Watch Demo
+    </a>
+  </div>
+</div>
+
+
+    <div class="project-card glass hover-glow" data-tech="R Statistics Healthcare Python">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div>
+          <div class="project-title">Healthcare Analytics with OMOP & SDTM</div>
+          <div class="project-subtitle">Sumptuous Data Sciences • Current</div>
+        </div>
+      </div>
+      <div class="achievement-badge internship">
+        <i class="fas fa-briefcase"></i>
+        Internship Project
+      </div>
+      <p class="project-description">
+        Advanced healthcare analytics using industry-standard OMOP Common Data Model and SDTM formats. 
+        Implementing statistical models for clinical data analysis, developing ERD designs, and creating 
+        comprehensive presentations for healthcare stakeholders.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">R</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">OMOP CDM</span>
+        <span class="tech-tag">SDTM</span>
+        <span class="tech-tag">Healthcare Analytics</span>
+      </div>
+      <div class="project-links">
+        <span class="project-link" style="background: rgba(243, 156, 18, 0.2); color: #f39c12;">
+          <i class="fas fa-clock"></i>
+          In Progress
+        </span>
       </div>
     </div>
 
-    <div class="projects-grid" id="projectsGrid">
-      <!-- C# Weather App Project with Video -->
-      <div class="project-card glass hover-glow" data-tech="C# .NET Weather API Desktop">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-cloud-sun"></i>
-          </div>
-          <div>
-            <div class="project-title">C# Weather Application</div>
-            <div class="project-subtitle">Desktop Weather App with API Integration</div>
-          </div>
+    <div class="project-card glass hover-glow" data-tech="Swift Figma Mobile iOS">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-mobile-alt"></i>
         </div>
-        <p class="project-description">
-          Modern desktop weather application built with C# and .NET Framework, featuring real-time weather data 
-          from OpenWeatherMap API, clean UI design, and comprehensive weather information display including 
-          temperature, humidity, wind speed, and forecast data.
-        </p>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/PnPsRTGRr-o" 
-                  title="C# Weather Application Demo" 
-                  allowfullscreen>
-          </iframe>
-        </div>
-        <div class="project-tech">
-          <span class="tech-tag">C#</span>
-          <span class="tech-tag">.NET Framework</span>
-          <span class="tech-tag">WinForms</span>
-          <span class="tech-tag">REST API</span>
-          <span class="tech-tag">JSON</span>
-        </div>
-        <div class="project-links">
-          <a href="https://www.youtube.com/watch?v=PnPsRTGRr-o" class="project-link" target="_blank">
-            <i class="fab fa-youtube"></i>
-            Watch Demo
-          </a>
+        <div>
+          <div class="project-title">Outting Otters - Antisocial Social Media</div>
+          <div class="project-subtitle">UIC SparkHacks Winner</div>
         </div>
       </div>
-
-      <!-- Second Video Project -->
-      <div class="project-card glass hover-glow" data-tech="Mobile Development iOS Swift">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <div>
-            <div class="project-title">iOS Development Showcase</div>
-            <div class="project-subtitle">Mobile Application Development</div>
-          </div>
-        </div>
-        <p class="project-description">
-          Comprehensive showcase of iOS development skills including UI/UX design, Swift programming, 
-          and mobile app architecture. Features modern iOS development practices, Core Data integration, 
-          and responsive design principles.
-        </p>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/52NtpTuMZQ8" 
-                  title="iOS Development Showcase" 
-                  allowfullscreen>
-          </iframe>
-        </div>
-        <div class="project-tech">
-          <span class="tech-tag">Swift</span>
-          <span class="tech-tag">iOS</span>
-          <span class="tech-tag">UIKit</span>
-          <span class="tech-tag">Core Data</span>
-          <span class="tech-tag">Xcode</span>
-        </div>
-        <div class="project-links">
-          <a href="https://www.youtube.com/watch?v=52NtpTuMZQ8" class="project-link" target="_blank">
-            <i class="fab fa-youtube"></i>
-            Watch Demo
-          </a>
-        </div>
+      <div class="achievement-badge">
+        <i class="fas fa-trophy"></i>
+        Hackathon Winner
       </div>
-
-      <div class="project-card glass hover-glow" data-tech="R Statistics Healthcare Python">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <div>
-            <div class="project-title">Healthcare Analytics with OMOP & SDTM</div>
-            <div class="project-subtitle">Sumptuous Data Sciences • Current</div>
-          </div>
-        </div>
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Advanced healthcare analytics using industry-standard OMOP Common Data Model and SDTM formats. 
-          Implementing statistical models for clinical data analysis, developing ERD designs, and creating 
-          comprehensive presentations for healthcare stakeholders.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">OMOP CDM</span>
-          <span class="tech-tag">SDTM</span>
-          <span class="tech-tag">Healthcare Analytics</span>
-        </div>
-        <div class="project-links">
-          <span class="project-link" style="background: rgba(243, 156, 18, 0.2); color: #f39c12;">
-            <i class="fas fa-clock"></i>
-            In Progress
-          </span>
-        </div>
+      <p class="project-description">
+        Revolutionary social media app designed for introverts featuring achievement systems, 
+        comfortable social connections, and event hosting capabilities. Built during UIC SparkHacks 
+        with focus on inclusive digital social experiences.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Swift</span>
+        <span class="tech-tag">iOS</span>
+        <span class="tech-tag">Figma</span>
+        <span class="tech-tag">UI/UX</span>
+        <span class="tech-tag">Social Media</span>
       </div>
-
-      <div class="project-card glass hover-glow" data-tech="Swift Figma Mobile iOS">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <div>
-            <div class="project-title">Outting Otters - Antisocial Social Media</div>
-            <div class="project-subtitle">UIC SparkHacks Winner</div>
-          </div>
-        </div>
-        <div class="achievement-badge">
-          <i class="fas fa-trophy"></i>
-          Hackathon Winner
-        </div>
-        <p class="project-description">
-          Revolutionary social media app designed for introverts featuring achievement systems, 
-          comfortable social connections, and event hosting capabilities. Built during UIC SparkHacks 
-          with focus on inclusive digital social experiences.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Swift</span>
-          <span class="tech-tag">iOS</span>
-          <span class="tech-tag">Figma</span>
-          <span class="tech-tag">UI/UX</span>
-          <span class="tech-tag">Social Media</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card glass hover-glow" data-tech="R Statistics Regression Healthcare">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div>
-            <div class="project-title">Diabetes Progression Analysis</div>
-            <div class="project-subtitle">UIC Statistical Modeling Project</div>
-          </div>
-        </div>
-        <div class="achievement-badge university">
-          <i class="fas fa-university"></i>
-          UIC Project
-        </div>
-        <p class="project-description">
-          Comprehensive statistical analysis examining key predictors of diabetes progression using 
-          multiple linear regression, multicollinearity assessment, and advanced model validation 
-          techniques with ANOVA.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Statistics</span>
-          <span class="tech-tag">Linear Regression</span>
-          <span class="tech-tag">ANOVA</span>
-          <span class="tech-tag">Healthcare</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card glass hover-glow" data-tech="Python AWS Flask MySQL Cloud">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-cloud"></i>
-          </div>
-          <div>
-            <div class="project-title">AWS Cloud-Based User System</div>
-            <div class="project-subtitle">Full-Stack Cloud Application</div>
-          </div>
-        </div>
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS. 
-          Features secure authentication, session management, admin dashboard, and 
-          comprehensive user search functionality.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Flask</span>
-          <span class="tech-tag">AWS EC2</span>
-          <span class="tech-tag">AWS RDS</span>
-          <span class="tech-tag">MySQL</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card glass hover-glow" data-tech="C# Azure .NET API SQL">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-server"></i>
-          </div>
-          <div>
-            <div class="project-title">Customer Management API</div>
-            <div class="project-subtitle">RESTful Web API</div>
-          </div>
-        </div>
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Enterprise-grade RESTful API built with ASP.NET Core featuring full CRUD operations, 
-          Azure SQL integration, automated CI/CD pipelines, and comprehensive API documentation.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">C#</span>
-          <span class="tech-tag">ASP.NET Core</span>
-          <span class="tech-tag">Azure SQL</span>
-          <span class="tech-tag">REST API</span>
-          <span class="tech-tag">CI/CD</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Customer-API" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card glass hover-glow" data-tech="R Statistics Fitness Analytics">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-dumbbell"></i>
-          </div>
-          <div>
-            <div class="project-title">Gym Data Analysis & Regression</div>
-            <div class="project-subtitle">UIC Statistical Analysis Project</div>
-          </div>
-        </div>
-        <div class="achievement-badge university">
-          <i class="fas fa-university"></i>
-          UIC Project
-        </div>
-        <p class="project-description">
-          Advanced statistical analysis of gym member data using regression techniques and ANOVA 
-          to understand relationships between workout habits, physical traits, and health outcomes.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Statistics</span>
-          <span class="tech-tag">Regression</span>
-          <span class="tech-tag">Data Visualization</span>
-          <span class="tech-tag">ANOVA</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
+      <div class="project-links">
+        <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="project-link" target="_blank">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
       </div>
     </div>
+
+    <div class="project-card glass hover-glow" data-tech="R Statistics Regression Healthcare">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div>
+          <div class="project-title">Diabetes Progression Analysis</div>
+          <div class="project-subtitle">UIC Statistical Modeling Project</div>
+        </div>
+      </div>
+      <div class="achievement-badge university">
+        <i class="fas fa-university"></i>
+        UIC Project
+      </div>
+      <p class="project-description">
+        Comprehensive statistical analysis examining key predictors of diabetes progression using 
+        multiple linear regression, multicollinearity assessment, and advanced model validation 
+        techniques with ANOVA.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">R</span>
+        <span class="tech-tag">Statistics</span>
+        <span class="tech-tag">Linear Regression</span>
+        <span class="tech-tag">ANOVA</span>
+        <span class="tech-tag">Healthcare</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" class="project-link" target="_blank">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card glass hover-glow" data-tech="Python AWS Flask MySQL Cloud">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <div>
+          <div class="project-title">AWS Cloud-Based User System</div>
+          <div class="project-subtitle">Full-Stack Cloud Application</div>
+        </div>
+      </div>
+      <div class="achievement-badge internship">
+        <i class="fas fa-briefcase"></i>
+        Internship Project
+      </div>
+      <p class="project-description">
+        Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS. 
+        Features secure authentication, session management, admin dashboard, and 
+        comprehensive user search functionality.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">AWS EC2</span>
+        <span class="tech-tag">AWS RDS</span>
+        <span class="tech-tag">MySQL</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" class="project-link" target="_blank">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card glass hover-glow" data-tech="C# Azure .NET API SQL">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-server"></i>
+        </div>
+        <div>
+          <div class="project-title">Customer Management API</div>
+          <div class="project-subtitle">RESTful Web API</div>
+        </div>
+      </div>
+      <div class="achievement-badge internship">
+        <i class="fas fa-briefcase"></i>
+        Internship Project
+      </div>
+      <p class="project-description">
+        Enterprise-grade RESTful API built with ASP.NET Core featuring full CRUD operations, 
+        Azure SQL integration, automated CI/CD pipelines, and comprehensive API documentation.
+      </p>
+      <!-- First video moved here -->
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/PnPsRTGRr-o" 
+                title="C# Weather Application Demo" 
+                allowfullscreen>
+        </iframe>
+      </div>
+      <div class="project-tech">
+        <span class="tech-tag">C#</span>
+        <span class="tech-tag">ASP.NET Core</span>
+        <span class="tech-tag">Azure SQL</span>
+        <span class="tech-tag">REST API</span>
+        <span class="tech-tag">CI/CD</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Jeet52/Customer-API" class="project-link" target="_blank">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+        <a href="https://www.youtube.com/watch?v=PnPsRTGRr-o" class="project-link" target="_blank">
+          <i class="fab fa-youtube"></i>
+          Watch Demo
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card glass hover-glow" data-tech="R Statistics Fitness Analytics">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-dumbbell"></i>
+        </div>
+        <div>
+          <div class="project-title">Gym Data Analysis & Regression</div>
+          <div class="project-subtitle">UIC Statistical Analysis Project</div>
+        </div>
+      </div>
+      <div class="achievement-badge university">
+        <i class="fas fa-university"></i>
+        UIC Project
+      </div>
+      <p class="project-description">
+        Advanced statistical analysis of gym member data using regression techniques and ANOVA 
+        to understand relationships between workout habits, physical traits, and health outcomes.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">R</span>
+        <span class="tech-tag">Statistics</span>
+        <span class="tech-tag">Regression</span>
+        <span class="tech-tag">Data Visualization</span>
+        <span class="tech-tag">ANOVA</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" class="project-link" target="_blank">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <div class="no-results" id="noResults" style="display: none; text-align: center; padding: 3rem; color: var(--color-text-muted);">
       <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
