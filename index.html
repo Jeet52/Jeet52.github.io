@@ -431,6 +431,128 @@ section {
   margin-bottom: 1rem;
 }
 
+/* Enhanced Testimonials Section */
+.testimonials-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  padding: 3rem;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.quote-icon {
+  position: absolute;
+  top: -10px;
+  left: 3rem;
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.testimonial-content {
+  margin-top: 2rem;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  font-style: italic;
+  position: relative;
+}
+
+.testimonial-text:first-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.3rem;
+}
+
+.author-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.2rem;
+}
+
+.author-company {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-date {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.author-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-success);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  white-space: nowrap;
+}
+
 /* Projects Grid */
 .projects-grid {
   display: grid;
@@ -519,6 +641,7 @@ section {
 .project-links {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .project-link {
@@ -541,6 +664,28 @@ section {
   transform: translateY(-2px);
 }
 
+/* YouTube Video Embed Styles */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin: 1rem 0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+
 /* Achievement Badges */
 .achievement-badge {
   display: inline-flex;
@@ -554,6 +699,16 @@ section {
   font-weight: 600;
   margin-bottom: 1rem;
   box-shadow: 0 4px 20px rgba(240, 147, 251, 0.3);
+}
+
+.achievement-badge.internship {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+}
+
+.achievement-badge.university {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
 }
 
 /* Contact Section */
@@ -788,6 +943,23 @@ footer {
   .search-box {
     min-width: auto;
   }
+
+  .testimonial-author {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .author-badge {
+    align-self: flex-start;
+  }
+
+  .testimonial-card {
+    padding: 2rem;
+  }
+
+  .quote-icon {
+    left: 2rem;
+  }
 }
 
 /* Hover Effects */
@@ -843,6 +1015,7 @@ footer {
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -984,32 +1157,30 @@ footer {
       </div>
 
       <div class="timeline-item glass hover-glow">
+        <div class="timeline-title">Web Development Intern</div>
+        <div class="timeline-company">IT Expert System, Inc</div>
+        <div class="timeline-duration">June 2025 - August 2025 • Hybrid</div>
+        <p>Leading healthcare analytics projects using OMOP and SDTM data models. Developing advanced statistical models in R and Python, creating comprehensive ERD designs, and presenting insights to company stakeholders. Specializing in clinical data analysis and regulatory compliance standards.</p>
+      </div>
+
+      <div class="timeline-item glass hover-glow">
         <div class="timeline-title">Student Programmer</div>
         <div class="timeline-company">Northern Illinois University</div>
         <div class="timeline-duration">May 2022 - August 2022 • On-site</div>
         <p>Developed and tested beta programming assignments for curriculum integration. Conducted comprehensive evaluations and provided detailed feedback to senior faculty members. Contributed to curriculum modernization efforts and improved student learning outcomes.</p>
       </div>
-
-       <div class="timeline-item glass hover-glow">
-        <div class="timeline-title">Web Development Intern</div>
-        <div class="timeline-company">IT Expert System, Inc</div>
-        <div class="timeline-duration">June 2025 - August 2025 • Hybrid</div>
-        <p> Leading healthcare analytics projects using OMOP and SDTM data models. Developing advanced statistical models in R and Python, creating comprehensive ERD designs, and presenting insights to company stakeholders. Specializing in clinical data analysis and regulatory compliance standards.</p>
-      </div>
-          
     </div>
   </section>
-
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="animate-on-scroll">
     <h2 class="section-title">What People Say</h2>
     <div class="testimonials-container">
-      <div class="testimonial-card glass hover-glow">
+      <div class="testimonial-card">
+        <div class="quote-icon">
+          <i class="fas fa-quote-left"></i>
+        </div>
         <div class="testimonial-content">
-          <div class="quote-icon">
-            <i class="fas fa-quote-left"></i>
-          </div>
           <p class="testimonial-text">
             "I've had the pleasure of working with Jeet, and I can confidently say he is a hardworking and talented IT professional. His passion for data analysis, web development, and mobile development is evident in every project he takes on. Jeet is a quick learner who consistently adapts to new tools and technologies, often going the extra mile to meet tight deadlines and evolving project demands."
           </p>
@@ -1036,12 +1207,6 @@ footer {
   <!-- Projects Section -->
   <section id="projects" class="animate-on-scroll">
     <h2 class="section-title">Featured Projects</h2>
-
-     
-
-  <!-- Projects Section -->
-  <section id="projects" class="animate-on-scroll">
-    <h2 class="section-title">Featured Projects</h2>
     
     <div class="filter-controls">
       <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects...">
@@ -1052,10 +1217,85 @@ footer {
         <button class="filter-btn" data-filter="AWS">AWS</button>
         <button class="filter-btn" data-filter="Azure">Azure</button>
         <button class="filter-btn" data-filter="Swift">Swift</button>
+        <button class="filter-btn" data-filter="C#">C#</button>
       </div>
     </div>
 
     <div class="projects-grid" id="projectsGrid">
+      <!-- C# Weather App Project with Video -->
+      <div class="project-card glass hover-glow" data-tech="C# .NET Weather API Desktop">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+          <div>
+            <div class="project-title">C# Weather Application</div>
+            <div class="project-subtitle">Desktop Weather App with API Integration</div>
+          </div>
+        </div>
+        <p class="project-description">
+          Modern desktop weather application built with C# and .NET Framework, featuring real-time weather data 
+          from OpenWeatherMap API, clean UI design, and comprehensive weather information display including 
+          temperature, humidity, wind speed, and forecast data.
+        </p>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/PnPsRTGRr-o" 
+                  title="C# Weather Application Demo" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">C#</span>
+          <span class="tech-tag">.NET Framework</span>
+          <span class="tech-tag">WinForms</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">JSON</span>
+        </div>
+        <div class="project-links">
+          <a href="https://www.youtube.com/watch?v=PnPsRTGRr-o" class="project-link" target="_blank">
+            <i class="fab fa-youtube"></i>
+            Watch Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Second Video Project -->
+      <div class="project-card glass hover-glow" data-tech="Mobile Development iOS Swift">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div>
+            <div class="project-title">iOS Development Showcase</div>
+            <div class="project-subtitle">Mobile Application Development</div>
+          </div>
+        </div>
+        <p class="project-description">
+          Comprehensive showcase of iOS development skills including UI/UX design, Swift programming, 
+          and mobile app architecture. Features modern iOS development practices, Core Data integration, 
+          and responsive design principles.
+        </p>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/52NtpTuMZQ8" 
+                  title="iOS Development Showcase" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Swift</span>
+          <span class="tech-tag">iOS</span>
+          <span class="tech-tag">UIKit</span>
+          <span class="tech-tag">Core Data</span>
+          <span class="tech-tag">Xcode</span>
+        </div>
+        <div class="project-links">
+          <a href="https://www.youtube.com/watch?v=52NtpTuMZQ8" class="project-link" target="_blank">
+            <i class="fab fa-youtube"></i>
+            Watch Demo
+          </a>
+        </div>
+      </div>
+
       <div class="project-card glass hover-glow" data-tech="R Statistics Healthcare Python">
         <div class="project-header">
           <div class="project-icon">
@@ -1066,7 +1306,7 @@ footer {
             <div class="project-subtitle">Sumptuous Data Sciences • Current</div>
           </div>
         </div>
-        <div class="achievement-badge">
+        <div class="achievement-badge internship">
           <i class="fas fa-briefcase"></i>
           Internship Project
         </div>
@@ -1131,8 +1371,12 @@ footer {
           </div>
           <div>
             <div class="project-title">Diabetes Progression Analysis</div>
-            <div class="project-subtitle">Statistical Modeling Project</div>
+            <div class="project-subtitle">UIC Statistical Modeling Project</div>
           </div>
+        </div>
+        <div class="achievement-badge university">
+          <i class="fas fa-university"></i>
+          UIC Project
         </div>
         <p class="project-description">
           Comprehensive statistical analysis examining key predictors of diabetes progression using 
@@ -1164,6 +1408,10 @@ footer {
             <div class="project-subtitle">Full-Stack Cloud Application</div>
           </div>
         </div>
+        <div class="achievement-badge internship">
+          <i class="fas fa-briefcase"></i>
+          Internship Project
+        </div>
         <p class="project-description">
           Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS. 
           Features secure authentication, session management, admin dashboard, and 
@@ -1194,6 +1442,10 @@ footer {
             <div class="project-subtitle">RESTful Web API</div>
           </div>
         </div>
+        <div class="achievement-badge internship">
+          <i class="fas fa-briefcase"></i>
+          Internship Project
+        </div>
         <p class="project-description">
           Enterprise-grade RESTful API built with ASP.NET Core featuring full CRUD operations, 
           Azure SQL integration, automated CI/CD pipelines, and comprehensive API documentation.
@@ -1220,8 +1472,12 @@ footer {
           </div>
           <div>
             <div class="project-title">Gym Data Analysis & Regression</div>
-            <div class="project-subtitle">Statistical Analysis Project</div>
+            <div class="project-subtitle">UIC Statistical Analysis Project</div>
           </div>
+        </div>
+        <div class="achievement-badge university">
+          <i class="fas fa-university"></i>
+          UIC Project
         </div>
         <p class="project-description">
           Advanced statistical analysis of gym member data using regression techniques and ANOVA 
@@ -1499,6 +1755,7 @@ footer {
         }
       });
     }
+
 
     // Parallax effects
     function setupParallaxEffects() {
