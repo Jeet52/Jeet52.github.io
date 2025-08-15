@@ -4,21 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeet Patel | Data Analyst Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
 :root {
-  --color-primary: #1A2A6C;
-  --color-primary-dark: #0D1A3A;
-  --color-bg: #F5F7FA;
-  --color-bg-alt: #e9ecef;
-  --color-border: #B0B8C1;
-  --color-text: #222;
-  --color-text-muted: #666666;
-  --color-accent: #1A2A6C;
-  --color-success: #2ecc71;
-  --color-black: #111;
-  --color-orange: #f39c12;
-  --color-blue: #3498db;
+  --color-primary: #667eea;
+  --color-primary-dark: #5a67d8;
+  --color-secondary: #764ba2;
+  --color-accent: #f093fb;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-bg: #0f0f23;
+  --color-bg-light: #1a1a3e;
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  --color-text: #ffffff;
+  --color-text-muted: #a0aec0;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --shadow-glow: 0 0 40px rgba(102, 126, 234, 0.3);
 }
 
 /* Loading Screen */
@@ -28,23 +35,24 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-bg-alt) 100%);
+  background: var(--color-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.8s ease;
 }
 
 .loader {
-  width: 50px;
-  height: 50px;
-  border: 4px solid var(--color-bg-alt);
-  border-top: 4px solid var(--color-primary);
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(102, 126, 234, 0.2);
+  border-top: 3px solid var(--color-primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 20px;
+  box-shadow: var(--shadow-glow);
 }
 
 @keyframes spin {
@@ -56,102 +64,135 @@
   color: var(--color-primary);
   font-size: 1.2rem;
   font-weight: 600;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Reset & global */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Roboto', Arial, sans-serif;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-bg-alt) 100%);
-  color: var(--color-text);
-  line-height: 1.6;
-  position: relative;
-}
-
-/* Parallax Background */
-.parallax-bg {
+/* Animated Background */
+.animated-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120%;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-bg-alt) 100%);
-  z-index: -1;
-  will-change: transform;
+  height: 100%;
+  z-index: -2;
+  background: var(--color-bg);
+  overflow: hidden;
 }
 
-/* Language Switcher */
-.language-switcher {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  display: flex;
-  gap: 10px;
-}
-
-.lang-btn {
-  background: var(--color-primary);
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.lang-btn.active {
-  background: var(--color-success);
-}
-
-.lang-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: var(--color-primary);
-  color: white;
-  border: none;
+.bg-shape {
+  position: absolute;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  display: none;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(26,42,108,0.3);
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: float 6s ease-in-out infinite;
 }
 
-.back-to-top:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(26,42,108,0.4);
+.bg-shape:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  background: var(--gradient-primary);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
 }
 
-.back-to-top.visible {
-  display: block;
-  animation: fadeInUp 0.5s ease;
+.bg-shape:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  background: var(--gradient-secondary);
+  top: 60%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.bg-shape:nth-child(3) {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  bottom: 20%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Glass Morphism Effect */
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+}
+
+/* Header */
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+  animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -159,906 +200,617 @@ body {
   }
 }
 
-/* Section layout */
-section {
-  padding: 3rem 2rem;
-  max-width: 1000px;
-  margin: 2rem auto;
-  background: rgba(233, 236, 239, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(26,42,108,0.08);
-  scroll-margin-top: 80px;
-  backdrop-filter: blur(10px);
-  transform: translateY(50px);
-  opacity: 0;
-  transition: all 0.6s ease;
-}
-
-section.animate-in {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Skip link styling */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--color-primary);
-  color: white;
-  padding: 8px 16px;
-  z-index: 100;
-  transition: top 0.3s ease;
-  text-decoration: none;
-  font-weight: bold;
-}
-.skip-link:focus {
-  top: 0;
-  outline: 2px solid #fff;
-}
-
-/* Header */
-header {
-  text-align: center;
-  margin: 2rem auto 0 auto;
-  max-width: 1000px;
-  background: rgba(233, 236, 239, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(26,42,108,0.08);
-  padding: 1.5rem;
-  backdrop-filter: blur(10px);
-}
-h1 {
-  color: var(--color-primary);
-  margin-bottom: 0.2rem;
-}
-h2 {
-  border-bottom: 2px solid var(--color-accent);
-  padding-bottom: 0.2rem;
-  color: var(--color-accent);
-}
-
 /* Navigation */
-#navbar {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: var(--color-black);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  padding: 0.75rem 0;
+nav {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  animation: slideDown 1s ease-out 0.6s both;
 }
 
-#navbar ul {
-  margin: 0 auto;
-  max-width: 700px;
-  padding: 0;
+nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-#navbar ul li {
-  margin: 0 10px;
-}
-
-#navbar ul li a {
-  display: block;
-  padding: 10px 12px;
-  color: #fff;
+nav a {
+  color: var(--color-text);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.05rem;
-  border-radius: 6px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
   transition: all 0.3s ease;
-}
-#navbar ul li a:hover,
-#navbar ul li a:focus-visible {
-  background-color: var(--color-primary);
-  color: var(--color-success);
-  filter: brightness(1.1);
-  transform: translateY(-2px);
+  position: relative;
 }
 
-/* Search and Filter Controls */
-.controls {
+nav a:hover, nav a.active {
+  background: var(--gradient-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* CTA Buttons */
+.cta-buttons {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2rem;
+  justify-content: center;
   flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.btn {
+  display: inline-flex;
   align-items: center;
-}
-
-.search-box {
-  flex: 1;
-  min-width: 250px;
-  padding: 10px 15px;
-  border: 2px solid var(--color-border);
-  border-radius: 8px;
-  font-size: 1rem;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-.search-box:focus {
-  border-color: var(--color-primary);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(26,42,108,0.1);
-}
-
-.filter-buttons {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.filter-btn {
-  padding: 8px 16px;
-  border: 2px solid var(--color-primary);
-  background: white;
-  color: var(--color-primary);
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
   font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-  background: var(--color-primary);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(26,42,108,0.2);
-}
-
-.clear-search {
-  background: var(--color-orange);
-  color: white;
+  text-decoration: none;
+  transition: all 0.4s ease;
   border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.clear-search:hover {
-  background: #e67e22;
-  transform: translateY(-2px);
-}
-
-/* Projects Grid */
-#projects-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-/* Project Cards */
-.project-card {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(26,42,108,0.08);
-  width: 100%;
-  max-width: 100%;
-  transition: all 0.3s ease;
+  font-size: 1rem;
   position: relative;
   overflow: hidden;
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-success));
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-glow);
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(26,42,108,0.15);
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
 }
 
-.project-card.hidden {
-  display: none;
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
 }
 
-.project-technologies {
-  display: none;
+.btn-secondary:hover {
+  background: var(--color-glass);
+  border-color: var(--color-primary);
 }
 
-/* Tech icons */
-.tech-icons-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 1rem;
-  justify-content: center;
-}
-.tech-icon {
-  max-height: 32px;
-  width: auto;
+/* Sections */
+section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
-/* Project images - FIXED */
-.project-img {
-  width: 100%;
-  max-width: 500px;
-  height: 250px;
-  object-fit: cover;
-  margin: 1rem auto;
-  display: block;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(26,42,108,0.1);
-  transition: transform 0.3s ease;
-}
-
-.project-img:hover {
-  transform: scale(1.02);
-}
-
-/* Special styling for vertical iPhone app images */
-.project-img.vertical {
-  max-width: 300px;
-  height: 400px;
-  object-fit: contain;
-  background: #f8f9fa;
-  padding: 10px;
-}
-
-/* About me portrait image - FIXED */
-.about-portrait {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 2rem auto;
-  display: block;
-  box-shadow: 0 8px 24px rgba(26,42,108,0.2);
-  transition: transform 0.3s ease;
-  border: 4px solid var(--color-primary);
-}
-
-.about-portrait:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 32px rgba(26,42,108,0.3);
-}
-
-/* Skills section layout - FIXED */
-.skills-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
-
-.skills-list {
-  width: 100%;
-}
-
-.skills-download {
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
   text-align: center;
-  width: 100%;
-  margin-top: 1rem;
+  margin-bottom: 3rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Enhanced project card styling */
-.project-card {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(26,42,108,0.08);
-  width: 100%;
-  max-width: 100%;
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.skill-card {
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
 }
 
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+}
+
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.skill-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.skill-list {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* Experience Timeline */
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-primary);
+  border-radius: 1px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -3.5rem;
+  top: 2rem;
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  border: 4px solid var(--color-bg);
+  box-shadow: 0 0 0 4px var(--color-primary);
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.1);
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-company {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-duration {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  padding: 2rem;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
 .project-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-success), var(--color-blue));
+  right: 0;
+  height: 4px;
+  background: var(--gradient-secondary);
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(26,42,108,0.15);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 80px rgba(240, 147, 251, 0.2);
 }
 
-/* Enhanced project titles */
-.project-card h3 {
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-/* Project subheadings */
-.project-subheading {
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-  font-weight: 600;
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
-  font-style: italic;
 }
 
-/* Project links styling */
+.project-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-secondary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.project-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  padding: 0.3rem 0.8rem;
+  background: rgba(102, 126, 234, 0.2);
+  color: var(--color-primary);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
 .project-links {
-  margin-top: 1rem;
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .project-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-primary);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  background: var(--color-glass);
+  color: var(--color-text);
   text-decoration: none;
+  border-radius: 25px;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .project-link:hover {
-  background: var(--color-success);
+  background: var(--color-primary);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(46,204,113,0.3);
-  color: white;
-  text-decoration: none;
 }
 
-/* Achievement badges */
+/* Achievement Badges */
 .achievement-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #f39c12, #e67e22);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 15px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin: 0.5rem 0;
-  box-shadow: 0 2px 8px rgba(243,156,18,0.3);
-}
-
-/* Status indicators - Updated to remove completed */
-.project-status {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
-}
-
-.status-in-progress {
-  background: rgba(243,156,18,0.1);
-  color: #f39c12;
-  border: 1px solid rgba(243,156,18,0.3);
-}
-
-/* Enhanced tech icons */
-.tech-icons-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 1.5rem 0 1rem;
-  justify-content: center;
-  padding: 1rem;
-  background: rgba(26,42,108,0.02);
-  border-radius: 12px;
-  border: 1px solid rgba(26,42,108,0.08);
-}
-
-.tech-icon {
-  max-height: 36px;
-  width: auto;
-  transition: transform 0.3s ease;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.tech-icon:hover {
-  transform: scale(1.1) translateY(-2px);
-}
-
-/* Enhanced section animations */
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.project-card:nth-child(odd) {
-  animation: slideInFromLeft 0.6s ease-out;
-}
-
-.project-card:nth-child(even) {
-  animation: slideInFromRight 0.6s ease-out;
-}
-
-/* Enhanced buttons */
-.btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, var(--color-black), var(--color-primary));
+  padding: 0.5rem 1rem;
+  background: var(--gradient-secondary);
   color: white;
-  padding: 14px 28px;
   border-radius: 25px;
-  font-weight: 700;
-  box-shadow: 0 6px 20px rgba(26, 42, 108, 0.3);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-success));
-  box-shadow: 0 10px 30px rgba(13, 26, 58, 0.4);
-  transform: translateY(-3px);
-  color: white;
-  text-decoration: none;
-}
-
-.btn::before {
-  content: '📄';
-  font-size: 1.1em;
-}
-
-/* Progress bars for skills (optional enhancement) */
-.skill-category {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: rgba(26,42,108,0.02);
-  border-radius: 12px;
-  border-left: 4px solid var(--color-primary);
-}
-
-.skill-category strong {
-  color: var(--color-primary);
-  font-size: 1.1rem;
-}
-
-/* Testimonials */
-.testimonial-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(26,42,108,0.08);
-  margin-bottom: 2rem;
-  border-left: 4px solid var(--color-success);
-  position: relative;
-}
-
-.testimonial-card::before {
-  content: '"';
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  font-size: 4rem;
-  color: var(--color-success);
-  opacity: 0.3;
-}
-
-.testimonial-text {
-  font-style: italic;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.testimonial-author {
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-primary);
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(240, 147, 251, 0.3);
 }
 
-.testimonial-role {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+/* Contact Section */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 20px;
 }
 
-/* Certifications */
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+.form-group {
+  margin-bottom: 2rem;
 }
 
-.cert-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(26,42,108,0.08);
-  text-align: center;
+.form-group label {
+  display: block;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: 1rem;
   transition: all 0.3s ease;
-  border-top: 4px solid var(--color-blue);
 }
 
-.cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(26,42,108,0.15);
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-.cert-badge {
+/* Filter Controls */
+.filter-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  border-radius: 50px;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* Language Switcher */
+.language-switcher {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
   width: 60px;
   height: 60px;
-  background: var(--color-blue);
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(100px);
+  box-shadow: var(--shadow-glow);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--color-bg-light);
+  border-top: 1px solid var(--color-border);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.cert-title {
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
-
-.cert-issuer {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.cert-date {
-  color: var(--color-success);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-/* Internships */
-.internship-timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.internship-timeline::before {
-  content: '';
-  position: absolute;
-  left: 8px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--color-primary);
-}
-
-.internship-item {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(26,42,108,0.08);
-  margin-bottom: 2rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.internship-item::before {
-  content: '';
-  position: absolute;
-  left: -27px;
-  top: 2rem;
-  width: 12px;
-  height: 12px;
-  background: var(--color-success);
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 0 2px var(--color-success);
-}
-
-.internship-item:hover {
-  transform: translateX(10px);
-  box-shadow: 0 8px 20px rgba(26,42,108,0.15);
-}
-
-.internship-title {
-  font-weight: 600;
-  color: var(--color-primary);
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.internship-company {
-  color: var(--color-success);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.internship-duration {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.internship-description {
-  line-height: 1.6;
-}
-
-/* Portrait image styling - REMOVED (replaced with about-portrait) */
-
-/* Links */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-a:hover,
-a:focus-visible {
-  text-decoration: underline;
-  filter: brightness(1.1);
-  transform: translateY(-2px);
-}
-
-/* Buttons */
-#resume a,
-.btn {
-  display: inline-block;
-  background-color: var(--color-black);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(26, 42, 108, 0.3);
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-#resume a:hover,
-.btn:hover {
-  background-color: var(--color-primary);
-  box-shadow: 0 8px 20px rgba(13, 26, 58, 0.4);
-  transform: translateY(-3px);
-}
-
-/* Footer & social icons */
-footer {
-  text-align: center;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  color: #fff;
-  background: var(--color-black);
-  border-top: 1px solid var(--color-border);
-  padding: 1.5rem 0 0.5rem 0;
-  min-height: 80px;
-}
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
-  background: var(--color-black);
-  padding: 0.5rem 0;
-}
-.social-links img {
-  height: 28px;
-  width: 28px;
-  transition: all 0.3s ease;
-  outline: none;
-  filter: invert(1);
-}
-.social-links img:hover,
-.social-links img:focus-visible {
-  transform: scale(1.3) rotate(5deg);
-  box-shadow: 0 0 0 2px var(--color-primary);
-}
-
-/* Contact Form */
-form {
-  max-width: 500px;
-  margin: 0 auto 3rem;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(26,42,108,0.1);
-  padding: 2rem;
-  box-sizing: border-box;
-}
-form label {
-  font-weight: bold;
-  margin-top: 1rem;
-  display: block;
-  color: var(--color-primary);
-}
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin-top: 4px;
-  margin-bottom: 1rem;
-  border: 2px solid var(--color-border);
-  border-radius: 8px;
-  resize: vertical;
-  font-size: 1rem;
   color: var(--color-text);
-  background: var(--color-bg-alt);
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-  border-color: var(--color-primary);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(26,42,108,0.1);
-}
-
-button[type="submit"] {
-  background-color: var(--color-black);
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  width: 100%;
-  font-weight: 600;
-}
-button[type="submit"]:hover,
-button[type="submit"]:focus-visible {
-  background-color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(26,42,108,0.3);
-}
-#form-success {
-  font-weight: bold;
-  color: var(--color-success);
-  margin-top: 18px;
-  margin-bottom: 8px;
-  display: none;
-}
-
-/* Main content wrapper */
-#main-content {
-  margin: 0 auto;
-  max-width: 1100px;
-}
-
-/* No Results Message */
-.no-results {
-  text-align: center;
-  padding: 3rem 2rem;
-  color: var(--color-text-muted);
   font-size: 1.2rem;
-  display: none;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.no-results.show {
-  display: block;
+.social-link:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
 }
 
-/* Responsive Tweaks */
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  body {
-    padding: 0 0.5rem;
+  .hero-title {
+    font-size: 3rem;
   }
   
-  .language-switcher {
-    top: 10px;
-    right: 10px;
+  .hero-subtitle {
+    font-size: 1.2rem;
   }
   
-  .back-to-top {
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
+  .section-title {
+    font-size: 2rem;
   }
   
-  header {
-    padding: 1rem;
-  }
-  
-  #navbar ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #navbar ul li {
-    margin: 5px 0;
-  }
-  
-  h1 {
-    font-size: 1.8rem;
-  }
-  
-  section {
-    padding: 2rem 1rem;
-  }
-  
-  .controls {
-    flex-direction: column;
+  nav ul {
     gap: 1rem;
+  }
+  
+  nav a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline {
+    padding-left: 2rem;
+  }
+  
+  .timeline::before {
+    left: 0.5rem;
+  }
+  
+  .timeline-item::before {
+    left: -2.5rem;
+  }
+  
+  .filter-controls {
+    flex-direction: column;
   }
   
   .search-box {
     min-width: auto;
   }
-  
-  .filter-buttons {
-    justify-content: center;
-  }
-  
-  .cert-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .internship-timeline {
-    padding-left: 1rem;
-  }
-  
-  .internship-item::before {
-    left: -17px;
-  }
-  
-  .project-card {
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 1rem;
-  }
-  
-  form {
-    padding: 1.5rem;
-  }
-  
-  footer {
-    padding: 1rem 0 0.5rem 0;
-    font-size: 0.85rem;
-  }
-  
-  .about-portrait {
-    width: 180px;
-    height: 180px;
-  }
-  
-  .skills-content {
-    gap: 1.5rem;
-  }
-  
-  .skills-download {
-    text-align: center;
-  }
+}
+
+/* Hover Effects */
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
 }
   </style>
 </head>
@@ -1070,399 +822,667 @@ button[type="submit"]:focus-visible {
     <div class="loading-text">Loading Portfolio...</div>
   </div>
 
-  <!-- Parallax Background -->
-  <div class="parallax-bg" id="parallaxBg"></div>
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+  </div>
 
   <!-- Language Switcher -->
   <div class="language-switcher">
     <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-    <button class="lang-btn" onclick="switchLanguage('hi')">हिं</button>
+    <button class="lang-btn" onclick="switchLanguage('hi')">हि</button>
   </div>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
-
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <nav id="navbar" role="navigation" aria-label="Primary navigation">
+  <!-- Navigation -->
+  <nav class="glass">
     <ul>
+      <li><a href="#home" class="nav-link">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#internships">Experience</a></li>
-      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <header>
-    <h1>Jeet Patel</h1>
-    <p>Statistics & Economics Major | Computer Science Minor | Aspiring Data Analyst</p>
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Header -->
+  <header id="home">
+    <div class="hero-content">
+      <h1 class="hero-title">Jeet Patel</h1>
+      <p class="hero-subtitle">Data Analyst • Statistics & Economics Major • Tech Innovator</p>
+      <p class="hero-description">
+        Transforming complex data into actionable insights through advanced analytics, machine learning, 
+        and innovative visualization techniques. Passionate about leveraging data science to solve real-world problems.
+      </p>
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-rocket"></i>
+          View My Work
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-envelope"></i>
+          Get In Touch
+        </a>
+        <button onclick="downloadPortfolio()" class="btn btn-secondary">
+          <i class="fas fa-download"></i>
+          Download Resume
+        </button>
+      </div>
+    </div>
   </header>
 
-  <main id="main-content" role="main">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I'm Jeet Patel, a driven undergraduate student at the University of Illinois at Chicago, pursuing a BS in Statistics, a BA in Economics, and a minor in Computer Science. I have strong programming skills in Python, R, SQL, and C++, with hands-on experience in cloud platforms like AWS and Azure.
+  <!-- About Section -->
+  <section id="about" class="animate-on-scroll">
+    <h2 class="section-title">About Me</h2>
+    <div class="glass" style="padding: 3rem; text-align: center; border-radius: 20px;">
+      <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; color: var(--color-text-muted);">
+        I'm a driven data enthusiast pursuing a BS in Statistics and BA in Economics with a Computer Science minor at UIC. 
+        My journey combines rigorous academic foundation with hands-on experience in healthcare analytics, 
+        cloud computing, and full-stack development.
       </p>
-      <p>
-        Through internships and hackathons, I've applied my knowledge to real-world problems – including healthcare data analysis using OMOP and SDTM data models, full-stack web development, and mobile app prototyping. I'm passionate about using data to uncover insights and support decision-making in business and healthcare.
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted);">
+        Through multiple internships and hackathon victories, I've developed expertise in transforming complex datasets 
+        into meaningful insights that drive business decisions and improve healthcare outcomes.
       </p>
-      <p>
-        Currently, I'm seeking opportunities to grow as a data analyst and contribute to impactful data-driven projects while completing my studies at UIC.
-      </p>
-      <img src="Images/PatelJeet.jpg" alt="Jeet Patel" class="about-portrait">
-    </section>
+    </div>
+  </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-content">
-        <div class="skills-list">
-          <div class="skill-category">
-            <strong>Programming Languages:</strong> Python, R, SAS, SQL, C++, C#, Kotlin, HTML, CSS, Swift
-          </div>
-          <div class="skill-category">
-            <strong>Frameworks & Tools:</strong> Flask, .NET 8, ASP.NET Core Web API, Azure Functions, Figma
-          </div>
-          <div class="skill-category">
-            <strong>Cloud & DevOps:</strong> AWS EC2, AWS RDS, Azure SQL Database, Azure App Services, GitHub Actions
-          </div>
-          <div class="skill-category">
-            <strong>Databases & Data Tools:</strong> MySQL, OMOP CDM, SDTM, ERD Modeling, Power BI, Tableau, Excel
-          </div>
-          <div class="skill-category">
-            <strong>Development Methodologies:</strong> Agile, Sprint Planning, Code Reviews, CI/CD
-          </div>
-
-          <div class="tech-icons-row">
-              <img src="Images/Excel.png" alt="Excel" class="tech-icon">
-              <img src="Images/PowerBI.png" alt="Power BI" class="tech-icon">
-          </div>
+  <!-- Skills Section -->
+  <section id="skills" class="animate-on-scroll">
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-chart-line"></i>
         </div>
-        
-        <div class="skills-download">
-          <a href="#" class="btn" onclick="downloadPortfolio()">Download Complete Portfolio</a>
+        <h3 class="skill-title">Data Analysis</h3>
+        <div class="skill-list">
+          Python • R • SAS • SQL<br>
+          Pandas • NumPy • Scikit-learn<br>
+          Statistical Modeling • Machine Learning
         </div>
       </div>
-    </section>
 
-    <section id="internships">
-      <h2>Professional Experience</h2>
-      
-      <div class="internship-timeline">
-        <div class="internship-item">
-          <div class="internship-title">Data Science Intern</div>
-          <div class="internship-company">Sumptuous Data Sciences</div>
-          <div class="internship-duration">July 2025 - August 2025 · 2 months</div>
-          <div class="internship-location">Monmouth Junction, New Jersey, United States · Remote</div>
-          <div class="internship-description">
-            Complete weekly assignments in R and Python focused on real-world healthcare analytics using OMOP and SDTM data models. Preparing a final presentation on clinical data analysis for a company-wide audience. Gained expertise in ERD modeling and healthcare data standards.
-          </div>
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-cloud"></i>
         </div>
-        
-        <div class="internship-item">
-          <div class="internship-title">Web Development Intern</div>
-          <div class="internship-company">IT Expert System, Inc</div>
-          <div class="internship-duration">June 2025 - August 2025 · 3 months</div>
-          <div class="internship-location">Schaumburg, Illinois, United States · Hybrid</div>
-          <div class="internship-description">
-            Collaborated in an Agile team of four to build and present weekly full-stack web applications, using Trello for sprint planning and Canva for client-ready presentations. Contributed to group projects by designing front-end interfaces, integrating backend logic, and participating in regular code reviews and retrospectives. Worked with Flask and Azure SQL technologies.
-          </div>
-        </div>
-
-        <div class="internship-item">
-          <div class="internship-title">Student Programmer</div>
-          <div class="internship-company">Northern Illinois University</div>
-          <div class="internship-duration">May 2022 - August 2022 · 4 months</div>
-          <div class="internship-description">
-            Coded beta program assignments and tested whether to add them to the curriculum for the following fall at NIU. The program assignments consisted of dailies and group recitation projects accompanied by surveys. Effectively communicated evaluation results and detailed feedback to senior department members to guide curriculum decisions.
-          </div>
+        <h3 class="skill-title">Cloud & DevOps</h3>
+        <div class="skill-list">
+          AWS EC2 • AWS RDS • Azure<br>
+          Docker • CI/CD • GitHub Actions<br>
+          Azure Functions • Cloud Architecture
         </div>
       </div>
-    </section>
 
-    <section id="certifications">
-      <h2>Certifications</h2>
-      
-      <div class="cert-grid">
-        <div class="cert-card">
-          <div class="cert-badge">DA</div>
-          <div class="cert-title">Career Essentials in Data Analysis</div>
-          <div class="cert-issuer">Microsoft</div>
-          <div class="cert-date">2025</div>
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-code"></i>
         </div>
-        
-        <div class="cert-card">
-          <div class="cert-badge">PY</div>
-          <div class="cert-title">Python for Data Science</div>
-          <div class="cert-issuer">Saylor Academy</div>
-          <div class="cert-date">2025</div>
-        </div>
-        
-        <div class="cert-card">
-          <div class="cert-badge">PY</div>
-          <div class="cert-title">Scientific Computing with Python</div>
-          <div class="cert-issuer">freeCodeCamp</div>
-          <div class="cert-date">2024</div>
-        </div>
-        
-        <div class="cert-card">
-          <div class="cert-badge">WEB</div>
-          <div class="cert-title">Web Development Internship</div>
-          <div class="cert-issuer">IT Expert System, Inc</div>
-          <div class="cert-date">August 2025</div>
-        </div>
-        
-        <div class="cert-card">
-          <div class="cert-badge">⭐</div>
-          <div class="cert-title">SparkHacks Favorite Challenge</div>
-          <div class="cert-issuer">UIC SparkHacks</div>
-          <div class="cert-date">February 2025</div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-badge">SQL</div>
-          <div class="cert-title">Analytic SQL for Developers</div>
-          <div class="cert-issuer">Oracle</div>
-          <div class="cert-date">2025</div>
-        </div>
-        
-        
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      
-      <div class="controls">
-        <input type="text" class="search-box" id="searchBox" placeholder="Search projects...">
-        
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="Python">Python</button>
-          <button class="filter-btn" data-filter="R">R</button>
-          <button class="filter-btn" data-filter="AWS">AWS</button>
-          <button class="filter-btn" data-filter="Azure">Azure</button>
-          <button class="filter-btn" data-filter="Swift">Swift</button>
-          <button class="filter-btn" data-filter="C#">C#</button>
-        </div>
-        
-        <button class="clear-search" onclick="clearSearch()">Clear</button>
-      </div>
-      
-      <div id="projects-grid">
-        <div class="project-card" data-technologies="R,Statistics,Healthcare">
-          <h3>Healthcare Analytics with OMOP & SDTM</h3>
-          <div class="project-subheading">Sumptuous Data Sciences</div>
-          <p>
-            Currently working on real-world healthcare analytics projects using OMOP Common Data Model and SDTM standards. This internship project involves weekly assignments in R and Python, focusing on clinical data analysis, ERD modeling, and preparing presentations for healthcare stakeholders. Gaining hands-on experience with industry-standard healthcare data formats.
-          </p>
-          <img src="Images/OMOP.png" alt="OMOP Project" class="project-img">
-          <div class="tech-icons-row">
-            <img src="Images/R.png" alt="R" class="tech-icon">
-            <img src="Images/Python.png" alt="Python" class="tech-icon">
-          </div>
-          <div class="project-status status-in-progress">🔄 Internship Project - In Progress</div>
-          <div class="project-technologies">R Statistics Healthcare Python</div>
-        </div>
-
-        <div class="project-card" data-technologies="Swift,Figma,Mobile">
-          <h3>Outting Otters - Antisocial Social Media App for Introverts</h3>
-          <div class="project-subheading">UIC SparkHacks</div>
-          <div class="achievement-badge">🏆 SparkHacks Favorite Challenge Winner</div>
-          <p>
-            Developed an innovative antisocial social media app designed specifically for introverts, featuring our mascot "Outting Otters." The app includes unique features like trophies for achievements, connections tailored for introverted users, event hosting capabilities with detailed information including costs and attendance numbers. Created during UIC SparkHacks in a team of 4, focusing on addressing the social needs of introverted individuals in a comfortable digital environment.
-          </p>
-          <img src="Images/Otter.png" alt="Otter Project" class="project-img vertical">
-          <div class="tech-icons-row">
-              <img src="Images/Swift.png" alt="Swift" class="tech-icon">
-              <img src="Images/Figma.png" alt="Figma" class="tech-icon">
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" target="_blank" rel="noopener noreferrer" class="project-link">
-              📂 GitHub Repo
-            </a>
-          </div>
-          <div class="project-technologies">Swift Figma Mobile</div>
-        </div>
-
-        <div class="project-card" data-technologies="R,Statistics">
-          <h3>Factors Influencing Diabetes Progression</h3>
-          <div class="project-subheading">University of Illinois at Chicago</div>
-          <p>
-            A comprehensive statistical analysis project that examines key predictors of diabetes progression using multiple linear regression. The study includes assumption checks, multicollinearity assessment, variable selection, and model validation using ANOVA techniques. Demonstrates proficiency in advanced statistical modeling and healthcare data analysis.
-          </p>
-          <img src="Images/Diabetes.png" alt="Diabetes Project" class="project-img">
-          <div class="tech-icons-row">
-            <img src="Images/R.png" alt="R" class="tech-icon">
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" target="_blank" rel="noopener noreferrer" class="project-link">
-              📂 GitHub Repo
-            </a>
-          </div>
-          <div class="project-technologies">R Statistics</div>
-        </div>
-
-        <div class="project-card" data-technologies="Python,AWS,HTML,CSS">
-          <h3>AWS Cloud-Based User System</h3>
-          <div class="project-subheading">IT Expert System, Inc</div>
-          <p>
-            A full-stack Flask web application deployed on AWS EC2 with a MySQL database hosted on AWS RDS. Features include secure user registration, login, session management, and an admin panel for user search. Demonstrates cloud deployment skills and full-stack development capabilities.
-          </p>
-          <img src="Images/AWS_Cloud.png" alt="AWS Cloud" class="project-img">
-          <div class="tech-icons-row">
-            <img src="Images/AWS.png" alt="AWS" class="tech-icon">
-            <img src="Images/Python.png" alt="Python" class="tech-icon">
-            <img src="Images/HTML.png" alt="HTML" class="tech-icon">
-            <img src="Images/CSS.png" alt="CSS" class="tech-icon">
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" target="_blank" rel="noopener noreferrer" class="project-link">
-              📂 GitHub Repo
-            </a>
-          </div>
-          <div class="project-technologies">Python AWS HTML CSS</div>
-        </div>
-
-        <div class="project-card" data-technologies="C#,Azure,.NET">
-          <h3>Customer API</h3>
-          <div class="project-subheading">IT Expert System, Inc</div>
-          <p>
-            Developed a RESTful API using C# and ASP.NET Core with full CRUD functionality connected to an Azure SQL database. Features automated CI/CD deployment pipelines with GitHub Actions. Demonstrates modern web API development practices and cloud integration skills.
-          </p>
-          <img src="Images/CustomerAPI.png" alt="Customer API" class="project-img">
-          <div class="tech-icons-row">
-            <img src="Images/DotNet.png" alt="NET" class="tech-icon">
-            <img src="Images/CSharp.png" alt="CSharp" class="tech-icon">
-            <img src="Images/Azure.png" alt="Azure" class="tech-icon">
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Jeet52/Customer-API" target="_blank" rel="noopener noreferrer" class="project-link">
-              📂 GitHub Repo
-            </a>
-          </div>
-          <div class="project-technologies">C# Azure .NET</div>
-        </div>
-
-        <div class="project-card" data-technologies="R,Statistics">
-          <h3>Gym Data Analysis with Linear Regression</h3>
-          <div class="project-subheading">University of Illinois at Chicago</div>
-          <p>
-            An R Markdown project analyzing gym member data to understand how workout habits and physical traits influence calories burned and water intake using regression and ANOVA techniques. Demonstrates statistical analysis skills and data visualization capabilities in R.
-          </p>
-          <img src="Images/GymData.png" alt="Gym Data" class="project-img">
-          <div class="tech-icons-row">
-            <img src="Images/R.png" alt="R" class="tech-icon">
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" target="_blank" rel="noopener noreferrer" class="project-link">
-              📂 GitHub Repo
-            </a>
-          </div>
-          <div class="project-technologies">R Statistics</div>
+        <h3 class="skill-title">Development</h3>
+        <div class="skill-list">
+          Python • C++ • C# • Swift<br>
+          Flask • .NET • ASP.NET Core<br>
+          HTML • CSS • JavaScript
         </div>
       </div>
-      
-      <div class="no-results" id="noResults">
-        <p>No projects found matching your search criteria.</p>
-      </div>
-    </section>
 
-    <section id="testimonials">
-      <h2>Testimonials</h2>
-      
-      <div class="testimonial-card">
-        <div class="testimonial-text">
-          "I've had the pleasure of working with Jeet, and I can confidently say he is a hardworking and talented IT professional. His passion for data analysis, web development, and mobile development is evident in every project he takes on. Jeet is a quick learner who consistently adapts to new tools and technologies, often going the extra mile to meet tight deadlines and evolving project demands."
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-database"></i>
         </div>
-        <div class="testimonial-author">Harry K.</div>
-        <div class="testimonial-role">Director Of Business Development at IT Expert System, Inc</div>
-      </div>
-      
-      <div class="testimonial-card">
-        <div class="testimonial-text">
-          "One of Jeet's greatest strengths is his collaborative nature. He is a true team player who communicates effectively and contributes positively to any team dynamic. Whether he's diving into a new framework or supporting a colleague, Jeet brings a proactive and solutions-oriented mindset to the table."
+        <h3 class="skill-title">Data Management</h3>
+        <div class="skill-list">
+          MySQL • PostgreSQL • OMOP CDM<br>
+          SDTM • ERD Modeling<br>
+          Data Warehousing • ETL Processes
         </div>
-        <div class="testimonial-author">Harry K.</div>
-        <div class="testimonial-role">Director Of Business Development at IT Expert System, Inc</div>
       </div>
-      
-      <div class="testimonial-card">
-        <div class="testimonial-text">
-          "His ability to pick up complex concepts quickly, combined with his dedication and adaptability, makes him a valuable asset to any organization. Jeet consistently delivers high-quality work and demonstrates excellent problem-solving skills in both individual and team settings."
+
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-chart-bar"></i>
         </div>
-        <div class="testimonial-author">Harry K.</div>
-        <div class="testimonial-role">Director Of Business Development at IT Expert System, Inc</div>
+        <h3 class="skill-title">Visualization</h3>
+        <div class="skill-list">
+          Power BI • Tableau • Excel<br>
+          Matplotlib • Seaborn • ggplot2<br>
+          Interactive Dashboards
+        </div>
       </div>
-    </section>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form id="contact-form" action="https://formspree.io/f/mjkopqaj" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3 class="skill-title">Mobile & Design</h3>
+        <div class="skill-list">
+          Swift • Kotlin • iOS Development<br>
+          Figma • UI/UX Design<br>
+          Prototyping • User Research
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="_replyto" required />
+  <!-- Experience Section -->
+  <section id="experience" class="animate-on-scroll">
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item glass hover-glow">
+        <div class="timeline-title">Data Science Intern</div>
+        <div class="timeline-company">Sumptuous Data Sciences</div>
+        <div class="timeline-duration">July 2025 - August 2025 • Remote</div>
+        <p>Collaborated in an Agile development team to build full-stack web applications using Flask and Azure technologies. Implemented CI/CD pipelines, participated in sprint planning and code reviews, and delivered client-ready presentations. Gained expertise in modern web development practices and cloud deployment strategies.</p>
+      </div>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+      <div class="timeline-item glass hover-glow">
+        <div class="timeline-title">Student Programmer</div>
+        <div class="timeline-company">Northern Illinois University</div>
+        <div class="timeline-duration">May 2022 - August 2022 • On-site</div>
+        <p>Developed and tested beta programming assignments for curriculum integration. Conducted comprehensive evaluations and provided detailed feedback to senior faculty members. Contributed to curriculum modernization efforts and improved student learning outcomes.</p>
+      </div>
 
-        <button type="submit" class="btn">Send Message</button>
-        <p id="form-success">Thanks! Your message has been sent.</p>
+       <div class="timeline-item glass hover-glow">
+        <div class="timeline-title">Web Development Intern</div>
+        <div class="timeline-company">IT Expert System, Inc</div>
+        <div class="timeline-duration">June 2025 - August 2025 • Hybrid</div>
+        <p> Leading healthcare analytics projects using OMOP and SDTM data models. Developing advanced statistical models in R and Python, creating comprehensive ERD designs, and presenting insights to company stakeholders. Specializing in clinical data analysis and regulatory compliance standards.</p>
+      </div>
+          
+    </div>
+  </section>
+
+
+
+     
+
+  <!-- Projects Section -->
+  <section id="projects" class="animate-on-scroll">
+    <h2 class="section-title">Featured Projects</h2>
+    
+    <div class="filter-controls">
+      <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects...">
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="Python">Python</button>
+        <button class="filter-btn" data-filter="R">R</button>
+        <button class="filter-btn" data-filter="AWS">AWS</button>
+        <button class="filter-btn" data-filter="Azure">Azure</button>
+        <button class="filter-btn" data-filter="Swift">Swift</button>
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      <div class="project-card glass hover-glow" data-tech="R Statistics Healthcare Python">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <div>
+            <div class="project-title">Healthcare Analytics with OMOP & SDTM</div>
+            <div class="project-subtitle">Sumptuous Data Sciences • Current</div>
+          </div>
+        </div>
+        <div class="achievement-badge">
+          <i class="fas fa-briefcase"></i>
+          Internship Project
+        </div>
+        <p class="project-description">
+          Advanced healthcare analytics using industry-standard OMOP Common Data Model and SDTM formats. 
+          Implementing statistical models for clinical data analysis, developing ERD designs, and creating 
+          comprehensive presentations for healthcare stakeholders.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">R</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">OMOP CDM</span>
+          <span class="tech-tag">SDTM</span>
+          <span class="tech-tag">Healthcare Analytics</span>
+        </div>
+        <div class="project-links">
+          <span class="project-link" style="background: rgba(243, 156, 18, 0.2); color: #f39c12;">
+            <i class="fas fa-clock"></i>
+            In Progress
+          </span>
+        </div>
+      </div>
+
+      <div class="project-card glass hover-glow" data-tech="Swift Figma Mobile iOS">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div>
+            <div class="project-title">Outting Otters - Antisocial Social Media</div>
+            <div class="project-subtitle">UIC SparkHacks Winner</div>
+          </div>
+        </div>
+        <div class="achievement-badge">
+          <i class="fas fa-trophy"></i>
+          Hackathon Winner
+        </div>
+        <p class="project-description">
+          Revolutionary social media app designed for introverts featuring achievement systems, 
+          comfortable social connections, and event hosting capabilities. Built during UIC SparkHacks 
+          with focus on inclusive digital social experiences.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Swift</span>
+          <span class="tech-tag">iOS</span>
+          <span class="tech-tag">Figma</span>
+          <span class="tech-tag">UI/UX</span>
+          <span class="tech-tag">Social Media</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card glass hover-glow" data-tech="R Statistics Regression Healthcare">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div>
+            <div class="project-title">Diabetes Progression Analysis</div>
+            <div class="project-subtitle">Statistical Modeling Project</div>
+          </div>
+        </div>
+        <p class="project-description">
+          Comprehensive statistical analysis examining key predictors of diabetes progression using 
+          multiple linear regression, multicollinearity assessment, and advanced model validation 
+          techniques with ANOVA.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">R</span>
+          <span class="tech-tag">Statistics</span>
+          <span class="tech-tag">Linear Regression</span>
+          <span class="tech-tag">ANOVA</span>
+          <span class="tech-tag">Healthcare</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card glass hover-glow" data-tech="Python AWS Flask MySQL Cloud">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div>
+            <div class="project-title">AWS Cloud-Based User System</div>
+            <div class="project-subtitle">Full-Stack Cloud Application</div>
+          </div>
+        </div>
+        <p class="project-description">
+          Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS. 
+          Features secure authentication, session management, admin dashboard, and 
+          comprehensive user search functionality.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Flask</span>
+          <span class="tech-tag">AWS EC2</span>
+          <span class="tech-tag">AWS RDS</span>
+          <span class="tech-tag">MySQL</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card glass hover-glow" data-tech="C# Azure .NET API SQL">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <div>
+            <div class="project-title">Customer Management API</div>
+            <div class="project-subtitle">RESTful Web API</div>
+          </div>
+        </div>
+        <p class="project-description">
+          Enterprise-grade RESTful API built with ASP.NET Core featuring full CRUD operations, 
+          Azure SQL integration, automated CI/CD pipelines, and comprehensive API documentation.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">C#</span>
+          <span class="tech-tag">ASP.NET Core</span>
+          <span class="tech-tag">Azure SQL</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">CI/CD</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/Customer-API" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card glass hover-glow" data-tech="R Statistics Fitness Analytics">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-dumbbell"></i>
+          </div>
+          <div>
+            <div class="project-title">Gym Data Analysis & Regression</div>
+            <div class="project-subtitle">Statistical Analysis Project</div>
+          </div>
+        </div>
+        <p class="project-description">
+          Advanced statistical analysis of gym member data using regression techniques and ANOVA 
+          to understand relationships between workout habits, physical traits, and health outcomes.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">R</span>
+          <span class="tech-tag">Statistics</span>
+          <span class="tech-tag">Regression</span>
+          <span class="tech-tag">Data Visualization</span>
+          <span class="tech-tag">ANOVA</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-results" id="noResults" style="display: none; text-align: center; padding: 3rem; color: var(--color-text-muted);">
+      <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+      <h3>No projects found</h3>
+      <p>Try adjusting your search terms or filters</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="animate-on-scroll">
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-form glass">
+      <form id="contactForm" action="https://formspree.io/f/mjkopqaj" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="_replyto" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <i class="fas fa-paper-plane"></i>
+          Send Message
+        </button>
       </form>
-    </section>
-  </main>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Jeet Patel. All rights reserved.</p>
+    <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
+      © 2025 Jeet Patel. Crafted with passion and precision.
+    </p>
     <div class="social-links">
-      <a href="https://github.com/Jeet52" target="_blank" aria-label="GitHub" rel="noopener noreferrer" title="GitHub">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub icon" />
+      <a href="https://github.com/Jeet52" class="social-link" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
       </a>
-      <a href="https://linkedin.com/in/jeetpatel52" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer" title="LinkedIn">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn icon" />
+      <a href="https://linkedin.com/in/jeetpatel52" class="social-link" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://www.instagram.com/jeetpatel52" target="_blank" aria-label="Instagram" rel="noopener noreferrer" title="Instagram">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram icon" />
+      <a href="https://www.instagram.com/jeetpatel52" class="social-link" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="mailto:contact@jeetpatel.dev" class="social-link" aria-label="Email">
+        <i class="fas fa-envelope"></i>
       </a>
     </div>
   </footer>
 
   <script>
+    // Global variables
     let currentLanguage = 'en';
-    
-    // Loading Screen
-    window.addEventListener('load', function() {
+    let isLoading = true;
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      initializePortfolio();
+    });
+
+    // Initialize portfolio
+    function initializePortfolio() {
+      hideLoadingScreen();
+      setupScrollAnimations();
+      setupFilterSystem();
+      setupFormHandling();
+      setupNavigationHighlight();
+      setupBackToTop();
+      setupParallaxEffects();
+    }
+
+    // Hide loading screen with animation
+    function hideLoadingScreen() {
       setTimeout(() => {
-        document.getElementById('loadingScreen').style.opacity = '0';
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.style.opacity = '0';
         setTimeout(() => {
-          document.getElementById('loadingScreen').style.display = 'none';
-          animateOnScroll();
-        }, 500);
+          loadingScreen.style.display = 'none';
+          isLoading = false;
+        }, 800);
       }, 2000);
-    });
+    }
 
-    // Parallax Effect
-    window.addEventListener('scroll', function() {
-      const scrolled = window.pageYOffset;
-      const parallax = document.getElementById('parallaxBg');
-      const speed = scrolled * 0.5;
-      parallax.style.transform = `translateY(${speed}px)`;
-      
-      // Back to top button
-      const backToTop = document.getElementById('backToTop');
-      if (scrolled > 300) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
+    // Setup scroll-based animations
+    function setupScrollAnimations() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    // Navigation active state
+    function setupNavigationHighlight() {
+      const navLinks = document.querySelectorAll('nav a');
+      const sections = document.querySelectorAll('section, header');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      sections.forEach(section => observer.observe(section));
+    }
+
+    // Filter and search system
+    function setupFilterSystem() {
+      const searchBox = document.getElementById('searchBox');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+      const noResults = document.getElementById('noResults');
+
+      let currentFilter = 'all';
+      let currentSearch = '';
+
+      // Search functionality
+      searchBox.addEventListener('input', function() {
+        currentSearch = this.value.toLowerCase();
+        filterProjects();
+      });
+
+      // Filter buttons
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          currentFilter = this.getAttribute('data-filter');
+          filterProjects();
+        });
+      });
+
+      function filterProjects() {
+        let visibleCount = 0;
+
+        projectCards.forEach(card => {
+          const tech = card.getAttribute('data-tech') || '';
+          const title = card.querySelector('.project-title').textContent.toLowerCase();
+          const description = card.querySelector('.project-description').textContent.toLowerCase();
+
+          const matchesFilter = currentFilter === 'all' || tech.toLowerCase().includes(currentFilter.toLowerCase());
+          const matchesSearch = currentSearch === '' || 
+                              title.includes(currentSearch) || 
+                              description.includes(currentSearch) ||
+                              tech.toLowerCase().includes(currentSearch);
+
+          if (matchesFilter && matchesSearch) {
+            card.style.display = 'block';
+            card.style.animation = `fadeInUp 0.6s ease-out ${visibleCount * 0.1}s both`;
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
       }
-    });
+    }
 
-    // Scroll to top function
+    // Form handling
+    function setupFormHandling() {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.reset();
+            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        } catch (error) {
+          showNotification('Failed to send message. Please try again.', 'error');
+        } finally {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
+
+    // Show notifications
+    function showNotification(message, type) {
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        background: ${type === 'success' ? 'var(--color-success)' : 'var(--color-danger)'};
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow-glow);
+        z-index: 10000;
+        animation: slideInRight 0.5s ease-out;
+      `;
+      notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check' : 'exclamation-triangle'}"></i> ${message}`;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.5s ease-out forwards';
+        setTimeout(() => notification.remove(), 500);
+      }, 5000);
+    }
+
+    // Back to top functionality
+    function setupBackToTop() {
+      const backToTop = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+    }
+
+    // Parallax effects
+    function setupParallaxEffects() {
+      const shapes = document.querySelectorAll('.bg-shape');
+      
+      window.addEventListener('scroll', () => {
+        if (isLoading) return;
+        
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        shapes.forEach((shape, index) => {
+          const speed = (index + 1) * 0.3;
+          shape.style.transform = `translateY(${rate * speed}px) rotate(${scrolled * 0.05}deg)`;
+        });
+      });
+    }
+
+    // Utility functions
     function scrollToTop() {
       window.scrollTo({
         top: 0,
@@ -1470,252 +1490,144 @@ button[type="submit"]:focus-visible {
       });
     }
 
-    // Animate sections on scroll
-    function animateOnScroll() {
-      const sections = document.querySelectorAll('section');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-    }
-
-    // Language Switching
     function switchLanguage(lang) {
       currentLanguage = lang;
-      // Language switching functionality can be added here if needed
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
+        if (btn.textContent.includes(lang === 'en' ? 'EN' : 'हि')) {
+          btn.classList.add('active');
+        }
       });
-      event.target.classList.add('active');
       document.documentElement.lang = lang;
     }
 
-    // Project Filtering and Search
-    const searchBox = document.getElementById('searchBox');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    const noResults = document.getElementById('noResults');
-    
-    let currentFilter = 'all';
-    let currentSearch = '';
-
-    // Search functionality
-    searchBox.addEventListener('input', function() {
-      currentSearch = this.value.toLowerCase();
-      filterProjects();
-    });
-
-    // Filter functionality
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Update active filter button
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        
-        currentFilter = this.getAttribute('data-filter');
-        filterProjects();
-      });
-    });
-
-    function filterProjects() {
-      let visibleCount = 0;
-      
-      projectCards.forEach(card => {
-        const technologies = card.getAttribute('data-technologies') || '';
-        const title = card.querySelector('h3').textContent.toLowerCase();
-        const description = card.querySelector('p').textContent.toLowerCase();
-        
-        const matchesFilter = currentFilter === 'all' || technologies.includes(currentFilter);
-        const matchesSearch = currentSearch === '' || 
-                            title.includes(currentSearch) || 
-                            description.includes(currentSearch) ||
-                            technologies.toLowerCase().includes(currentSearch);
-        
-        if (matchesFilter && matchesSearch) {
-          card.classList.remove('hidden');
-          visibleCount++;
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-      
-      // Show/hide no results message
-      if (visibleCount === 0) {
-        noResults.classList.add('show');
-      } else {
-        noResults.classList.remove('show');
-      }
-    }
-
-    // Clear search function
-    function clearSearch() {
-      searchBox.value = '';
-      currentSearch = '';
-      currentFilter = 'all';
-      
-      // Reset filter buttons
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      filterButtons[0].classList.add('active');
-      
-      filterProjects();
-    }
-
-    // Download Portfolio PDF
+    // Download portfolio
     function downloadPortfolio() {
       const portfolioContent = `
 JEET PATEL - DATA ANALYST PORTFOLIO
+===============================================
 
-CONTACT INFORMATION:
-GitHub: github.com/Jeet52
-LinkedIn: linkedin.com/in/jeetpatel52
-Instagram: instagram.com/jeetpatel52
+CONTACT INFORMATION
+-------------------
+📧 Email: contact@jeetpatel.dev
+🔗 GitHub: github.com/Jeet52  
+💼 LinkedIn: linkedin.com/in/jeetpatel52
+📱 Instagram: instagram.com/jeetpatel52
 
-EDUCATION:
-University of Illinois at Chicago
-BS in Statistics, BA in Economics, Minor in Computer Science
+EDUCATION
+---------
+🎓 University of Illinois at Chicago
+   • BS in Statistics
+   • BA in Economics  
+   • Minor in Computer Science
 
-SKILLS:
-Programming: Python, R, SQL, C++, C#, Kotlin, HTML, CSS, Swift
-Frameworks: Flask, .NET 8, ASP.NET Core Web API, Azure Functions, Figma
-Cloud: AWS EC2, AWS RDS, Azure SQL Database, Azure App Services
-Data Tools: MySQL, OMOP CDM, SDTM, ERD Modeling, Power BI, Tableau, Excel
-Development: Agile, Sprint Planning, Code Reviews, CI/CD
+TECHNICAL SKILLS
+---------------
+📊 Data Analysis: Python, R, SAS, SQL, Pandas, NumPy, Scikit-learn
+☁️  Cloud & DevOps: AWS EC2, AWS RDS, Azure, Docker, CI/CD, GitHub Actions
+💻 Development: Python, C++, C#, Swift, Flask, .NET, ASP.NET Core
+🗄️  Databases: MySQL, PostgreSQL, OMOP CDM, SDTM, ERD Modeling
+📈 Visualization: Power BI, Tableau, Excel, Matplotlib, Seaborn
+📱 Mobile & Design: Swift, Kotlin, Figma, UI/UX Design
 
-CERTIFICATIONS:
-- Analytic SQL for Developers - Oracle (2025)
-- Career Essentials in Data Analysis - Microsoft (2025)
-- Python for Data Science - Saylor Academy (2025)
-- Scientific Computing with Python - freeCodeCamp (2024)
-- Web Development Internship - IT Expert System, Inc (2025)
-- SparkHacks Favorite Challenge - UIC SparkHacks (2025)
+CERTIFICATIONS
+--------------
+🏆 Analytic SQL for Developers - Oracle (2025)
+🏆 Career Essentials in Data Analysis - Microsoft (2025)  
+🏆 Python for Data Science - Saylor Academy (2025)
+🏆 Scientific Computing with Python - freeCodeCamp (2024)
+🏆 SparkHacks Favorite Challenge Winner (2025)
 
-EXPERIENCE:
-Data Science Intern - Sumptuous Data Sciences (Jul-Aug 2025)
-Web Development Intern - IT Expert System, Inc (Jun-Aug 2025)
-Student Programmer - Northern Illinois University (May-Aug 2022)
+PROFESSIONAL EXPERIENCE
+-----------------------
+📊 Data Science Intern | Sumptuous Data Sciences (Jul-Aug 2025)
+   • Healthcare analytics with OMOP & SDTM data models
+   • Statistical modeling in R and Python
+   • Clinical data analysis and regulatory compliance
 
-PROJECTS:
-1. Healthcare Analytics with OMOP & SDTM (R, Python, Healthcare) - Sumptuous Data Sciences
-2. Outting Otters - Antisocial Social Media App for Introverts (Swift, Figma) - UIC SparkHacks
-3. Factors Influencing Diabetes Progression (R, Statistics) - University of Illinois at Chicago
-4. AWS Cloud-Based User System (Python, AWS, HTML, CSS) - IT Expert System, Inc
-5. Customer API (C#, Azure, .NET) - IT Expert System, Inc
-6. Gym Data Analysis with Linear Regression (R, Statistics) - University of Illinois at Chicago
+💻 Web Development Intern | IT Expert System, Inc (Jun-Aug 2025)  
+   • Full-stack development with Flask and Azure
+   • Agile methodology and CI/CD implementation
+   • Client presentations and code reviews
 
-ACHIEVEMENTS:
-- SparkHacks Favorite Challenge Winner (February 2025)
-- Multiple internship recommendations
-- Strong portfolio of data science and web development projects
+👨‍💻 Student Programmer | Northern Illinois University (May-Aug 2022)
+   • Beta program development and testing
+   • Curriculum evaluation and feedback
+   • Faculty collaboration and reporting
 
-For complete project details and live portfolio, visit: https://github.com/Jeet52
+KEY PROJECTS
+------------
+🏥 Healthcare Analytics with OMOP & SDTM
+   Technologies: R, Python, OMOP CDM, SDTM, Healthcare Analytics
+
+📱 Outting Otters - Antisocial Social Media App (🏆 Hackathon Winner)
+   Technologies: Swift, iOS, Figma, UI/UX Design
+
+📊 Diabetes Progression Statistical Analysis  
+   Technologies: R, Statistics, Linear Regression, ANOVA
+
+☁️  AWS Cloud-Based User System
+   Technologies: Python, Flask, AWS EC2, AWS RDS, MySQL
+
+🔧 Customer Management RESTful API
+   Technologies: C#, ASP.NET Core, Azure SQL, REST API
+
+🏋️ Gym Data Analysis & Regression
+   Technologies: R, Statistics, Data Visualization, ANOVA
+
+ACHIEVEMENTS
+------------
+🏆 SparkHacks Favorite Challenge Winner (February 2025)
+🏆 Multiple professional internship recommendations  
+🏆 Strong portfolio of data science and web development projects
+🏆 Experience in healthcare, fintech, and social media domains
+
+INTERESTS
+---------
+📊 Data Science & Machine Learning
+🏥 Healthcare Analytics & Medical Research
+☁️  Cloud Computing & DevOps
+📱 Mobile App Development & UI/UX Design
+🤖 Artificial Intelligence & Automation
+
+---
+Portfolio Last Updated: ${new Date().toLocaleDateString()}
+For live portfolio and project demos: https://github.com/Jeet52
       `;
-      
-      // Create and download the file
+
       const blob = new Blob([portfolioContent], { type: 'text/plain' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.style.display = 'none';
       a.href = url;
-      a.download = 'Jeet_Patel_Portfolio.txt';
+      a.download = 'Jeet_Patel_Portfolio_2025.txt';
+      a.style.display = 'none';
       document.body.appendChild(a);
       a.click();
-      window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
       
-      alert('Portfolio downloaded successfully!');
+      showNotification('Portfolio downloaded successfully!', 'success');
     }
 
-    // Contact Form Enhancement
-    const form = document.getElementById('contact-form');
-    const successMessage = document.getElementById('form-success');
-
-    if (form && successMessage) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        const data = new FormData(form);
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: {
-              Accept: 'application/json',
-            },
-          });
-          
-          if (response.ok) {
-            form.reset();
-            successMessage.style.display = 'block';
-            setTimeout(() => {
-              successMessage.style.display = 'none';
-            }, 5000);
-          } else {
-            alert('Oops! Something went wrong.');
-          }
-        } catch (error) {
-          alert('Network error. Please try again later.');
-        } finally {
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        }
-      });
-    }
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('#navbar a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Add hover effects to project cards
-    projectCards.forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-8px) scale(1.02)';
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
-
-    // Initialize page
-    document.addEventListener('DOMContentLoaded', function() {
-      switchLanguage('en');
-      
-      const searchBox = document.getElementById('searchBox');
-      if (searchBox) {
-        searchBox.placeholder = 'Search projects...';
+    // Add CSS animations dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
       }
       
-      setTimeout(() => {
-        projectCards.forEach((card, index) => {
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, index * 200);
-        });
-      }, 1000);
-    });
+      @keyframes slideOutRight {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+      }
+      
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 </body>
 </html>
