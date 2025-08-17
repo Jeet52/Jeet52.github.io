@@ -1,4 +1,864 @@
-<!DOCTYPE html>
+</style>
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader"></div>
+    <div class="loading-text">Loading Portfolio...</div>
+  </div>
+
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+  </div>
+
+  <!-- Language Switcher -->
+  <div class="language-switcher">
+    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+    <button class="lang-btn" onclick="switchLanguage('hi')">हि</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="glass">
+    <ul>
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Header -->
+  <header id="home">
+    <div class="hero-content">
+      <h1 class="hero-title">Jeet Patel</h1>
+      <p class="hero-subtitle">Data Analyst • Statistics & Economics Major • Tech Innovator</p>
+      <p class="hero-description">
+        Transforming complex data into actionable insights through advanced analytics, machine learning, 
+        and innovative visualization techniques. Passionate about leveraging data science to solve real-world problems.
+      </p>
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-rocket"></i>
+          View My Work
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-envelope"></i>
+          Get In Touch
+        </a>
+        <button onclick="downloadPortfolio()" class="btn btn-secondary">
+          <i class="fas fa-download"></i>
+          Download Resume
+        </button>
+      </div>
+    </div>
+  </header>
+
+<!-- About Section -->
+<section id="about" class="animate-on-scroll">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-container glass hover-glow" style="padding: 2rem; border-radius: 25px; position: relative; overflow: hidden; text-align: center;">
+    
+    <!-- Decorative gradient overlay -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-primary);"></div>
+    
+    <!-- Centered Circular Image inside the container -->
+    <div style="margin-bottom: 2rem;">
+      <img src="Images/Patel_Jeet.jpg" alt="Jeet Patel" 
+           style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
+                  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3); 
+                  border: 4px solid rgba(255, 255, 255, 0.15);
+                  transition: all 0.4s ease;"
+           onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 60px rgba(102, 126, 234, 0.5)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 40px rgba(102, 126, 234, 0.3)'">
+    </div>
+
+    <!-- Main content with improved styling -->
+    <div>
+      <p style="font-size: 1.15rem; line-height: 1.9; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        I'm a <strong style="color: var(--color-text); font-weight: 600;">UIC student</strong> graduating in 
+        <span style="color: var(--color-primary); font-weight: 600;">May 2026</span> with a 
+        <strong style="color: var(--color-primary); position: relative;">BS in Statistics</strong>, 
+        <strong style="color: var(--color-primary);">BA in Economics</strong>, and a 
+        <strong style="color: var(--color-primary);">minor in Computer Science</strong>. 
+      </p>
+      
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        Aspiring <em style="color: var(--color-accent); font-weight: 600; font-style: normal;">data analyst</em> with hands-on experience in 
+        <strong style="color: var(--color-success);">healthcare analytics</strong>, 
+        <strong style="color: var(--color-success);">cloud computing</strong>, and 
+        <strong style="color: var(--color-success);">full-stack development</strong>.
+      </p>
+
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        I enjoy transforming <strong style="color: var(--color-text);">complex datasets</strong> into 
+        <strong style="color: var(--color-accent);">actionable insights</strong> that drive business decisions.
+      </p>
+
+      <!-- Quick Stats/Highlights -->
+      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+        <div style="text-align: center; padding: 1rem;">
+          <div style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">3+</div>
+          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Internships</div>
+        </div>
+        <div style="text-align: center; padding: 1rem;">
+          <div style="font-size: 2rem; font-weight: 700; color: var(--color-success); margin-bottom: 0.5rem;">7+</div>
+          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Projects</div>
+        </div>
+        <div style="text-align: center; padding: 1rem;">
+          <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.5rem;">5+</div>
+          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Certifications</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="animate-on-scroll">
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="skill-title">Data Analysis</h3>
+        <div class="skill-list">
+          Python • R • SAS • SQL<br>
+          Pandas • NumPy • Scikit-learn<br>
+          Statistical Modeling • Machine Learning
+        </div>
+      </div>
+
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <h3 class="skill-title">Cloud & DevOps</h3>
+        <div class="skill-list">
+          AWS EC2 • AWS RDS • Azure<br>
+          Docker • CI/CD • GitHub Actions<br>
+          Azure Functions • Cloud Architecture
+        </div>
+      </div>
+
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 class="skill-title">Development</h3>
+        <div class="skill-list">
+          Python • C++ • C# • Swift<br>
+          Flask • .NET • ASP.NET Core<br>
+          HTML • CSS • JavaScript
+        </div>
+      </div>
+
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3 class="skill-title">Data Management</h3>
+        <div class="skill-list">
+          MySQL • PostgreSQL • OMOP CDM<br>
+          SDTM • ERD Modeling<br>
+          Data Warehousing • ETL Processes
+        </div>
+      </div>
+
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <h3 class="skill-title">Visualization</h3>
+        <div class="skill-list">
+          Power BI • Tableau • Excel<br>
+          Matplotlib • Seaborn • ggplot2<br>
+          Interactive Dashboards
+        </div>
+      </div>
+
+      <div class="skill-card glass hover-glow">
+        <div class="skill-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3 class="skill-title">Mobile & Design</h3>
+        <div class="skill-list">
+          Swift • Kotlin • iOS Development<br>
+          Figma • UI/UX Design<br>
+          Prototyping • User Research
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Experience Section with Company Logos -->
+  <section id="experience" class="animate-on-scroll">
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item glass hover-glow">
+        <div class="company-logo">
+          <img src="Images/SDS_Logo.png" alt="Sumptuous Data Sciences" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-title">Data Science Intern</div>
+          <div class="timeline-company">Sumptuous Data Sciences</div>
+          <div class="timeline-duration">July 2025 - August 2025 • Remote</div>
+          <p>Collaborated in an Agile development team to build full-stack web applications using Flask and Azure technologies. Implemented CI/CD pipelines, participated in sprint planning and code reviews, and delivered client-ready presentations. Gained expertise in modern web development practices and cloud deployment strategies.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item glass hover-glow">
+        <div class="company-logo">
+          <img src="Images/IT_Expert_Logo.png" alt="IT Expert System, Inc" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-title">Web Development Intern</div>
+          <div class="timeline-company">IT Expert System, Inc</div>
+          <div class="timeline-duration">June 2025 - August 2025 • Hybrid</div>
+          <p>Leading healthcare analytics projects using OMOP and SDTM data models. Developing advanced statistical models in R and Python, creating comprehensive ERD designs, and presenting insights to company stakeholders. Specializing in clinical data analysis and regulatory compliance standards.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item glass hover-glow">
+        <div class="company-logo">
+          <img src="Images/NIU_Logo.png" alt="Northern Illinois University" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-title">Student Programmer</div>
+          <div class="timeline-company">Northern Illinois University</div>
+          <div class="timeline-duration">May 2022 - August 2022 • On-site</div>
+          <p>Developed and tested beta programming assignments for curriculum integration. Conducted comprehensive evaluations and provided detailed feedback to senior faculty members. Contributed to curriculum modernization efforts and improved student learning outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="animate-on-scroll">
+    <h2 class="section-title">Testimonials</h2>
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <div class="quote-icon">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <div class="testimonial-content">
+          <p class="testimonial-text">
+            "I've had the pleasure of working with Jeet, and I can confidently say he is a hardworking and talented IT professional. His passion for data analysis, web development, and mobile development is evident in every project he takes on. Jeet is a quick learner who consistently adapts to new tools and technologies, often going the extra mile to meet tight deadlines and evolving project demands."
+          </p>
+          <p class="testimonial-text">
+            "One of Jeet's greatest strengths is his collaborative nature. He is a true team player who communicates effectively and contributes positively to any team dynamic. Whether he's diving into a new framework or supporting a colleague, Jeet brings a proactive and solutions-oriented mindset to the table. His ability to pick up complex concepts quickly, combined with his dedication and adaptability, makes him a valuable asset to any organization."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <div class="author-name">Harry K</div>
+              <div class="author-title">Director of Business Development</div>
+              <div class="author-company">IT Expert System, Inc</div>
+              <div class="testimonial-date">August 2025</div>
+            </div>
+            <div class="author-badge">
+              <i class="fas fa-briefcase"></i>
+              <span>Direct Supervisor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Enhanced Projects Section - 2x3 Grid Layout -->
+<section id="projects" class="animate-on-scroll">
+  <h2 class="section-title">Featured Projects</h2>
+  
+  <div class="filter-controls">
+    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects...">
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="Python">Python</button>
+      <button class="filter-btn" data-filter="R">R</button>
+      <button class="filter-btn" data-filter="AWS">AWS</button>
+      <button class="filter-btn" data-filter="Azure">Azure</button>
+      <button class="filter-btn" data-filter="Swift">Swift</button>
+      <button class="filter-btn" data-filter="C#">C#</button>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <!-- 1) Outting Otters - Hackathon -->
+    <div class="project-card glass hover-glow" data-tech="Swift Figma Mobile iOS">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <div class="project-info">
+          <div class="project-title">Outting Otters</div>
+          <div class="project-subtitle">UIC SparkHacks Winner</div>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="achievement-badge">
+          <i class="fas fa-trophy"></i>
+          Hackathon Winner
+        </div>
+        <p class="project-description">
+          Revolutionary social media app designed for introverts featuring achievement systems, 
+          comfortable social connections, and event hosting capabilities.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Swift</span>
+          <span class="tech-tag">iOS</span>
+          <span class="tech-tag">Figma</span>
+          <span class="tech-tag">UI/UX</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2) Healthcare Analytics with SDTM & OMOP -->
+    <div class="project-card glass hover-glow" data-tech="R Statistics Healthcare Python">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="project-info">
+          <div class="project-title">Healthcare Analytics</div>
+          <div class="project-subtitle">OMOP & SDTM Analysis</div>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="achievement-badge internship">
+          <i class="fas fa-briefcase"></i>
+          Internship Project
+        </div>
+        <p class="project-description">
+          Advanced healthcare analytics using industry-standard OMOP Common Data Model and SDTM formats. 
+          Statistical modeling for clinical data analysis with ERD designs.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">R</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">OMOP</span>
+          <span class="tech-tag">SDTM</span>
+        </div>
+        <div class="project-links">
+          <span class="project-link" style="background: rgba(243, 156, 18, 0.2); color: #f39c12;">
+            <i class="fas fa-clock"></i>
+            In Progress
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3) Customer Management API -->
+    <div class="project-card glass hover-glow" data-tech="C# Azure .NET API SQL">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-server"></i>
+        </div>
+        <div class="project-info">
+          <div class="project-title">Customer API</div>
+          <div class="project-subtitle">RESTful Web API</div>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="achievement-badge internship">
+          <i class="fas fa-briefcase"></i>
+          Internship Project
+        </div>
+        <p class="project-description">
+          Enterprise-grade RESTful API built with ASP.NET Core featuring full CRUD operations, 
+          Azure SQL integration, and automated CI/CD pipelines.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">C#</span>
+          <span class="tech-tag">ASP.NET</span>
+          <span class="tech-tag">Azure SQL</span>
+          <span class="tech-tag">REST API</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/Customer-API" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a href="https://www.youtube.com/watch?v=PnPsRTGRr-o" class="project-link" target="_blank">
+            <i class="fab fa-youtube"></i>
+            Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4) AWS Cloud-Based User System -->
+    <div class="project-card glass hover-glow" data-tech="Python AWS Flask MySQL Cloud">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <div class="project-info">
+          <div class="project-title">AWS User System</div>
+          <div class="project-subtitle">Full-Stack Cloud App</div>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="achievement-badge internship">
+          <i class="fas fa-briefcase"></i>
+          Internship Project
+        </div>
+        <p class="project-description">
+          Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS. 
+          Features secure authentication and admin dashboard.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Flask</span>
+          <span class="tech-tag">AWS EC2</span>
+          <span class="tech-tag">MySQL</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5) Gym Data Analysis & Regression -->
+    <div class="project-card glass hover-glow" data-tech="R Statistics Fitness Analytics">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-dumbbell"></i>
+        </div>
+        <div class="project-info">
+          <div class="project-title">Gym Data Analysis</div>
+          <div class="project-subtitle">Statistical Modeling</div>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="achievement-badge university">
+          <i class="fas fa-university"></i>
+          UIC Project
+        </div>
+        <p class="project-description">
+          Advanced statistical analysis of gym member data using regression techniques and ANOVA 
+          to understand relationships between workout habits and health outcomes.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">R</span>
+          <span class="tech-tag">Statistics</span>
+          <span class="tech-tag">Regression</span>
+          <span class="tech-tag">ANOVA</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6) Diabetes Progression Analysis -->
+    <div class="project-card glass hover-glow" data-tech="R Statistics Regression Healthcare">
+      <div class="project-header">
+        <div class="project-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="project-info">
+          <div class="project-title">Diabetes Analysis</div>
+          <div class="project-subtitle">Statistical Modeling</div>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="achievement-badge university">
+          <i class="fas fa-university"></i>
+          UIC Project
+        </div>
+        <p class="project-description">
+          Comprehensive statistical analysis examining key predictors of diabetes progression using 
+          multiple linear regression and advanced model validation techniques.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">R</span>
+          <span class="tech-tag">Statistics</span>
+          <span class="tech-tag">Regression</span>
+          <span class="tech-tag">ANOVA</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" class="project-link" target="_blank">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-results" id="noResults" style="display: none; text-align: center; padding: 3rem; color: var(--color-text-muted);">
+    <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+    <h3>No projects found</h3>
+    <p>Try adjusting your search terms or filters</p>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="animate-on-scroll">
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-form glass">
+      <form id="contactForm" action="https://formspree.io/f/mjkopqaj" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="_replyto" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <i class="fas fa-paper-plane"></i>
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
+      © 2025 Jeet Patel. Crafted with passion and precision.
+    </p>
+    <div class="social-links">
+      <a href="https://github.com/Jeet52" class="social-link" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/jeetpatel52" class="social-link" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:contact@jeetpatel.dev" class="social-link" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Global variables
+    let currentLanguage = 'en';
+    let isLoading = true;
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      initializePortfolio();
+    });
+
+    // Initialize portfolio
+    function initializePortfolio() {
+      hideLoadingScreen();
+      setupScrollAnimations();
+      setupFilterSystem();
+      setupFormHandling();
+      setupNavigationHighlight();
+      setupBackToTop();
+      setupParallaxEffects();
+    }
+
+    // Hide loading screen with animation
+    function hideLoadingScreen() {
+      setTimeout(() => {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+          isLoading = false;
+        }, 800);
+      }, 2000);
+    }
+
+    // Setup scroll-based animations
+    function setupScrollAnimations() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    // Navigation active state
+    function setupNavigationHighlight() {
+      const navLinks = document.querySelectorAll('nav a');
+      const sections = document.querySelectorAll('section, header');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      sections.forEach(section => observer.observe(section));
+    }
+
+    // Filter and search system
+    function setupFilterSystem() {
+      const searchBox = document.getElementById('searchBox');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+      const noResults = document.getElementById('noResults');
+
+      let currentFilter = 'all';
+      let currentSearch = '';
+
+      // Search functionality
+      searchBox.addEventListener('input', function() {
+        currentSearch = this.value.toLowerCase();
+        filterProjects();
+      });
+
+      // Filter buttons
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          currentFilter = this.getAttribute('data-filter');
+          filterProjects();
+        });
+      });
+
+      function filterProjects() {
+        let visibleCount = 0;
+
+        projectCards.forEach(card => {
+          const tech = card.getAttribute('data-tech') || '';
+          const title = card.querySelector('.project-title').textContent.toLowerCase();
+          const description = card.querySelector('.project-description').textContent.toLowerCase();
+
+          const matchesFilter = currentFilter === 'all' || tech.toLowerCase().includes(currentFilter.toLowerCase());
+          const matchesSearch = currentSearch === '' || 
+                              title.includes(currentSearch) || 
+                              description.includes(currentSearch) ||
+                              tech.toLowerCase().includes(currentSearch);
+
+          if (matchesFilter && matchesSearch) {
+            card.style.display = 'block';
+            card.style.animation = `fadeInUp 0.6s ease-out ${visibleCount * 0.1}s both`;
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+
+    // Form handling
+    function setupFormHandling() {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.reset();
+            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        } catch (error) {
+          showNotification('Failed to send message. Please try again.', 'error');
+        } finally {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
+
+    // Show notifications
+    function showNotification(message, type) {
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        background: ${type === 'success' ? 'var(--color-success)' : 'var(--color-danger)'};
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow-glow);
+        z-index: 10000;
+        animation: slideInRight 0.5s ease-out;
+      `;
+      notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check' : 'exclamation-triangle'}"></i> ${message}`;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.5s ease-out forwards';
+        setTimeout(() => notification.remove(), 500);
+      }, 5000);
+    }
+
+    // Back to top functionality
+    function setupBackToTop() {
+      const backToTop = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+    }
+
+    // Parallax effects
+    function setupParallaxEffects() {
+      const shapes = document.querySelectorAll('.bg-shape');
+      
+      window.addEventListener('scroll', () => {
+        if (isLoading) return;
+        
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        shapes.forEach((shape, index) => {
+          const speed = (index + 1) * 0.3;
+          shape.style.transform = `translateY(${rate * speed}px) rotate(${scrolled * 0.05}deg)`;
+        });
+      });
+    }
+
+    // Utility functions
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function switchLanguage(lang) {
+      currentLanguage = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.includes(lang === 'en' ? 'EN' : 'हि')) {
+          btn.classList.add('active');
+        }
+      });
+      document.documentElement.lang = lang;
+    }
+
+    function downloadPortfolio() {
+      // Check if we're on GitHub Pages
+      const isGitHubPages = window.location.hostname.includes('github.io');
+      
+      let resumeUrl;
+      if (isGitHubPages) {
+        // GitHub Pages URL - using the repository name
+        resumeUrl = `${window.location.origin}${window.location.pathname}Resume/Patel_Resume.pdf`;
+        // Clean up any double slashes except after protocol
+        resumeUrl = resumeUrl.replace(/([^:]\/)\/+/g, '$1');
+      } else {
+        // Local development
+        resumeUrl = 'Resume/Patel_Resume.pdf';
+      }
+
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = resumeUrl;
+      link.download = 'Patel_Resume.pdf';
+      link.target = '_blank';
+      
+      // Add to DOM, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      showNotification('Resume download initiated!', 'success');
+    }
+
+    // Add CSS animations dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      
+      @keyframes slideOutRight {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+      }
+      
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -415,7 +1275,7 @@ section {
   box-shadow: 0 20px 60px rgba(102, 126, 234, 0.1);
 }
 
-/* Company Logo Styling */
+/* Company Logo Styling - Updated to remove background colors */
 .company-logo {
   width: 80px;
   height: 80px;
@@ -431,18 +1291,8 @@ section {
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   border: 2px solid var(--color-border);
-}
-
-.company-logo.sumptuous {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.company-logo.it-expert {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-}
-
-.company-logo.niu {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  background: var(--color-glass);
+  backdrop-filter: blur(20px);
 }
 
 .timeline-content {
@@ -590,18 +1440,18 @@ section {
   white-space: nowrap;
 }
 
-/* Enhanced Projects Grid - 2 per row */
+/* Enhanced Projects Grid - Made smaller */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 3rem;
 }
 
 .project-card {
-  aspect-ratio: 1;
-  padding: 2.5rem;
-  border-radius: 25px;
+  aspect-ratio: 1.2;
+  padding: 1.8rem;
+  border-radius: 20px;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -622,8 +1472,8 @@ section {
 }
 
 .project-card:hover {
-  transform: translateY(-15px) scale(1.05);
-  box-shadow: 0 30px 100px rgba(240, 147, 251, 0.3);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 80px rgba(240, 147, 251, 0.3);
   border-color: rgba(240, 147, 251, 0.5);
 }
 
@@ -631,21 +1481,21 @@ section {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .project-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: var(--gradient-secondary);
-  border-radius: 15px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   flex-shrink: 0;
-  box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
+  box-shadow: 0 6px 20px rgba(240, 147, 251, 0.3);
 }
 
 .project-info {
@@ -654,17 +1504,17 @@ section {
 }
 
 .project-title {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--color-text);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   line-height: 1.2;
 }
 
 .project-subtitle {
   color: var(--color-text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
 }
 
 .project-content {
@@ -675,31 +1525,31 @@ section {
 
 .project-description {
   color: var(--color-text-muted);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
   flex: 1;
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
 }
 
 .tech-tag {
-  padding: 0.3rem 0.8rem;
+  padding: 0.25rem 0.6rem;
   background: rgba(102, 126, 234, 0.2);
   color: var(--color-primary);
-  border-radius: 20px;
-  font-size: 0.75rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 
 .project-links {
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
   margin-top: auto;
 }
@@ -707,13 +1557,13 @@ section {
 .project-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
   background: var(--color-glass);
   color: var(--color-text);
   text-decoration: none;
-  border-radius: 25px;
-  font-size: 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.3s ease;
   border: 1px solid var(--color-border);
@@ -723,32 +1573,32 @@ section {
   background: var(--color-primary);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
 }
 
 /* Achievement Badges */
 .achievement-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
   background: var(--gradient-secondary);
   color: white;
-  border-radius: 25px;
-  font-size: 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 20px rgba(240, 147, 251, 0.3);
+  margin-bottom: 0.8rem;
+  box-shadow: 0 3px 15px rgba(240, 147, 251, 0.3);
 }
 
 .achievement-badge.internship {
   background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 3px 15px rgba(245, 158, 11, 0.3);
 }
 
 .achievement-badge.university {
   background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 3px 15px rgba(139, 92, 246, 0.3);
 }
 
 /* Contact Section */
@@ -969,7 +1819,7 @@ footer {
 
   .project-card {
     aspect-ratio: auto;
-    min-height: 400px;
+    min-height: 350px;
   }
   
   .timeline {
@@ -1066,859 +1916,3 @@ footer {
 .projects-grid .project-card:nth-child(even) {
   animation-delay: 0.2s;
 }
-  </style>
-</head>
-
-<body>
-  <!-- Loading Screen -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loader"></div>
-    <div class="loading-text">Loading Portfolio...</div>
-  </div>
-
-  <!-- Animated Background -->
-  <div class="animated-bg">
-    <div class="bg-shape"></div>
-    <div class="bg-shape"></div>
-    <div class="bg-shape"></div>
-  </div>
-
-  <!-- Language Switcher -->
-  <div class="language-switcher">
-    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-    <button class="lang-btn" onclick="switchLanguage('hi')">हि</button>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="glass">
-    <ul>
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- Header -->
-  <header id="home">
-    <div class="hero-content">
-      <h1 class="hero-title">Jeet Patel</h1>
-      <p class="hero-subtitle">Data Analyst • Statistics & Economics Major • Tech Innovator</p>
-      <p class="hero-description">
-        Transforming complex data into actionable insights through advanced analytics, machine learning, 
-        and innovative visualization techniques. Passionate about leveraging data science to solve real-world problems.
-      </p>
-      <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">
-          <i class="fas fa-rocket"></i>
-          View My Work
-        </a>
-        <a href="#contact" class="btn btn-secondary">
-          <i class="fas fa-envelope"></i>
-          Get In Touch
-        </a>
-        <button onclick="downloadPortfolio()" class="btn btn-secondary">
-          <i class="fas fa-download"></i>
-          Download Resume
-        </button>
-      </div>
-    </div>
-  </header>
-
-<!-- About Section -->
-<section id="about" class="animate-on-scroll">
-  <h2 class="section-title">About Me</h2>
-  <div class="about-container glass hover-glow" style="padding: 2rem; border-radius: 25px; position: relative; overflow: hidden; text-align: center;">
-    
-    <!-- Decorative gradient overlay -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-primary);"></div>
-    
-    <!-- Centered Circular Image inside the container -->
-    <div style="margin-bottom: 2rem;">
-      <img src="Images/Patel_Jeet.jpg" alt="Jeet Patel" 
-           style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
-                  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3); 
-                  border: 4px solid rgba(255, 255, 255, 0.15);
-                  transition: all 0.4s ease;"
-           onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 60px rgba(102, 126, 234, 0.5)'"
-           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 40px rgba(102, 126, 234, 0.3)'">
-    </div>
-
-    <!-- Main content with improved styling -->
-    <div>
-      <p style="font-size: 1.15rem; line-height: 1.9; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-        I'm a <strong style="color: var(--color-text); font-weight: 600;">UIC student</strong> graduating in 
-        <span style="color: var(--color-primary); font-weight: 600;">May 2026</span> with a 
-        <strong style="color: var(--color-primary); position: relative;">BS in Statistics</strong>, 
-        <strong style="color: var(--color-primary);">BA in Economics</strong>, and a 
-        <strong style="color: var(--color-primary);">minor in Computer Science</strong>. 
-      </p>
-      
-      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-        Aspiring <em style="color: var(--color-accent); font-weight: 600; font-style: normal;">data analyst</em> with hands-on experience in 
-        <strong style="color: var(--color-success);">healthcare analytics</strong>, 
-        <strong style="color: var(--color-success);">cloud computing</strong>, and 
-        <strong style="color: var(--color-success);">full-stack development</strong>.
-      </p>
-
-      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-        I enjoy transforming <strong style="color: var(--color-text);">complex datasets</strong> into 
-        <strong style="color: var(--color-accent);">actionable insights</strong> that drive business decisions.
-      </p>
-
-      <!-- Quick Stats/Highlights -->
-      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
-        <div style="text-align: center; padding: 1rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">3+</div>
-          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Internships</div>
-        </div>
-        <div style="text-align: center; padding: 1rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: var(--color-success); margin-bottom: 0.5rem;">7+</div>
-          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Projects</div>
-        </div>
-        <div style="text-align: center; padding: 1rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.5rem;">5+</div>
-          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Certifications</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- Skills Section -->
-  <section id="skills" class="animate-on-scroll">
-    <h2 class="section-title">Technical Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h3 class="skill-title">Data Analysis</h3>
-        <div class="skill-list">
-          Python • R • SAS • SQL<br>
-          Pandas • NumPy • Scikit-learn<br>
-          Statistical Modeling • Machine Learning
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-cloud"></i>
-        </div>
-        <h3 class="skill-title">Cloud & DevOps</h3>
-        <div class="skill-list">
-          AWS EC2 • AWS RDS • Azure<br>
-          Docker • CI/CD • GitHub Actions<br>
-          Azure Functions • Cloud Architecture
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-code"></i>
-        </div>
-        <h3 class="skill-title">Development</h3>
-        <div class="skill-list">
-          Python • C++ • C# • Swift<br>
-          Flask • .NET • ASP.NET Core<br>
-          HTML • CSS • JavaScript
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-database"></i>
-        </div>
-        <h3 class="skill-title">Data Management</h3>
-        <div class="skill-list">
-          MySQL • PostgreSQL • OMOP CDM<br>
-          SDTM • ERD Modeling<br>
-          Data Warehousing • ETL Processes
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-chart-bar"></i>
-        </div>
-        <h3 class="skill-title">Visualization</h3>
-        <div class="skill-list">
-          Power BI • Tableau • Excel<br>
-          Matplotlib • Seaborn • ggplot2<br>
-          Interactive Dashboards
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-mobile-alt"></i>
-        </div>
-        <h3 class="skill-title">Mobile & Design</h3>
-        <div class="skill-list">
-          Swift • Kotlin • iOS Development<br>
-          Figma • UI/UX Design<br>
-          Prototyping • User Research
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Enhanced Experience Section with Company Logos -->
-  <section id="experience" class="animate-on-scroll">
-    <h2 class="section-title">Professional Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item glass hover-glow">
-        <div class="company-logo sumptuous">
-          <img src="Images/SDS_Logo.png" alt="Sumptuous Data Sciences" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-title">Data Science Intern</div>
-          <div class="timeline-company">Sumptuous Data Sciences</div>
-          <div class="timeline-duration">July 2025 - August 2025 • Remote</div>
-          <p>Collaborated in an Agile development team to build full-stack web applications using Flask and Azure technologies. Implemented CI/CD pipelines, participated in sprint planning and code reviews, and delivered client-ready presentations. Gained expertise in modern web development practices and cloud deployment strategies.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item glass hover-glow">
-        <div class="company-logo it-expert">
-          <img src="Images/IT_Expert_Logo.png" alt="IT Expert System, Inc" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-title">Web Development Intern</div>
-          <div class="timeline-company">IT Expert System, Inc</div>
-          <div class="timeline-duration">June 2025 - August 2025 • Hybrid</div>
-          <p>Leading healthcare analytics projects using OMOP and SDTM data models. Developing advanced statistical models in R and Python, creating comprehensive ERD designs, and presenting insights to company stakeholders. Specializing in clinical data analysis and regulatory compliance standards.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item glass hover-glow">
-        <div class="company-logo niu">
-          <img src="Images/NIU_Logo.png" alt="Northern Illinois University" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-title">Student Programmer</div>
-          <div class="timeline-company">Northern Illinois University</div>
-          <div class="timeline-duration">May 2022 - August 2022 • On-site</div>
-          <p>Developed and tested beta programming assignments for curriculum integration. Conducted comprehensive evaluations and provided detailed feedback to senior faculty members. Contributed to curriculum modernization efforts and improved student learning outcomes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="animate-on-scroll">
-    <h2 class="section-title">Testimonials</h2>
-    <div class="testimonials-container">
-      <div class="testimonial-card">
-        <div class="quote-icon">
-          <i class="fas fa-quote-left"></i>
-        </div>
-        <div class="testimonial-content">
-          <p class="testimonial-text">
-            "I've had the pleasure of working with Jeet, and I can confidently say he is a hardworking and talented IT professional. His passion for data analysis, web development, and mobile development is evident in every project he takes on. Jeet is a quick learner who consistently adapts to new tools and technologies, often going the extra mile to meet tight deadlines and evolving project demands."
-          </p>
-          <p class="testimonial-text">
-            "One of Jeet's greatest strengths is his collaborative nature. He is a true team player who communicates effectively and contributes positively to any team dynamic. Whether he's diving into a new framework or supporting a colleague, Jeet brings a proactive and solutions-oriented mindset to the table. His ability to pick up complex concepts quickly, combined with his dedication and adaptability, makes him a valuable asset to any organization."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <div class="author-name">Harry K</div>
-              <div class="author-title">Director of Business Development</div>
-              <div class="author-company">IT Expert System, Inc</div>
-              <div class="testimonial-date">August 2025</div>
-            </div>
-            <div class="author-badge">
-              <i class="fas fa-briefcase"></i>
-              <span>Direct Supervisor</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Enhanced Projects Section - 2x2 Grid Layout -->
-<section id="projects" class="animate-on-scroll">
-  <h2 class="section-title">Featured Projects</h2>
-  
-  <div class="filter-controls">
-    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects...">
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="Python">Python</button>
-      <button class="filter-btn" data-filter="R">R</button>
-      <button class="filter-btn" data-filter="AWS">AWS</button>
-      <button class="filter-btn" data-filter="Azure">Azure</button>
-      <button class="filter-btn" data-filter="Swift">Swift</button>
-      <button class="filter-btn" data-filter="C#">C#</button>
-    </div>
-  </div>
-
-  <div class="projects-grid">
-    <!-- 1) Outting Otters - Hackathon -->
-    <div class="project-card glass hover-glow" data-tech="Swift Figma Mobile iOS">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-mobile-alt"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Outting Otters</div>
-          <div class="project-subtitle">UIC SparkHacks Winner</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge">
-          <i class="fas fa-trophy"></i>
-          Hackathon Winner
-        </div>
-        <p class="project-description">
-          Revolutionary social media app designed for introverts featuring achievement systems, 
-          comfortable social connections, and event hosting capabilities.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Swift</span>
-          <span class="tech-tag">iOS</span>
-          <span class="tech-tag">Figma</span>
-          <span class="tech-tag">UI/UX</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2) Healthcare Analytics with SDTM & OMOP -->
-    <div class="project-card glass hover-glow" data-tech="R Statistics Healthcare Python">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-heartbeat"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Healthcare Analytics</div>
-          <div class="project-subtitle">OMOP & SDTM Analysis</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Advanced healthcare analytics using industry-standard OMOP Common Data Model and SDTM formats. 
-          Statistical modeling for clinical data analysis with ERD designs.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">OMOP</span>
-          <span class="tech-tag">SDTM</span>
-        </div>
-        <div class="project-links">
-          <span class="project-link" style="background: rgba(243, 156, 18, 0.2); color: #f39c12;">
-            <i class="fas fa-clock"></i>
-            In Progress
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3) Customer Management API -->
-    <div class="project-card glass hover-glow" data-tech="C# Azure .NET API SQL">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-server"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Customer API</div>
-          <div class="project-subtitle">RESTful Web API</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Enterprise-grade RESTful API built with ASP.NET Core featuring full CRUD operations, 
-          Azure SQL integration, and automated CI/CD pipelines.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">C#</span>
-          <span class="tech-tag">ASP.NET</span>
-          <span class="tech-tag">Azure SQL</span>
-          <span class="tech-tag">REST API</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Customer-API" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-          <a href="https://www.youtube.com/watch?v=PnPsRTGRr-o" class="project-link" target="_blank">
-            <i class="fab fa-youtube"></i>
-            Demo
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4) AWS Cloud-Based User System -->
-    <div class="project-card glass hover-glow" data-tech="Python AWS Flask MySQL Cloud">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-cloud"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">AWS User System</div>
-          <div class="project-subtitle">Full-Stack Cloud App</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS. 
-          Features secure authentication and admin dashboard.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Flask</span>
-          <span class="tech-tag">AWS EC2</span>
-          <span class="tech-tag">MySQL</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5) Gym Data Analysis & Regression -->
-    <div class="project-card glass hover-glow" data-tech="R Statistics Fitness Analytics">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-dumbbell"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Gym Data Analysis & Regression</div>
-          <div class="project-subtitle">UIC Statistical Analysis Project</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge university">
-          <i class="fas fa-university"></i>
-          UIC Project
-        </div>
-        <p class="project-description">
-          Advanced statistical analysis of gym member data using regression techniques and ANOVA 
-          to understand relationships between workout habits, physical traits, and health outcomes.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Statistics</span>
-          <span class="tech-tag">Regression</span>
-          <span class="tech-tag">Data Visualization</span>
-          <span class="tech-tag">ANOVA</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6) Diabetes Progression Analysis -->
-    <div class="project-card glass hover-glow" data-tech="R Statistics Regression Healthcare">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Diabetes Analysis</div>
-          <div class="project-subtitle">Statistical Modeling</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge university">
-          <i class="fas fa-university"></i>
-          UIC Project
-        </div>
-        <p class="project-description">
-          Comprehensive statistical analysis examining key predictors of diabetes progression using 
-          multiple linear regression and advanced model validation techniques.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Statistics</span>
-          <span class="tech-tag">Regression</span>
-          <span class="tech-tag">ANOVA</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="no-results" id="noResults" style="display: none; text-align: center; padding: 3rem; color: var(--color-text-muted);">
-    <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-    <h3>No projects found</h3>
-    <p>Try adjusting your search terms or filters</p>
-  </div>
-</section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="animate-on-scroll">
-    <h2 class="section-title">Let's Connect</h2>
-    <div class="contact-form glass">
-      <form id="contactForm" action="https://formspree.io/f/mjkopqaj" method="POST">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="_replyto" required>
-        </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">
-          <i class="fas fa-paper-plane"></i>
-          Send Message
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
-      © 2025 Jeet Patel. Crafted with passion and precision.
-    </p>
-    <div class="social-links">
-      <a href="https://github.com/Jeet52" class="social-link" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://linkedin.com/in/jeetpatel52" class="social-link" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://www.instagram.com/jeetpatel52" class="social-link" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="mailto:contact@jeetpatel.dev" class="social-link" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </footer>
-
-  <script>
-    // Global variables
-    let currentLanguage = 'en';
-    let isLoading = true;
-
-    // Initialize everything when DOM is loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      initializePortfolio();
-    });
-
-    // Initialize portfolio
-    function initializePortfolio() {
-      hideLoadingScreen();
-      setupScrollAnimations();
-      setupFilterSystem();
-      setupFormHandling();
-      setupNavigationHighlight();
-      setupBackToTop();
-      setupParallaxEffects();
-    }
-
-    // Hide loading screen with animation
-    function hideLoadingScreen() {
-      setTimeout(() => {
-        const loadingScreen = document.getElementById('loadingScreen');
-        loadingScreen.style.opacity = '0';
-        setTimeout(() => {
-          loadingScreen.style.display = 'none';
-          isLoading = false;
-        }, 800);
-      }, 2000);
-    }
-
-    // Setup scroll-based animations
-    function setupScrollAnimations() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-      });
-    }
-
-    // Navigation active state
-    function setupNavigationHighlight() {
-      const navLinks = document.querySelectorAll('nav a');
-      const sections = document.querySelectorAll('section, header');
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            navLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active');
-              }
-            });
-          }
-        });
-      }, { threshold: 0.3 });
-
-      sections.forEach(section => observer.observe(section));
-    }
-
-    // Filter and search system
-    function setupFilterSystem() {
-      const searchBox = document.getElementById('searchBox');
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const projectCards = document.querySelectorAll('.project-card');
-      const noResults = document.getElementById('noResults');
-
-      let currentFilter = 'all';
-      let currentSearch = '';
-
-      // Search functionality
-      searchBox.addEventListener('input', function() {
-        currentSearch = this.value.toLowerCase();
-        filterProjects();
-      });
-
-      // Filter buttons
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-          currentFilter = this.getAttribute('data-filter');
-          filterProjects();
-        });
-      });
-
-      function filterProjects() {
-        let visibleCount = 0;
-
-        projectCards.forEach(card => {
-          const tech = card.getAttribute('data-tech') || '';
-          const title = card.querySelector('.project-title').textContent.toLowerCase();
-          const description = card.querySelector('.project-description').textContent.toLowerCase();
-
-          const matchesFilter = currentFilter === 'all' || tech.toLowerCase().includes(currentFilter.toLowerCase());
-          const matchesSearch = currentSearch === '' || 
-                              title.includes(currentSearch) || 
-                              description.includes(currentSearch) ||
-                              tech.toLowerCase().includes(currentSearch);
-
-          if (matchesFilter && matchesSearch) {
-            card.style.display = 'block';
-            card.style.animation = `fadeInUp 0.6s ease-out ${visibleCount * 0.1}s both`;
-            visibleCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-      }
-    }
-
-    // Form handling
-    function setupFormHandling() {
-      const form = document.getElementById('contactForm');
-      if (!form) return;
-
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (response.ok) {
-            form.reset();
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-          } else {
-            throw new Error('Network response was not ok');
-          }
-        } catch (error) {
-          showNotification('Failed to send message. Please try again.', 'error');
-        } finally {
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-        }
-      });
-    }
-
-    // Show notifications
-    function showNotification(message, type) {
-      const notification = document.createElement('div');
-      notification.style.cssText = `
-        position: fixed;
-        top: 2rem;
-        right: 2rem;
-        background: ${type === 'success' ? 'var(--color-success)' : 'var(--color-danger)'};
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 10px;
-        box-shadow: var(--shadow-glow);
-        z-index: 10000;
-        animation: slideInRight 0.5s ease-out;
-      `;
-      notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check' : 'exclamation-triangle'}"></i> ${message}`;
-      
-      document.body.appendChild(notification);
-      
-      setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.5s ease-out forwards';
-        setTimeout(() => notification.remove(), 500);
-      }, 5000);
-    }
-
-    // Back to top functionality
-    function setupBackToTop() {
-      const backToTop = document.getElementById('backToTop');
-      
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          backToTop.classList.add('visible');
-        } else {
-          backToTop.classList.remove('visible');
-        }
-      });
-    }
-
-    // Parallax effects
-    function setupParallaxEffects() {
-      const shapes = document.querySelectorAll('.bg-shape');
-      
-      window.addEventListener('scroll', () => {
-        if (isLoading) return;
-        
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        
-        shapes.forEach((shape, index) => {
-          const speed = (index + 1) * 0.3;
-          shape.style.transform = `translateY(${rate * speed}px) rotate(${scrolled * 0.05}deg)`;
-        });
-      });
-    }
-
-    // Utility functions
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-
-    function switchLanguage(lang) {
-      currentLanguage = lang;
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.textContent.includes(lang === 'en' ? 'EN' : 'हि')) {
-          btn.classList.add('active');
-        }
-      });
-      document.documentElement.lang = lang;
-    }
-
-  function downloadPortfolio() {
-  // GitHub Pages URL
-  let resumeUrl = 'https://Jeet52.github.io/Jeet52/Resume/Patel_Resume.pdf';
-
-  // Fallback to local path for testing
-  if (!window.location.href.includes('github.io')) {
-    resumeUrl = 'Resume/Patel_Resume.pdf';
-  }
-
-  const link = document.createElement('a');
-  link.href = resumeUrl;
-  link.download = 'Patel_Resume.pdf'; // Correct file name
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-
-  showNotification('Resume download initiated!', 'success');
-}
-
-
-    // Add CSS animations dynamically
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes slideInRight {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-      }
-      
-      @keyframes slideOutRight {
-        from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
-      }
-      
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-    `;
-    document.head.appendChild(style);
-  </script>
-</body>
-</html>
