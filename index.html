@@ -716,14 +716,14 @@ section {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem; /* tighter spacing */
-  margin-top: 2rem;
+  gap: 1.2rem;
+  margin-top: 3rem;
 }
 
 .project-card {
   aspect-ratio: 1;
-  padding: 1rem; /* smaller padding = smaller container */
-  border-radius: 14px;
+  padding: 1.5rem;
+  border-radius: 18px;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -733,38 +733,125 @@ section {
   justify-content: space-between;
 }
 
-/* Icon box smaller */
-.project-icon {
-  width: 35px;
-  height: 35px;
-  font-size: 1.4rem; /* bigger icon font */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-secondary);
 }
 
-/* Titles & Text bigger */
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(240, 147, 251, 0.25);
+  border-color: rgba(240, 147, 251, 0.4);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-secondary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+}
+
+.project-info {
+  flex: 1;
+  min-width: 0;
+}
+
 .project-title {
-  font-size: 1.3rem; /* larger */
+  font-size: 1.1rem;
   font-weight: 700;
-  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
 }
 
 .project-subtitle {
-  font-size: 1rem; /* larger */
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-description {
-  font-size: 1rem; /* larger text */
-  line-height: 1.6;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
 }
 
 .tech-tag {
-  font-size: 0.8rem; /* larger tags */
-  padding: 0.25rem 0.6rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(102, 126, 234, 0.2);
+  color: var(--color-primary);
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .project-link {
-  font-size: 0.9rem; /* larger button text */
-  padding: 0.5rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--color-glass);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border);
 }
+
+.project-link:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
 
 
 /* Achievement Badges */
