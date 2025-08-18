@@ -415,7 +415,7 @@ section {
   box-shadow: 0 20px 60px rgba(102, 126, 234, 0.1);
 }
 
-/* Company Logo Styling - Fixed with white background */
+/* Company Logo Styling - Fixed to remove white background */
 .company-logo {
   width: 80px;
   height: 80px;
@@ -431,9 +431,9 @@ section {
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   border: 2px solid var(--color-border);
-  background: white; /* Changed to white background */
+  background: transparent; /* Changed from white to transparent */
   backdrop-filter: blur(20px);
-  padding: 10px; /* Added padding for better image display */
+  padding: 10px;
 }
 
 .company-logo img {
@@ -588,7 +588,7 @@ section {
   white-space: nowrap;
 }
 
-/* Hackathon Achievement Section */
+/* Hackathon Achievement Section - Updated with certificate and GitHub link */
 .achievement-section {
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
   border-radius: 25px;
@@ -651,7 +651,7 @@ section {
   color: var(--color-text-muted);
   line-height: 1.8;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
 
 .achievement-tech {
@@ -659,26 +659,90 @@ section {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .achievement-tech .tech-tag {
   background: rgba(255, 215, 0, 0.2);
   color: #ffd700;
   border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
-/* Enhanced Projects Grid - Made smaller and more compact */
+/* Certificate and Links Section */
+.achievement-certificate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.certificate-image {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.certificate-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+}
+
+.achievement-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.achievement-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.achievement-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.achievement-link.secondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+.achievement-link.secondary:hover {
+  background: var(--color-glass);
+  border-color: var(--color-primary);
+}
+
+/* Enhanced Projects Grid - Updated to show only 4 projects in 2x2 grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   margin-top: 3rem;
 }
 
 .project-card {
   aspect-ratio: 1;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 18px;
   transition: all 0.4s ease;
   position: relative;
@@ -708,20 +772,20 @@ section {
 .project-header {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.6rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .project-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background: var(--gradient-secondary);
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   flex-shrink: 0;
   box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
 }
@@ -732,17 +796,17 @@ section {
 }
 
 .project-title {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-text);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
   line-height: 1.2;
 }
 
 .project-subtitle {
   color: var(--color-text-muted);
-  font-size: 0.8rem;
-  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
 }
 
 .project-content {
@@ -753,35 +817,31 @@ section {
 
 .project-description {
   color: var(--color-text-muted);
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
   flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-bottom: 1rem;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
 }
 
 .tech-tag {
-  padding: 0.2rem 0.5rem;
+  padding: 0.3rem 0.7rem;
   background: rgba(102, 126, 234, 0.2);
   color: var(--color-primary);
   border-radius: 12px;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 
 .project-links {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
   margin-top: auto;
 }
@@ -789,13 +849,13 @@ section {
 .project-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.4rem 0.8rem;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
   background: var(--color-glass);
   color: var(--color-text);
   text-decoration: none;
-  border-radius: 15px;
-  font-size: 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.3s ease;
   border: 1px solid var(--color-border);
@@ -812,14 +872,14 @@ section {
 .achievement-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.3rem 0.6rem;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
   background: var(--gradient-secondary);
   color: white;
   border-radius: 15px;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
   box-shadow: 0 2px 10px rgba(240, 147, 251, 0.3);
 }
 
@@ -942,1102 +1002,4 @@ section {
 }
 
 /* Back to Top */
-.back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(100px);
-  box-shadow: var(--shadow-glow);
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.back-to-top:hover {
-  transform: translateY(-5px);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 3rem 2rem;
-  background: var(--color-bg-light);
-  border-top: 1px solid var(--color-border);
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.social-link {
-  width: 50px;
-  height: 50px;
-  background: var(--color-glass);
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text);
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  background: var(--color-primary);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-glow);
-}
-
-/* Scroll Animations */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
-}
-
-.animate-on-scroll.animated {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  nav ul {
-    gap: 1rem;
-  }
-  
-  nav a {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
-  
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    aspect-ratio: auto;
-    min-height: 280px;
-  }
-  
-  .timeline {
-    padding-left: 2rem;
-  }
-  
-  .timeline::before {
-    left: 0.5rem;
-  }
-  
-  .timeline-item {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .timeline-item::before {
-    left: -2.5rem;
-  }
-
-  .company-logo {
-    margin-bottom: 1rem;
-  }
-  
-  .filter-controls {
-    flex-direction: column;
-  }
-  
-  .search-box {
-    min-width: auto;
-  }
-
-  .testimonial-author {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .author-badge {
-    align-self: flex-start;
-  }
-
-  .testimonial-card {
-    padding: 2rem;
-  }
-
-  .quote-icon {
-    left: 2rem;
-  }
-
-  .achievement-section {
-    padding: 2rem;
-  }
-
-  .achievement-header {
-    flex-direction: column;
-  }
-
-  .trophy-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 1024px) and (min-width: 769px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Hover Effects */
-.hover-glow:hover {
-  box-shadow: var(--shadow-glow);
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg-light);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-dark);
-}
-
-/* Pulse Animation for Interactive Elements */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.project-card:hover .project-icon {
-  animation: pulse 0.6s ease-in-out;
-}
-
-.company-logo:hover {
-  animation: pulse 0.6s ease-in-out;
-  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
-}
-
-/* Staggered Animation for Project Cards */
-.projects-grid .project-card:nth-child(odd) {
-  animation-delay: 0.1s;
-}
-
-.projects-grid .project-card:nth-child(even) {
-  animation-delay: 0.2s;
-}
-</style>
-</head>
-
-<body>
-  <!-- Loading Screen -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loader"></div>
-    <div class="loading-text">Loading Portfolio...</div>
-  </div>
-
-  <!-- Animated Background -->
-  <div class="animated-bg">
-    <div class="bg-shape"></div>
-    <div class="bg-shape"></div>
-    <div class="bg-shape"></div>
-  </div>
-
-  <!-- Language Switcher -->
-  <div class="language-switcher">
-    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-    <button class="lang-btn" onclick="switchLanguage('hi')">हि</button>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="glass">
-    <ul>
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- Header -->
-  <header id="home">
-    <div class="hero-content">
-      <h1 class="hero-title">Jeet Patel</h1>
-      <p class="hero-subtitle">Data Analyst • Statistics & Economics Major • Tech Innovator</p>
-      <p class="hero-description">
-        Transforming complex data into actionable insights through advanced analytics, machine learning, 
-        and innovative visualization techniques. Passionate about leveraging data science to solve real-world problems.
-      </p>
-      <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">
-          <i class="fas fa-rocket"></i>
-          View My Work
-        </a>
-        <a href="#contact" class="btn btn-secondary">
-          <i class="fas fa-envelope"></i>
-          Get In Touch
-        </a>
-        <button onclick="downloadPortfolio()" class="btn btn-secondary">
-          <i class="fas fa-download"></i>
-          Download Resume
-        </button>
-      </div>
-    </div>
-  </header>
-
-<!-- About Section -->
-<section id="about" class="animate-on-scroll">
-  <h2 class="section-title">About Me</h2>
-  <div class="about-container glass hover-glow" style="padding: 2rem; border-radius: 25px; position: relative; overflow: hidden; text-align: center;">
-    
-    <!-- Decorative gradient overlay -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-primary);"></div>
-    
-    <!-- Centered Circular Image inside the container -->
-    <div style="margin-bottom: 2rem;">
-      <img src="Images/Patel_Jeet.jpg" alt="Jeet Patel" 
-           style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
-                  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3); 
-                  border: 4px solid rgba(255, 255, 255, 0.15);
-                  transition: all 0.4s ease;"
-           onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 60px rgba(102, 126, 234, 0.5)'"
-           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 40px rgba(102, 126, 234, 0.3)'">
-    </div>
-
-    <!-- Main content with improved styling -->
-    <div>
-      <p style="font-size: 1.15rem; line-height: 1.9; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-        I'm a <strong style="color: var(--color-text); font-weight: 600;">UIC student</strong> graduating in 
-        <span style="color: var(--color-primary); font-weight: 600;">May 2026</span> with a 
-        <strong style="color: var(--color-primary); position: relative;">BS in Statistics</strong>, 
-        <strong style="color: var(--color-primary);">BA in Economics</strong>, and a 
-        <strong style="color: var(--color-primary);">minor in Computer Science</strong>. 
-      </p>
-      
-      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-        Aspiring <em style="color: var(--color-accent); font-weight: 600; font-style: normal;">data analyst</em> with hands-on experience in 
-        <strong style="color: var(--color-success);">healthcare analytics</strong>, 
-        <strong style="color: var(--color-success);">cloud computing</strong>, and 
-        <strong style="color: var(--color-success);">full-stack development</strong>.
-      </p>
-
-      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-        I enjoy transforming <strong style="color: var(--color-text);">complex datasets</strong> into 
-        <strong style="color: var(--color-accent);">actionable insights</strong> that drive business decisions.
-      </p>
-
-      <!-- Quick Stats/Highlights -->
-      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
-        <div style="text-align: center; padding: 1rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">3+</div>
-          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Internships</div>
-        </div>
-        <div style="text-align: center; padding: 1rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: var(--color-success); margin-bottom: 0.5rem;">7+</div>
-          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Projects</div>
-        </div>
-        <div style="text-align: center; padding: 1rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.5rem;">5+</div>
-          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Certifications</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- Skills Section -->
-  <section id="skills" class="animate-on-scroll">
-    <h2 class="section-title">Technical Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h3 class="skill-title">Data Analysis</h3>
-        <div class="skill-list">
-          Python • R • SAS • SQL<br>
-          Pandas • NumPy • Scikit-learn<br>
-          Statistical Modeling • Machine Learning
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-cloud"></i>
-        </div>
-        <h3 class="skill-title">Cloud & DevOps</h3>
-        <div class="skill-list">
-          AWS EC2 • AWS RDS • Azure<br>
-          Docker • CI/CD • GitHub Actions<br>
-          Azure Functions • Cloud Architecture
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-code"></i>
-        </div>
-        <h3 class="skill-title">Development</h3>
-        <div class="skill-list">
-          Python • C++ • C# • Swift<br>
-          Flask • .NET • ASP.NET Core<br>
-          HTML • CSS • JavaScript
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-database"></i>
-        </div>
-        <h3 class="skill-title">Data Management</h3>
-        <div class="skill-list">
-          MySQL • PostgreSQL • OMOP CDM<br>
-          SDTM • ERD Modeling<br>
-          Data Warehousing • ETL Processes
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-chart-bar"></i>
-        </div>
-        <h3 class="skill-title">Visualization</h3>
-        <div class="skill-list">
-          Power BI • Tableau • Excel<br>
-          Matplotlib • Seaborn • ggplot2<br>
-          Interactive Dashboards
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-mobile-alt"></i>
-        </div>
-        <h3 class="skill-title">Mobile & Design</h3>
-        <div class="skill-list">
-          Swift • Kotlin • iOS Development<br>
-          Figma • UI/UX Design<br>
-          Prototyping • User Research
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Enhanced Experience Section with Company Logos -->
-  <section id="experience" class="animate-on-scroll">
-    <h2 class="section-title">Professional Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item glass hover-glow">
-        <div class="company-logo">
-          <img src="Images/SDS_Logo.png" alt="Sumptuous Data Sciences">
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-title">Data Science Intern</div>
-          <div class="timeline-company">Sumptuous Data Sciences</div>
-          <div class="timeline-duration">July 2025 - August 2025 • Remote</div>
-          <p>Collaborated in an Agile development team to build full-stack web applications using Flask and Azure technologies. Implemented CI/CD pipelines, participated in sprint planning and code reviews, and delivered client-ready presentations. Gained expertise in modern web development practices and cloud deployment strategies.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item glass hover-glow">
-        <div class="company-logo">
-          <img src="Images/IT_Expert_Logo.png" alt="IT Expert System, Inc">
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-title">Web Development Intern</div>
-          <div class="timeline-company">IT Expert System, Inc</div>
-          <div class="timeline-duration">June 2025 - August 2025 • Hybrid</div>
-          <p>Leading healthcare analytics projects using OMOP and SDTM data models. Developing advanced statistical models in R and Python, creating comprehensive ERD designs, and presenting insights to company stakeholders. Specializing in clinical data analysis and regulatory compliance standards.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item glass hover-glow">
-        <div class="company-logo">
-          <img src="Images/NIU_Logo.png" alt="Northern Illinois University">
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-title">Student Programmer</div>
-          <div class="timeline-company">Northern Illinois University</div>
-          <div class="timeline-duration">May 2022 - August 2022 • On-site</div>
-          <p>Developed and tested beta programming assignments for curriculum integration. Conducted comprehensive evaluations and provided detailed feedback to senior faculty members. Contributed to curriculum modernization efforts and improved student learning outcomes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="animate-on-scroll">
-    <h2 class="section-title">Testimonials</h2>
-    <div class="testimonials-container">
-      <div class="testimonial-card">
-        <div class="quote-icon">
-          <i class="fas fa-quote-left"></i>
-        </div>
-        <div class="testimonial-content">
-          <p class="testimonial-text">
-            "I've had the pleasure of working with Jeet, and I can confidently say he is a hardworking and talented IT professional. His passion for data analysis, web development, and mobile development is evident in every project he takes on. Jeet is a quick learner who consistently adapts to new tools and technologies, often going the extra mile to meet tight deadlines and evolving project demands."
-          </p>
-          <p class="testimonial-text">
-            "One of Jeet's greatest strengths is his collaborative nature. He is a true team player who communicates effectively and contributes positively to any team dynamic. Whether he's diving into a new framework or supporting a colleague, Jeet brings a proactive and solutions-oriented mindset to the table. His ability to pick up complex concepts quickly, combined with his dedication and adaptability, makes him a valuable asset to any organization."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <div class="author-name">Harry K</div>
-              <div class="author-title">Director of Business Development</div>
-              <div class="author-company">IT Expert System, Inc</div>
-              <div class="testimonial-date">August 2025</div>
-            </div>
-            <div class="author-badge">
-              <i class="fas fa-briefcase"></i>
-              <span>Direct Supervisor</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hackathon Achievement Section -->
-  <section id="achievements" class="animate-on-scroll">
-    <div class="achievement-section glass">
-      <div class="achievement-header">
-        <div class="trophy-icon">
-          <i class="fas fa-trophy"></i>
-        </div>
-        <div class="achievement-content">
-          <h3>UIC SparkHacks Winner</h3>
-          <div class="achievement-subtitle">SparkHacks Favorite Award</div>
-        </div>
-      </div>
-      <div class="achievement-description">
-        Won the prestigious "SparkHacks Favorite" award at UIC's SparkHacks hackathon for developing "Outting Otters" - 
-        a revolutionary social media app designed specifically for introverts. The app features innovative achievement systems, 
-        comfortable social connections, and intuitive event hosting capabilities that prioritize user comfort and authentic interactions.
-      </div>
-      <div class="achievement-tech">
-        <span class="tech-tag">Swift</span>
-        <span class="tech-tag">iOS Development</span>
-        <span class="tech-tag">Figma</span>
-        <span class="tech-tag">UI/UX Design</span>
-        <span class="tech-tag">User Research</span>
-      </div>
-    </div>
-  </section>
-
-<!-- Enhanced Projects Section - 3x2 Grid Layout -->
-<section id="projects" class="animate-on-scroll">
-  <h2 class="section-title">Featured Projects</h2>
-  
-  <div class="filter-controls">
-    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects...">
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="Python">Python</button>
-      <button class="filter-btn" data-filter="R">R</button>
-      <button class="filter-btn" data-filter="AWS">AWS</button>
-      <button class="filter-btn" data-filter="Azure">Azure</button>
-      <button class="filter-btn" data-filter="Swift">Swift</button>
-      <button class="filter-btn" data-filter="C#">C#</button>
-    </div>
-  </div>
-
-  <div class="projects-grid">
-    <!-- 1) Outting Otters - Hackathon -->
-    <div class="project-card glass hover-glow" data-tech="Swift Figma Mobile iOS">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-mobile-alt"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Outting Otters</div>
-          <div class="project-subtitle">UIC SparkHacks Winner</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge">
-          <i class="fas fa-trophy"></i>
-          Hackathon Winner
-        </div>
-        <p class="project-description">
-          Revolutionary social media app for introverts with achievement systems and event hosting capabilities.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Swift</span>
-          <span class="tech-tag">iOS</span>
-          <span class="tech-tag">Figma</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2) Healthcare Analytics with SDTM & OMOP -->
-    <div class="project-card glass hover-glow" data-tech="R Statistics Healthcare Python">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-heartbeat"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Healthcare Analytics</div>
-          <div class="project-subtitle">OMOP & SDTM Analysis</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Advanced healthcare analytics using OMOP and SDTM data models with statistical modeling.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">OMOP</span>
-        </div>
-        <div class="project-links">
-          <span class="project-link" style="background: rgba(243, 156, 18, 0.2); color: #f39c12;">
-            <i class="fas fa-clock"></i>
-            In Progress
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3) Customer Management API -->
-    <div class="project-card glass hover-glow" data-tech="C# Azure .NET API SQL">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-server"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Customer API</div>
-          <div class="project-subtitle">RESTful Web API</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Enterprise-grade RESTful API with ASP.NET Core and Azure SQL integration.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">C#</span>
-          <span class="tech-tag">ASP.NET</span>
-          <span class="tech-tag">Azure</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Customer-API" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4) AWS Cloud-Based User System -->
-    <div class="project-card glass hover-glow" data-tech="Python AWS Flask MySQL Cloud">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-cloud"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">AWS User System</div>
-          <div class="project-subtitle">Full-Stack Cloud App</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">AWS</span>
-          <span class="tech-tag">Flask</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5) Gym Data Analysis & Regression -->
-    <div class="project-card glass hover-glow" data-tech="R Statistics Fitness Analytics">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-dumbbell"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Gym Data Analysis</div>
-          <div class="project-subtitle">Statistical Modeling</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge university">
-          <i class="fas fa-university"></i>
-          UIC Project
-        </div>
-        <p class="project-description">
-          Statistical analysis using regression and ANOVA to understand workout habits.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Statistics</span>
-          <span class="tech-tag">ANOVA</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Gym-Data-Analysis-with-Simple-Linear-Regression-and-ANOVA" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6) Diabetes Progression Analysis -->
-    <div class="project-card glass hover-glow" data-tech="R Statistics Regression Healthcare">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Diabetes Analysis</div>
-          <div class="project-subtitle">Statistical Modeling</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge university">
-          <i class="fas fa-university"></i>
-          UIC Project
-        </div>
-        <p class="project-description">
-          Statistical analysis examining key predictors of diabetes progression using regression.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Statistics</span>
-          <span class="tech-tag">Regression</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="no-results" id="noResults" style="display: none; text-align: center; padding: 3rem; color: var(--color-text-muted);">
-    <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-    <h3>No projects found</h3>
-    <p>Try adjusting your search terms or filters</p>
-  </div>
-</section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="animate-on-scroll">
-    <h2 class="section-title">Let's Connect</h2>
-    <div class="contact-form glass">
-      <form id="contactForm" action="https://formspree.io/f/mjkopqaj" method="POST">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="_replyto" required>
-        </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">
-          <i class="fas fa-paper-plane"></i>
-          Send Message
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
-      © 2025 Jeet Patel. Crafted with passion and precision.
-    </p>
-    <div class="social-links">
-      <a href="https://github.com/Jeet52" class="social-link" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://linkedin.com/in/jeetpatel52" class="social-link" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="mailto:contact@jeetpatel.dev" class="social-link" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </footer>
-
-  <script>
-    // Global variables
-    let currentLanguage = 'en';
-    let isLoading = true;
-
-    // Initialize everything when DOM is loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      initializePortfolio();
-    });
-
-    // Initialize portfolio
-    function initializePortfolio() {
-      hideLoadingScreen();
-      setupScrollAnimations();
-      setupFilterSystem();
-      setupFormHandling();
-      setupNavigationHighlight();
-      setupBackToTop();
-      setupParallaxEffects();
-    }
-
-    // Hide loading screen with animation
-    function hideLoadingScreen() {
-      setTimeout(() => {
-        const loadingScreen = document.getElementById('loadingScreen');
-        loadingScreen.style.opacity = '0';
-        setTimeout(() => {
-          loadingScreen.style.display = 'none';
-          isLoading = false;
-        }, 800);
-      }, 2000);
-    }
-
-    // Setup scroll-based animations
-    function setupScrollAnimations() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-      });
-    }
-
-    // Navigation active state
-    function setupNavigationHighlight() {
-      const navLinks = document.querySelectorAll('nav a');
-      const sections = document.querySelectorAll('section, header');
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            navLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active');
-              }
-            });
-          }
-        });
-      }, { threshold: 0.3 });
-
-      sections.forEach(section => observer.observe(section));
-    }
-
-    // Filter and search system
-    function setupFilterSystem() {
-      const searchBox = document.getElementById('searchBox');
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const projectCards = document.querySelectorAll('.project-card');
-      const noResults = document.getElementById('noResults');
-
-      let currentFilter = 'all';
-      let currentSearch = '';
-
-      // Search functionality
-      searchBox.addEventListener('input', function() {
-        currentSearch = this.value.toLowerCase();
-        filterProjects();
-      });
-
-      // Filter buttons
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-          currentFilter = this.getAttribute('data-filter');
-          filterProjects();
-        });
-      });
-
-      function filterProjects() {
-        let visibleCount = 0;
-
-        projectCards.forEach(card => {
-          const tech = card.getAttribute('data-tech') || '';
-          const title = card.querySelector('.project-title').textContent.toLowerCase();
-          const description = card.querySelector('.project-description').textContent.toLowerCase();
-
-          const matchesFilter = currentFilter === 'all' || tech.toLowerCase().includes(currentFilter.toLowerCase());
-          const matchesSearch = currentSearch === '' || 
-                              title.includes(currentSearch) || 
-                              description.includes(currentSearch) ||
-                              tech.toLowerCase().includes(currentSearch);
-
-          if (matchesFilter && matchesSearch) {
-            card.style.display = 'block';
-            card.style.animation = `fadeInUp 0.6s ease-out ${visibleCount * 0.1}s both`;
-            visibleCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-      }
-    }
-
-    // Form handling
-    function setupFormHandling() {
-      const form = document.getElementById('contactForm');
-      if (!form) return;
-
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (response.ok) {
-            form.reset();
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-          } else {
-            throw new Error('Network response was not ok');
-          }
-        } catch (error) {
-          showNotification('Failed to send message. Please try again.', 'error');
-        } finally {
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-        }
-      });
-    }
-
-    // Show notifications
-    function showNotification(message, type) {
-      const notification = document.createElement('div');
-      notification.style.cssText = `
-        position: fixed;
-        top: 2rem;
-        right: 2rem;
-        background: ${type === 'success' ? 'var(--color-success)' : 'var(--color-danger)'};
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 10px;
-        box-shadow: var(--shadow-glow);
-        z-index: 10000;
-        animation: slideInRight 0.5s ease-out;
-      `;
-      notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check' : 'exclamation-triangle'}"></i> ${message}`;
-      
-      document.body.appendChild(notification);
-      
-      setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.5s ease-out forwards';
-        setTimeout(() => notification.remove(), 500);
-      }, 5000);
-    }
-
-    // Back to top functionality
-    function setupBackToTop() {
-      const backToTop = document.getElementById('backToTop');
-      
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          backToTop.classList.add('visible');
-        } else {
-          backToTop.classList.remove('visible');
-        }
-      });
-    }
-
-    // Parallax effects
-    function setupParallaxEffects() {
-      const shapes = document.querySelectorAll('.bg-shape');
-      
-      window.addEventListener('scroll', () => {
-        if (isLoading) return;
-        
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        
-        shapes.forEach((shape, index) => {
-          const speed = (index + 1) * 0.3;
-          shape.style.transform = `translateY(${rate * speed}px) rotate(${scrolled * 0.05}deg)`;
-        });
-      });
-    }
-
-    // Utility functions
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-
-    function switchLanguage(lang) {
-      currentLanguage = lang;
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.textContent.includes(lang === 'en' ? 'EN' : 'à¤¹à¤¿')) {
-          btn.classList.add('active');
-        }
-      });
-      document.documentElement.lang = lang;
-    }
-
-    function downloadPortfolio() {
-      // Check if we're on GitHub Pages
-      const isGitHubPages = window.location.hostname.includes('github.io');
-      
-      let resumeUrl;
-      if (isGitHubPages) {
-        // GitHub Pages URL - using the repository name
-        resumeUrl = `${window.location.origin}${window.location.pathname}Resume/Patel_Resume.pdf`;
-        // Clean up any double slashes except after protocol
-        resumeUrl = resumeUrl.replace(/([^:]\/)\/+/g, '$1');
-      } else {
-        // Local development
-        resumeUrl = 'Resume/Patel_Resume.pdf';
-      }
-
-      // Create a temporary link element
-      const link = document.createElement('a');
-      link.href = resumeUrl;
-      link.download = 'Patel_Resume.pdf';
-      link.target = '_blank';
-      
-      // Add to DOM, click, and remove
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      showNotification('Resume download initiated!', 'success');
-    }
-
-    // Add CSS animations dynamically
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes slideInRight {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-      }
-      
-      @keyframes slideOutRight {
-        from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
-      }
-      
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-    `;
-    document.head.appendChild(style);
-  </script>
-</body>
-</html>
+.back-
