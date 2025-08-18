@@ -1,3 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeet Patel | Data Analyst Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+:root {
+  --color-primary: #667eea;
+  --color-primary-dark: #5a67d8;
+  --color-secondary: #764ba2;
+  --color-accent: #f093fb;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-bg: #0f0f23;
+  --color-bg-light: #1a1a3e;
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  --color-text: #ffffff;
+  --color-text-muted: #a0aec0;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --shadow-glow: 0 0 40px rgba(102, 126, 234, 0.3);
+}
+
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(102, 126, 234, 0.2);
+  border-top: 3px solid var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-glow);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Animated Background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: float 6s ease-in-out infinite;
+}
+
+.bg-shape:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  background: var(--gradient-primary);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bg-shape:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  background: var(--gradient-secondary);
+  top: 60%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.bg-shape:nth-child(3) {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  bottom: 20%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Glass Morphism Effect */
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+}
+
+/* Header */
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  animation: slideDown 1s ease-out 0.6s both;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a:hover, nav a.active {
+  background: var(--gradient-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary:hover {
+  background: var(--color-glass);
+  border-color: var(--color-primary);
+}
+
+/* Sections */
+section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.skill-card {
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+}
+
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.skill-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.skill-list {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* Enhanced Experience Timeline with Logos */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-primary);
+  border-radius: 1px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 3rem;
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  border: 4px solid var(--color-bg);
+  box-shadow: 0 0 0 4px var(--color-primary);
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.1);
+}
+
+/* Company Logo Styling - Fixed with white background */
+.company-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--color-border);
+  background: white; /* Changed to white background */
+  backdrop-filter: blur(20px);
+  padding: 10px; /* Added padding for better image display */
+}
+
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-company {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-duration {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Enhanced Testimonials Section */
+.testimonials-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  padding: 3rem;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.quote-icon {
+  position: absolute;
+  top: -10px;
+  left: 3rem;
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.testimonial-content {
+  margin-top: 2rem;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  font-style: italic;
+  position: relative;
+}
+
+.testimonial-text:first-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.3rem;
+}
+
+.author-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.2rem;
+}
+
+.author-company {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-date {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.author-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-success);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  white-space: nowrap;
+}
+
+/* Hackathon Achievement Section */
+.achievement-section {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
+  border-radius: 25px;
+  padding: 3rem;
+  margin: 4rem auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.achievement-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+}
+
+.achievement-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.trophy-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--color-bg);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.achievement-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.achievement-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.achievement-description {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.achievement-tech {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.achievement-tech .tech-tag {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Enhanced Projects Grid - Made smaller and more compact */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  aspect-ratio: 1;
+  padding: 1.5rem;
+  border-radius: 18px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-secondary);
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(240, 147, 251, 0.25);
+  border-color: rgba(240, 147, 251, 0.4);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-secondary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+}
+
+.project-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.project-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-description {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  padding: 0.2rem 0.5rem;
+  background: rgba(102, 126, 234, 0.2);
+  color: var(--color-primary);
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--color-glass);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border);
+}
+
+.project-link:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Achievement Badges */
+.achievement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  background: var(--gradient-secondary);
+  color: white;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  box-shadow: 0 2px 10px rgba(240, 147, 251, 0.3);
+}
+
+.achievement-badge.internship {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+}
+
+.achievement-badge.university {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.3);
+}
+
+/* Contact Section */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 20px;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Filter Controls */
+.filter-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  border-radius: 50px;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* Language Switcher */
+.language-switcher {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(100px);
+  box-shadow: var(--shadow-glow);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--color-bg-light);
+  border-top: 1px solid var(--color-border);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  nav ul {
+    gap: 1rem;
+  }
+  
+  nav a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    aspect-ratio: auto;
+    min-height: 280px;
+  }
+  
+  .timeline {
+    padding-left: 2rem;
+  }
+  
+  .timeline::before {
+    left: 0.5rem;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .timeline-item::before {
+    left: -2.5rem;
+  }
+
+  .company-logo {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-controls {
+    flex-direction: column;
+  }
+  
+  .search-box {
+    min-width: auto;
+  }
+
+  .testimonial-author {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .author-badge {
+    align-self: flex-start;
+  }
+
+  .testimonial-card {
+    padding: 2rem;
+  }
+
+  .quote-icon {
+    left: 2rem;
+  }
+
+  .achievement-section {
+    padding: 2rem;
+  }
+
+  .achievement-header {
+    flex-direction: column;
+  }
+
+  .trophy-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Hover Effects */
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Pulse Animation for Interactive Elements */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.project-card:hover .project-icon {
+  animation: pulse 0.6s ease-in-out;
+}
+
+.company-logo:hover {
+  animation: pulse 0.6s ease-in-out;
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+/* Staggered Animation for Project Cards */
+.projects-grid .project-card:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.projects-grid .project-card:nth-child(even) {
+  animation-delay: 0.2s;
+}
 </style>
 </head>
 
@@ -18,7 +1188,7 @@
   <!-- Language Switcher -->
   <div class="language-switcher">
     <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-    <button class="lang-btn" onclick="switchLanguage('hi')">à¤¹à¤¿</button>
+    <button class="lang-btn" onclick="switchLanguage('hi')">हि</button>
   </div>
 
   <!-- Navigation -->
@@ -30,6 +1200,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#achievements">Achievements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -43,7 +1214,7 @@
   <header id="home">
     <div class="hero-content">
       <h1 class="hero-title">Jeet Patel</h1>
-      <p class="hero-subtitle">Data Analyst â€¢ Statistics & Economics Major â€¢ Tech Innovator</p>
+      <p class="hero-subtitle">Data Analyst • Statistics & Economics Major • Tech Innovator</p>
       <p class="hero-description">
         Transforming complex data into actionable insights through advanced analytics, machine learning, 
         and innovative visualization techniques. Passionate about leveraging data science to solve real-world problems.
@@ -137,9 +1308,9 @@
         </div>
         <h3 class="skill-title">Data Analysis</h3>
         <div class="skill-list">
-          Python â€¢ R â€¢ SAS â€¢ SQL<br>
-          Pandas â€¢ NumPy â€¢ Scikit-learn<br>
-          Statistical Modeling â€¢ Machine Learning
+          Python • R • SAS • SQL<br>
+          Pandas • NumPy • Scikit-learn<br>
+          Statistical Modeling • Machine Learning
         </div>
       </div>
 
@@ -149,9 +1320,9 @@
         </div>
         <h3 class="skill-title">Cloud & DevOps</h3>
         <div class="skill-list">
-          AWS EC2 â€¢ AWS RDS â€¢ Azure<br>
-          Docker â€¢ CI/CD â€¢ GitHub Actions<br>
-          Azure Functions â€¢ Cloud Architecture
+          AWS EC2 • AWS RDS • Azure<br>
+          Docker • CI/CD • GitHub Actions<br>
+          Azure Functions • Cloud Architecture
         </div>
       </div>
 
@@ -161,9 +1332,9 @@
         </div>
         <h3 class="skill-title">Development</h3>
         <div class="skill-list">
-          Python â€¢ C++ â€¢ C# â€¢ Swift<br>
-          Flask â€¢ .NET â€¢ ASP.NET Core<br>
-          HTML â€¢ CSS â€¢ JavaScript
+          Python • C++ • C# • Swift<br>
+          Flask • .NET • ASP.NET Core<br>
+          HTML • CSS • JavaScript
         </div>
       </div>
 
@@ -173,9 +1344,9 @@
         </div>
         <h3 class="skill-title">Data Management</h3>
         <div class="skill-list">
-          MySQL â€¢ PostgreSQL â€¢ OMOP CDM<br>
-          SDTM â€¢ ERD Modeling<br>
-          Data Warehousing â€¢ ETL Processes
+          MySQL • PostgreSQL • OMOP CDM<br>
+          SDTM • ERD Modeling<br>
+          Data Warehousing • ETL Processes
         </div>
       </div>
 
@@ -185,8 +1356,8 @@
         </div>
         <h3 class="skill-title">Visualization</h3>
         <div class="skill-list">
-          Power BI â€¢ Tableau â€¢ Excel<br>
-          Matplotlib â€¢ Seaborn â€¢ ggplot2<br>
+          Power BI • Tableau • Excel<br>
+          Matplotlib • Seaborn • ggplot2<br>
           Interactive Dashboards
         </div>
       </div>
@@ -197,9 +1368,9 @@
         </div>
         <h3 class="skill-title">Mobile & Design</h3>
         <div class="skill-list">
-          Swift â€¢ Kotlin â€¢ iOS Development<br>
-          Figma â€¢ UI/UX Design<br>
-          Prototyping â€¢ User Research
+          Swift • Kotlin • iOS Development<br>
+          Figma • UI/UX Design<br>
+          Prototyping • User Research
         </div>
       </div>
     </div>
@@ -211,36 +1382,36 @@
     <div class="timeline">
       <div class="timeline-item glass hover-glow">
         <div class="company-logo">
-          <img src="Images/SDS_Logo.png" alt="Sumptuous Data Sciences" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
+          <img src="Images/SDS_Logo.png" alt="Sumptuous Data Sciences">
         </div>
         <div class="timeline-content">
           <div class="timeline-title">Data Science Intern</div>
           <div class="timeline-company">Sumptuous Data Sciences</div>
-          <div class="timeline-duration">July 2025 - August 2025 â€¢ Remote</div>
+          <div class="timeline-duration">July 2025 - August 2025 • Remote</div>
           <p>Collaborated in an Agile development team to build full-stack web applications using Flask and Azure technologies. Implemented CI/CD pipelines, participated in sprint planning and code reviews, and delivered client-ready presentations. Gained expertise in modern web development practices and cloud deployment strategies.</p>
         </div>
       </div>
 
       <div class="timeline-item glass hover-glow">
         <div class="company-logo">
-          <img src="Images/IT_Expert_Logo.png" alt="IT Expert System, Inc" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
+          <img src="Images/IT_Expert_Logo.png" alt="IT Expert System, Inc">
         </div>
         <div class="timeline-content">
           <div class="timeline-title">Web Development Intern</div>
           <div class="timeline-company">IT Expert System, Inc</div>
-          <div class="timeline-duration">June 2025 - August 2025 â€¢ Hybrid</div>
+          <div class="timeline-duration">June 2025 - August 2025 • Hybrid</div>
           <p>Leading healthcare analytics projects using OMOP and SDTM data models. Developing advanced statistical models in R and Python, creating comprehensive ERD designs, and presenting insights to company stakeholders. Specializing in clinical data analysis and regulatory compliance standards.</p>
         </div>
       </div>
 
       <div class="timeline-item glass hover-glow">
         <div class="company-logo">
-          <img src="Images/NIU_Logo.png" alt="Northern Illinois University" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
+          <img src="Images/NIU_Logo.png" alt="Northern Illinois University">
         </div>
         <div class="timeline-content">
           <div class="timeline-title">Student Programmer</div>
           <div class="timeline-company">Northern Illinois University</div>
-          <div class="timeline-duration">May 2022 - August 2022 â€¢ On-site</div>
+          <div class="timeline-duration">May 2022 - August 2022 • On-site</div>
           <p>Developed and tested beta programming assignments for curriculum integration. Conducted comprehensive evaluations and provided detailed feedback to senior faculty members. Contributed to curriculum modernization efforts and improved student learning outcomes.</p>
         </div>
       </div>
@@ -279,12 +1450,39 @@
     </div>
   </section>
 
-<!-- Enhanced Projects Section - 2x3 Grid Layout -->
+  <!-- Hackathon Achievement Section -->
+  <section id="achievements" class="animate-on-scroll">
+    <div class="achievement-section glass">
+      <div class="achievement-header">
+        <div class="trophy-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="achievement-content">
+          <h3>UIC SparkHacks Winner</h3>
+          <div class="achievement-subtitle">SparkHacks Favorite Award</div>
+        </div>
+      </div>
+      <div class="achievement-description">
+        Won the prestigious "SparkHacks Favorite" award at UIC's SparkHacks hackathon for developing "Outting Otters" - 
+        a revolutionary social media app designed specifically for introverts. The app features innovative achievement systems, 
+        comfortable social connections, and intuitive event hosting capabilities that prioritize user comfort and authentic interactions.
+      </div>
+      <div class="achievement-tech">
+        <span class="tech-tag">Swift</span>
+        <span class="tech-tag">iOS Development</span>
+        <span class="tech-tag">Figma</span>
+        <span class="tech-tag">UI/UX Design</span>
+        <span class="tech-tag">User Research</span>
+      </div>
+    </div>
+  </section>
+
+<!-- Enhanced Projects Section - 3x2 Grid Layout -->
 <section id="projects" class="animate-on-scroll">
   <h2 class="section-title">Featured Projects</h2>
   
   <div class="filter-controls">
-    <input type="text" class="search-box" id="searchBox" placeholder="ðŸ” Search projects...">
+    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects...">
     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
       <button class="filter-btn active" data-filter="all">All Projects</button>
       <button class="filter-btn" data-filter="Python">Python</button>
@@ -315,14 +1513,12 @@
           Hackathon Winner
         </div>
         <p class="project-description">
-          Revolutionary social media app designed for introverts featuring achievement systems, 
-          comfortable social connections, and event hosting capabilities.
+          Revolutionary social media app for introverts with achievement systems and event hosting capabilities.
         </p>
         <div class="project-tech">
           <span class="tech-tag">Swift</span>
           <span class="tech-tag">iOS</span>
           <span class="tech-tag">Figma</span>
-          <span class="tech-tag">UI/UX</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="project-link" target="_blank">
@@ -351,14 +1547,12 @@
           Internship Project
         </div>
         <p class="project-description">
-          Advanced healthcare analytics using industry-standard OMOP Common Data Model and SDTM formats. 
-          Statistical modeling for clinical data analysis with ERD designs.
+          Advanced healthcare analytics using OMOP and SDTM data models with statistical modeling.
         </p>
         <div class="project-tech">
           <span class="tech-tag">R</span>
           <span class="tech-tag">Python</span>
           <span class="tech-tag">OMOP</span>
-          <span class="tech-tag">SDTM</span>
         </div>
         <div class="project-links">
           <span class="project-link" style="background: rgba(243, 156, 18, 0.2); color: #f39c12;">
@@ -387,23 +1581,17 @@
           Internship Project
         </div>
         <p class="project-description">
-          Enterprise-grade RESTful API built with ASP.NET Core featuring full CRUD operations, 
-          Azure SQL integration, and automated CI/CD pipelines.
+          Enterprise-grade RESTful API with ASP.NET Core and Azure SQL integration.
         </p>
         <div class="project-tech">
           <span class="tech-tag">C#</span>
           <span class="tech-tag">ASP.NET</span>
-          <span class="tech-tag">Azure SQL</span>
-          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">Azure</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Jeet52/Customer-API" class="project-link" target="_blank">
             <i class="fab fa-github"></i>
             GitHub
-          </a>
-          <a href="https://www.youtube.com/watch?v=PnPsRTGRr-o" class="project-link" target="_blank">
-            <i class="fab fa-youtube"></i>
-            Demo
           </a>
         </div>
       </div>
@@ -427,14 +1615,12 @@
           Internship Project
         </div>
         <p class="project-description">
-          Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS. 
-          Features secure authentication and admin dashboard.
+          Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS.
         </p>
         <div class="project-tech">
           <span class="tech-tag">Python</span>
+          <span class="tech-tag">AWS</span>
           <span class="tech-tag">Flask</span>
-          <span class="tech-tag">AWS EC2</span>
-          <span class="tech-tag">MySQL</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" class="project-link" target="_blank">
@@ -463,13 +1649,11 @@
           UIC Project
         </div>
         <p class="project-description">
-          Advanced statistical analysis of gym member data using regression techniques and ANOVA 
-          to understand relationships between workout habits and health outcomes.
+          Statistical analysis using regression and ANOVA to understand workout habits.
         </p>
         <div class="project-tech">
           <span class="tech-tag">R</span>
           <span class="tech-tag">Statistics</span>
-          <span class="tech-tag">Regression</span>
           <span class="tech-tag">ANOVA</span>
         </div>
         <div class="project-links">
@@ -499,14 +1683,12 @@
           UIC Project
         </div>
         <p class="project-description">
-          Comprehensive statistical analysis examining key predictors of diabetes progression using 
-          multiple linear regression and advanced model validation techniques.
+          Statistical analysis examining key predictors of diabetes progression using regression.
         </p>
         <div class="project-tech">
           <span class="tech-tag">R</span>
           <span class="tech-tag">Statistics</span>
           <span class="tech-tag">Regression</span>
-          <span class="tech-tag">ANOVA</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" class="project-link" target="_blank">
@@ -553,6 +1735,11 @@
       </form>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
+      © 2025 Jeet Patel. Crafted with passion and precision.
 
   <!-- Footer -->
   <footer>
