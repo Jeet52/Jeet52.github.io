@@ -712,18 +712,18 @@ section {
   box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
 
-/* Enhanced Projects Grid - Made smaller and more compact */
+/* Projects Grid - Compact containers but larger text */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  margin-top: 3rem;
+  gap: 1rem; /* tighter spacing */
+  margin-top: 2rem;
 }
 
 .project-card {
   aspect-ratio: 1;
-  padding: 1.5rem;
-  border-radius: 18px;
+  padding: 1rem; /* smaller padding = smaller container */
+  border-radius: 14px;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -733,124 +733,39 @@ section {
   justify-content: space-between;
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-secondary);
-}
-
-.project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(240, 147, 251, 0.25);
-  border-color: rgba(240, 147, 251, 0.4);
-}
-
-.project-header {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.6rem;
-}
-
+/* Icon box smaller */
 .project-icon {
-  width: 40px;
-  height: 40px;
-  background: var(--gradient-secondary);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+  width: 35px;
+  height: 35px;
+  font-size: 1.4rem; /* bigger icon font */
 }
 
-.project-info {
-  flex: 1;
-  min-width: 0;
-}
-
+/* Titles & Text bigger */
 .project-title {
-  font-size: 1.1rem;
+  font-size: 1.3rem; /* larger */
   font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 0.2rem;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 .project-subtitle {
-  color: var(--color-text-muted);
-  font-size: 0.8rem;
-  margin-bottom: 0.6rem;
-}
-
-.project-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  font-size: 1rem; /* larger */
 }
 
 .project-description {
-  color: var(--color-text-muted);
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  font-size: 0.85rem;
-  flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-bottom: 1rem;
+  font-size: 1rem; /* larger text */
+  line-height: 1.6;
 }
 
 .tech-tag {
-  padding: 0.2rem 0.5rem;
-  background: rgba(102, 126, 234, 0.2);
-  color: var(--color-primary);
-  border-radius: 12px;
-  font-size: 0.65rem;
-  font-weight: 500;
-}
-
-.project-links {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  margin-top: auto;
+  font-size: 0.8rem; /* larger tags */
+  padding: 0.25rem 0.6rem;
 }
 
 .project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.4rem 0.8rem;
-  background: var(--color-glass);
-  color: var(--color-text);
-  text-decoration: none;
-  border-radius: 15px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: 1px solid var(--color-border);
+  font-size: 0.9rem; /* larger button text */
+  padding: 0.5rem 0.9rem;
 }
 
-.project-link:hover {
-  background: var(--color-primary);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
 
 /* Achievement Badges */
 .achievement-badge {
@@ -1497,41 +1412,64 @@ footer {
     </div>
   </section>
 
-  <!-- Hackathon Achievement Section -->
-  <section id="achievements" class="animate-on-scroll">
-    <div class="achievement-section glass">
-      <div class="achievement-header">
-        <div class="trophy-icon">
-          <i class="fas fa-trophy"></i>
-        </div>
-        <div class="achievement-content">
-          <h3>UIC SparkHacks Winner</h3>
-          <div class="achievement-subtitle">SparkHacks Favorite Award</div>
-        </div>
+<!-- Hackathon Achievement Section -->
+<section id="achievements" class="animate-on-scroll">
+  <div class="achievement-section glass">
+    <div class="achievement-header">
+      <div class="trophy-icon">
+        <i class="fas fa-trophy"></i>
       </div>
-      <div class="achievement-description">
-        Won the prestigious "SparkHacks Favorite" award at UIC's SparkHacks hackathon for developing "Outting Otters" - 
-        a revolutionary social media app designed specifically for introverts. The app features innovative achievement systems, 
-        comfortable social connections, and intuitive event hosting capabilities that prioritize user comfort and authentic interactions.
-      </div>
-      <div class="achievement-tech">
-        <span class="tech-tag">Swift</span>
-        <span class="tech-tag">iOS Development</span>
-        <span class="tech-tag">Figma</span>
-        <span class="tech-tag">UI/UX Design</span>
-        <span class="tech-tag">User Research</span>
-      </div>
-      
-      <!-- Certificate Container -->
-      <div class="certificate-container">
-        <img src="https://jeet52.github.io/Images/SparkHacks_Certificate.png" alt="SparkHacks Certificate" class="certificate-image">
-        <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="certificate-link" target="_blank">
-          <i class="fab fa-github"></i>
-          View Project on GitHub
-        </a>
+      <div class="achievement-content">
+        <h3>UIC SparkHacks Winner</h3>
+        <div class="achievement-subtitle">SparkHacks Favorite Award</div>
       </div>
     </div>
-  </section>
+    <div class="achievement-description">
+      Won the prestigious "SparkHacks Favorite" award at UIC's SparkHacks hackathon for developing "Outting Otters" - 
+      a revolutionary social media app designed specifically for introverts. The app features innovative achievement systems, 
+      comfortable social connections, and intuitive event hosting capabilities that prioritize user comfort and authentic interactions.
+    </div>
+    <div class="achievement-tech">
+      <span class="tech-tag">Swift</span>
+      <span class="tech-tag">iOS Development</span>
+      <span class="tech-tag">Figma</span>
+      <span class="tech-tag">UI/UX Design</span>
+      <span class="tech-tag">User Research</span>
+    </div>
+    
+    <!-- GitHub Link Above Certificate -->
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; margin-top: 3rem;">
+      
+      <!-- GitHub Button (above certificate) -->
+      <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" 
+         class="btn btn-primary" target="_blank" style="font-size: 0.9rem;">
+        <i class="fab fa-github"></i>
+        View Project Code
+      </a>
+
+      <!-- Certificate Image -->
+      <div style="text-align: center;">
+        <img src="Images/SparkHacks_Certificate.jpg" alt="SparkHacks Certificate" 
+             style="max-width: 400px; width: 100%; height: auto; border-radius: 15px; 
+                    box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3); 
+                    border: 3px solid rgba(255, 215, 0, 0.5);
+                    transition: all 0.4s ease;"
+             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 20px 60px rgba(255, 215, 0, 0.5)'"
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 15px 50px rgba(255, 215, 0, 0.3)'">
+      </div>
+
+      <!-- Download Button (below certificate) -->
+      <a href="#" class="btn btn-secondary" 
+         onclick="showNotification('Certificate downloaded!', 'success')" 
+         style="font-size: 0.9rem;">
+        <i class="fas fa-download"></i>
+        Download Certificate
+      </a>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- Enhanced Projects Section - 2x2 Grid Layout -->
 <section id="projects" class="animate-on-scroll">
@@ -1550,146 +1488,158 @@ footer {
   </div>
 
   <div class="projects-grid">
-    <!-- 1) Healthcare Analytics with SDTM & OMOP -->
-    <div class="project-card glass hover-glow" data-tech="R Statistics Healthcare Python">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-heartbeat"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Healthcare Analytics</div>
-          <div class="project-subtitle">OMOP & SDTM Analysis</div>
-        </div>
+  <!-- 1) Healthcare Analytics with SDTM & OMOP -->
+  <div class="project-card glass hover-glow" data-tech="R Statistics Healthcare Python">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="fas fa-heartbeat"></i>
       </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Advanced healthcare analytics using OMOP and SDTM data models with statistical modeling in R and Python for clinical insights.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">OMOP</span>
-          <span class="tech-tag">SDTM</span>
-        </div>
-        <div class="project-links">
-          <span class="project-link" style="background: rgba(243, 156, 18, 0.2); color: #f39c12;">
-            <i class="fas fa-clock"></i>
-            In Progress
-          </span>
-        </div>
+      <div class="project-info">
+        <div class="project-title">Healthcare Analytics</div>
+        <div class="project-subtitle">OMOP & SDTM Analysis</div>
       </div>
     </div>
-
-    <!-- 2) Customer Management API -->
-    <div class="project-card glass hover-glow" data-tech="C# Azure .NET API SQL">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-server"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Customer API</div>
-          <div class="project-subtitle">RESTful Web API</div>
-        </div>
+    
+    <div class="project-content">
+      <div class="achievement-badge internship">
+        <i class="fas fa-briefcase"></i>
+        Internship — Sumptuous Data Science
       </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Enterprise-grade RESTful API built with ASP.NET Core and Azure SQL integration for comprehensive customer management.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">C#</span>
-          <span class="tech-tag">ASP.NET</span>
-          <span class="tech-tag">Azure</span>
-          <span class="tech-tag">SQL</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Customer-API" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
+      <p class="project-description">
+        Conducted advanced healthcare analytics as part of my internship with <strong>Sumptuous Data Science</strong>. 
+        The project focused on mapping and analyzing clinical trial data using <strong>OMOP</strong> and <strong>CDISC SDTM</strong> 
+        data models. Applied statistical modeling and R/Python workflows to ensure data consistency, improve integration of 
+        clinical data, and assess real-world applicability of standardized healthcare frameworks.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">R</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">OMOP</span>
+        <span class="tech-tag">SDTM</span>
       </div>
-    </div>
-
-    <!-- 3) AWS Cloud-Based User System -->
-    <div class="project-card glass hover-glow" data-tech="Python AWS Flask MySQL Cloud">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-cloud"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">AWS User System</div>
-          <div class="project-subtitle">Full-Stack Cloud App</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge internship">
-          <i class="fas fa-briefcase"></i>
-          Internship Project
-        </div>
-        <p class="project-description">
-          Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS, featuring user authentication and management.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">AWS</span>
-          <span class="tech-tag">Flask</span>
-          <span class="tech-tag">MySQL</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4) Diabetes Progression Analysis -->
-    <div class="project-card glass hover-glow" data-tech="R Statistics Regression Healthcare">
-      <div class="project-header">
-        <div class="project-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <div class="project-info">
-          <div class="project-title">Diabetes Analysis</div>
-          <div class="project-subtitle">Statistical Modeling</div>
-        </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="achievement-badge university">
-          <i class="fas fa-university"></i>
-          UIC Project
-        </div>
-        <p class="project-description">
-          Comprehensive statistical analysis examining key predictors of diabetes progression using advanced regression techniques.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">R</span>
-          <span class="tech-tag">Statistics</span>
-          <span class="tech-tag">Regression</span>
-          <span class="tech-tag">Healthcare</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" class="project-link" target="_blank">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-        </div>
+      <div class="project-links">
+        <span class="project-link" style="background: rgba(243, 156, 18, 0.2); color: #f39c12;">
+          <i class="fas fa-clock"></i>
+          In Progress
+        </span>
       </div>
     </div>
   </div>
+
+  <!-- 2) Customer Management API -->
+  <div class="project-card glass hover-glow" data-tech="C# Azure .NET API SQL">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="fas fa-server"></i>
+      </div>
+      <div class="project-info">
+        <div class="project-title">Customer API</div>
+        <div class="project-subtitle">RESTful Web API</div>
+      </div>
+    </div>
+    
+    <div class="project-content">
+      <div class="achievement-badge internship">
+        <i class="fas fa-briefcase"></i>
+        Internship — IT Expert System
+      </div>
+      <p class="project-description">
+        Built an enterprise-grade <strong>RESTful API</strong> as part of my internship with <strong>IT Expert System</strong>. 
+        Designed with <strong>ASP.NET Core</strong> and deployed on <strong>Azure App Services</strong>, the project integrates 
+        with <strong>Azure SQL</strong> to manage customer records. Implemented robust CRUD operations, database migrations, 
+        and CI/CD pipelines via GitHub Actions for automated deployment.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">C#</span>
+        <span class="tech-tag">ASP.NET</span>
+        <span class="tech-tag">Azure</span>
+        <span class="tech-tag">SQL</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Jeet52/Customer-API" class="project-link" target="_blank">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3) AWS Cloud-Based User System -->
+  <div class="project-card glass hover-glow" data-tech="Python AWS Flask MySQL Cloud">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="fas fa-cloud"></i>
+      </div>
+      <div class="project-info">
+        <div class="project-title">AWS User System</div>
+        <div class="project-subtitle">Full-Stack Cloud App</div>
+      </div>
+    </div>
+    
+    <div class="project-content">
+      <div class="achievement-badge internship">
+        <i class="fas fa-briefcase"></i>
+        Internship — IT Expert System
+      </div>
+      <p class="project-description">
+        Developed a <strong>full-stack cloud-based web application</strong> during my internship at <strong>IT Expert System</strong>. 
+        The system enables user registration and management with a <strong>Flask backend</strong>, deployed on <strong>AWS EC2</strong>, 
+        and connected to a <strong>MySQL database hosted on RDS</strong>. Integrated authentication, role-based access control, and 
+        API endpoints tested via Postman. Focused on scalability and security best practices for production deployment.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">AWS</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">MySQL</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Jeet52/AWS-Cloud-Based-User-System" class="project-link" target="_blank">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4) Diabetes Progression Analysis -->
+  <div class="project-card glass hover-glow" data-tech="R Statistics Regression Healthcare">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <div class="project-info">
+        <div class="project-title">Diabetes Analysis</div>
+        <div class="project-subtitle">Statistical Modeling</div>
+      </div>
+    </div>
+    
+    <div class="project-content">
+      <div class="achievement-badge university">
+        <i class="fas fa-university"></i>
+        UIC Project
+      </div>
+      <p class="project-description">
+        University project analyzing <strong>diabetes progression</strong> using the classic Diabetes dataset. Applied 
+        <strong>multiple regression models</strong> with forward selection, variable diagnostics, and assumption checks. 
+        Interpreted results to identify the most significant predictors of disease progression, highlighting statistical 
+        and clinical implications of the findings.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">R</span>
+        <span class="tech-tag">Statistics</span>
+        <span class="tech-tag">Regression</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Jeet52/Factors-Influencing-Diabetes-Progression" class="project-link" target="_blank">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <div class="no-results" id="noResults" style="display: none; text-align: center; padding: 3rem; color: var(--color-text-muted);">
     <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
