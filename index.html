@@ -1347,12 +1347,12 @@ footer {
           <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Internships</div>
         </div>
         <div style="text-align: center; padding: 1rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: var(--color-success); margin-bottom: 0.5rem;">4</div>
-          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Projects</div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--color-success); margin-bottom: 0.5rem;">5+</div>
+          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Certifications</div>
         </div>
         <div style="text-align: center; padding: 1rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.5rem;">5+</div>
-          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Certifications</div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.5rem;">12+</div>
+          <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Projects</div>
         </div>
       </div>
     </div>
@@ -1513,41 +1513,65 @@ footer {
     </div>
   </section>
 
-  <!-- Hackathon Achievement Section -->
-  <section id="achievements" class="animate-on-scroll">
-    <div class="achievement-section glass">
-      <div class="achievement-header">
-        <div class="trophy-icon">
-          <i class="fas fa-trophy"></i>
-        </div>
-        <div class="achievement-content">
-          <h3>UIC SparkHacks Winner</h3>
-          <div class="achievement-subtitle">SparkHacks Favorite Award</div>
-        </div>
+
+ <!-- Hackathon Achievement Section -->
+<section id="achievements" class="animate-on-scroll">
+  <div class="achievement-section glass">
+    <div class="achievement-header">
+      <div class="trophy-icon">
+        <i class="fas fa-trophy"></i>
       </div>
-      <div class="achievement-description">
-        Won the prestigious "SparkHacks Favorite" award at UIC's SparkHacks hackathon for developing "Outting Otters" - 
-        a revolutionary social media app designed specifically for introverts. The app features innovative achievement systems, 
-        comfortable social connections, and intuitive event hosting capabilities that prioritize user comfort and authentic interactions.
-      </div>
-      <div class="achievement-tech">
-        <span class="tech-tag">Swift</span>
-        <span class="tech-tag">iOS Development</span>
-        <span class="tech-tag">Figma</span>
-        <span class="tech-tag">UI/UX Design</span>
-        <span class="tech-tag">User Research</span>
-      </div>
-      
-      <!-- Certificate Container -->
-      <div class="certificate-container">
-        <img src="https://jeet52.github.io/Images/SparkHacks_Certificate.png" alt="SparkHacks Certificate" class="certificate-image">
-        <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="certificate-link" target="_blank">
-          <i class="fab fa-github"></i>
-          View Project on GitHub
-        </a>
+      <div class="achievement-content">
+        <h3>UIC SparkHacks Winner</h3>
+        <div class="achievement-subtitle">SparkHacks Favorite Award</div>
       </div>
     </div>
-  </section>
+    <div class="achievement-description">
+      Won the prestigious "SparkHacks Favorite" award at UIC's SparkHacks hackathon for developing "Outting Otters" - 
+      a revolutionary social media app designed specifically for introverts. The app features innovative achievement systems, 
+      comfortable social connections, and intuitive event hosting capabilities that prioritize user comfort and authentic interactions.
+    </div>
+    <div class="achievement-tech">
+      <span class="tech-tag">Swift</span>
+      <span class="tech-tag">iOS Development</span>
+      <span class="tech-tag">Figma</span>
+      <span class="tech-tag">UI/UX Design</span>
+      <span class="tech-tag">User Research</span>
+    </div>
+    
+    <!-- GitHub Link Above Certificate -->
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; margin-top: 3rem;">
+      
+      <!-- GitHub Button (above certificate) -->
+      <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" 
+         class="btn btn-primary" target="_blank" style="font-size: 0.9rem;">
+        <i class="fab fa-github"></i>
+        View Project Code
+      </a>
+
+      <!-- Certificate Image -->
+      <div style="text-align: center;">
+        <img src="Images/SparkHacks_Certificate.jpg" alt="SparkHacks Certificate" 
+             style="max-width: 400px; width: 100%; height: auto; border-radius: 15px; 
+                    box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3); 
+                    border: 3px solid rgba(255, 215, 0, 0.5);
+                    transition: all 0.4s ease;"
+             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 20px 60px rgba(255, 215, 0, 0.5)'"
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 15px 50px rgba(255, 215, 0, 0.3)'">
+      </div>
+
+      <!-- Download Button (below certificate) -->
+      <a href="#" class="btn btn-secondary" 
+         onclick="showNotification('Certificate downloaded!', 'success')" 
+         style="font-size: 0.9rem;">
+        <i class="fas fa-download"></i>
+        Download Certificate
+      </a>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- Enhanced Projects Section - 4 per row layout -->
 <section id="projects" class="animate-on-scroll">
@@ -1581,7 +1605,7 @@ footer {
       <div class="project-content">
         <div class="achievement-badge healthcare">
           <i class="fas fa-stethoscope"></i>
-          Healthcare Project
+          Sumptuous Data Science
         </div>
         <p class="project-description">
           Advanced healthcare analytics using OMOP and SDTM data models with statistical modeling in R and Python for clinical insights.
@@ -1616,7 +1640,7 @@ footer {
       <div class="project-content">
         <div class="achievement-badge internship">
           <i class="fas fa-briefcase"></i>
-          Internship Project
+          It Expert System
         </div>
         <p class="project-description">
           Enterprise-grade RESTful API built with ASP.NET Core and Azure SQL integration for comprehensive customer management.
@@ -1651,7 +1675,7 @@ footer {
       <div class="project-content">
         <div class="achievement-badge internship">
           <i class="fas fa-briefcase"></i>
-          Internship Project
+          It Expert System
         </div>
         <p class="project-description">
           Scalable Flask web application deployed on AWS EC2 with MySQL database on RDS, featuring user authentication and management.
@@ -1686,7 +1710,7 @@ footer {
       <div class="project-content">
         <div class="achievement-badge university">
           <i class="fas fa-university"></i>
-          UIC Project
+          UIC 
         </div>
         <p class="project-description">
           Comprehensive statistical analysis examining key predictors of diabetes progression using advanced regression techniques.
