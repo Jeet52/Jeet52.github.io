@@ -313,62 +313,53 @@ section {
 }
 
 /* Skills Section */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
+<div class="skill-card glass hover-glow">
+  <div class="skill-icon">
+    <i class="fas fa-code"></i>
+  </div>
+  <h3 class="skill-title">Programming & Frameworks</h3>
+  <div class="skill-list">
+    Python • R • SAS • SQL<br>
+    C++ • C • Kotlin • Swift<br>
+    HTML • CSS • Flask • Pillow
+  </div>
+</div>
 
-.skill-card {
-  padding: 2rem;
-  border-radius: 20px;
-  text-align: center;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
+<div class="skill-card glass hover-glow">
+  <div class="skill-icon">
+    <i class="fas fa-chart-bar"></i>
+  </div>
+  <h3 class="skill-title">Data & Analytics</h3>
+  <div class="skill-list">
+    Power BI • Tableau • Excel<br>
+    OMOP CDM • SDTM<br>
+    ERD Modeling • Statistical Analysis
+  </div>
+</div>
 
-.skill-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-primary);
-}
+<div class="skill-card glass hover-glow">
+  <div class="skill-icon">
+    <i class="fas fa-cloud"></i>
+  </div>
+  <h3 class="skill-title">Cloud & DevOps</h3>
+  <div class="skill-list">
+    AWS EC2 • AWS RDS<br>
+    Azure SQL Database • Azure App Services<br>
+    GitHub Actions • CI/CD Pipelines
+  </div>
+</div>
 
-.skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
-}
-
-.skill-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: white;
-}
-
-.skill-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--color-text);
-}
-
-.skill-list {
-  color: var(--color-text-muted);
-  line-height: 1.8;
-}
-
+<div class="skill-card glass hover-glow">
+  <div class="skill-icon">
+    <i class="fas fa-brain"></i>
+  </div>
+  <h3 class="skill-title">Machine Learning</h3>
+  <div class="skill-list">
+    Logistic Regression<br>
+    Random Forest<br>
+    Model Evaluation • Feature Engineering
+  </div>
+</div>
 /* Enhanced Experience Timeline with Logos */
 .timeline {
   position: relative;
@@ -1270,19 +1261,20 @@ footer {
     <button class="lang-btn" onclick="switchLanguage('hi')">हि</button>
   </div>
 
-  <!-- Navigation -->
-  <nav class="glass">
-    <ul>
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Updated Navigation -->
+<nav class="glass">
+  <ul>
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
@@ -1496,6 +1488,51 @@ footer {
       </div>
     </div>
   </section>
+
+  <!-- Research Section -->
+<section id="research" class="animate-on-scroll">
+  <h2 class="section-title">Research Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item glass hover-glow">
+      <div class="company-logo">
+        <img src="Images/UIC_Logo.png" alt="University of Illinois Chicago">
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-title">Behavioral Research Assistant</div>
+        <div class="timeline-company">COMRB - College of Medicine Research Building</div>
+        <div class="timeline-duration">January 2026 - Present • On-site</div>
+        <p>Building and testing Arduino circuits using C++ for behavioral experiments. Cleaning and structuring behavioral research data in R, modeling risk-seeking behavior, and evaluating model fit using R² in RMarkdown for comprehensive statistical analysis.</p>
+        <div class="project-tech" style="margin-top: 1rem;">
+          <span class="tech-tag">C++</span>
+          <span class="tech-tag">Arduino</span>
+          <span class="tech-tag">R</span>
+          <span class="tech-tag">RMarkdown</span>
+          <span class="tech-tag">Statistical Modeling</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item glass hover-glow">
+      <div class="company-logo">
+        <img src="Images/NASA_Logo.png" alt="NASA MIRO Center">
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-title">Research Analyst</div>
+        <div class="timeline-company">CISM-R2 - NASA MIRO Center for In-Space Manufacturing</div>
+        <div class="timeline-duration">December 2025 - Present • Hybrid</div>
+        <p>Performing advanced statistical analysis including ANOVA and linear regression using R, Python, and Excel. Creating interactive data visualizations and dashboards in Power BI and Tableau for research presentations and stakeholder communication.</p>
+        <div class="project-tech" style="margin-top: 1rem;">
+          <span class="tech-tag">R</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">ANOVA</span>
+          <span class="tech-tag">Linear Regression</span>
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">Tableau</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="animate-on-scroll">
