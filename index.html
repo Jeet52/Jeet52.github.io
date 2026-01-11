@@ -1381,77 +1381,101 @@ footer {
   <!-- Skills Section -->
   <section id="skills" class="animate-on-scroll">
     <h2 class="section-title">Technical Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h3 class="skill-title">Data Analysis</h3>
-        <div class="skill-list">
-          Python • R • SAS • SQL<br>
-          Pandas • NumPy • Scikit-learn<br>
-          Statistical Modeling • Machine Learning
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-cloud"></i>
-        </div>
-        <h3 class="skill-title">Cloud & DevOps</h3>
-        <div class="skill-list">
-          AWS EC2 • AWS RDS • Azure<br>
-          Docker • CI/CD • GitHub Actions<br>
-          Azure Functions • Cloud Architecture
-        </div>
-      </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
+    
+    <!-- Programming & Frameworks -->
+    <div class="skill-category glass hover-glow" style="margin-bottom: 2rem; padding: 2.5rem; border-radius: 25px; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-primary);"></div>
+      <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="width: 70px; height: 70px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; flex-shrink: 0; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">
           <i class="fas fa-code"></i>
         </div>
-        <h3 class="skill-title">Development</h3>
-        <div class="skill-list">
-          Python • C++ • C# • Swift<br>
-          Flask • .NET • ASP.NET Core<br>
-          HTML • CSS • JavaScript
+        <div>
+          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.3rem;">Programming & Frameworks</h3>
+          <p style="color: var(--color-text-muted); margin: 0;">Languages and development tools I work with</p>
         </div>
       </div>
-
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-database"></i>
-        </div>
-        <h3 class="skill-title">Data Management</h3>
-        <div class="skill-list">
-          MySQL • PostgreSQL • OMOP CDM<br>
-          SDTM • ERD Modeling<br>
-          Data Warehousing • ETL Processes
-        </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">R</span>
+        <span class="tech-tag">SAS</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">C++</span>
+        <span class="tech-tag">C</span>
+        <span class="tech-tag">C#</span>
+        <span class="tech-tag">Kotlin</span>
+        <span class="tech-tag">Swift</span>
+        <span class="tech-tag">HTML</span>
+        <span class="tech-tag">CSS</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">.NET</span>
+        <span class="tech-tag">ASP.NET Core</span>
+        <span class="tech-tag">Pillow</span>
       </div>
+    </div>
 
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
+    <!-- Data & Analytics -->
+    <div class="skill-category glass hover-glow" style="margin-bottom: 2rem; padding: 2.5rem; border-radius: 25px; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #10b981 0%, #059669 100%);"></div>
+      <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; flex-shrink: 0; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);">
           <i class="fas fa-chart-bar"></i>
         </div>
-        <h3 class="skill-title">Visualization</h3>
-        <div class="skill-list">
-          Power BI • Tableau • Excel<br>
-          Matplotlib • Seaborn • ggplot2<br>
-          Interactive Dashboards
+        <div>
+          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.3rem;">Data & Analytics</h3>
+          <p style="color: var(--color-text-muted); margin: 0;">Visualization and data modeling expertise</p>
         </div>
       </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <span class="tech-tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Power BI</span>
+        <span class="tech-tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Tableau</span>
+        <span class="tech-tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Excel</span>
+        <span class="tech-tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">OMOP CDM</span>
+        <span class="tech-tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">SDTM</span>
+        <span class="tech-tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">ERD Modeling</span>
+      </div>
+    </div>
 
-      <div class="skill-card glass hover-glow">
-        <div class="skill-icon">
-          <i class="fas fa-mobile-alt"></i>
+    <!-- Cloud & DevOps -->
+    <div class="skill-category glass hover-glow" style="margin-bottom: 2rem; padding: 2.5rem; border-radius: 25px; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);"></div>
+      <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; flex-shrink: 0; box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);">
+          <i class="fas fa-cloud"></i>
         </div>
-        <h3 class="skill-title">Mobile & Design</h3>
-        <div class="skill-list">
-          Swift • Kotlin • iOS Development<br>
-          Figma • UI/UX Design<br>
-          Prototyping • User Research
+        <div>
+          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.3rem;">Cloud & DevOps</h3>
+          <p style="color: var(--color-text-muted); margin: 0;">Cloud platforms and deployment tools</p>
         </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <span class="tech-tag" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">AWS EC2</span>
+        <span class="tech-tag" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">AWS RDS</span>
+        <span class="tech-tag" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">Azure SQL Database</span>
+        <span class="tech-tag" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">Azure App Services</span>
+        <span class="tech-tag" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">Azure Functions</span>
+        <span class="tech-tag" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">GitHub Actions</span>
+      </div>
+    </div>
+
+    <!-- Machine Learning -->
+    <div class="skill-category glass hover-glow" style="padding: 2.5rem; border-radius: 25px; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-secondary);"></div>
+      <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="width: 70px; height: 70px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; flex-shrink: 0; box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div>
+          <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.3rem;">Machine Learning</h3>
+          <p style="color: var(--color-text-muted); margin: 0;">ML algorithms and statistical methods</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <span class="tech-tag" style="background: rgba(240, 147, 251, 0.2); color: #f093fb; border-color: rgba(240, 147, 251, 0.3);">Logistic Regression</span>
+        <span class="tech-tag" style="background: rgba(240, 147, 251, 0.2); color: #f093fb; border-color: rgba(240, 147, 251, 0.3);">Random Forest</span>
+        <span class="tech-tag" style="background: rgba(240, 147, 251, 0.2); color: #f093fb; border-color: rgba(240, 147, 251, 0.3);">Linear Regression</span>
+        <span class="tech-tag" style="background: rgba(240, 147, 251, 0.2); color: #f093fb; border-color: rgba(240, 147, 251, 0.3);">ANOVA</span>
+        <span class="tech-tag" style="background: rgba(240, 147, 251, 0.2); color: #f093fb; border-color: rgba(240, 147, 251, 0.3);">PyTorch</span>
+        <span class="tech-tag" style="background: rgba(240, 147, 251, 0.2); color: #f093fb; border-color: rgba(240, 147, 251, 0.3);">CNN</span>
       </div>
     </div>
   </section>
@@ -1542,6 +1566,95 @@ footer {
     </div>
   </div>
 </section>
+
+  <!-- Tutoring Section -->
+  <section id="tutoring" class="animate-on-scroll">
+    <h2 class="section-title">Tutoring Experience</h2>
+    <div class="glass hover-glow" style="padding: 3rem; border-radius: 25px; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);"></div>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <!-- Left: Image -->
+        <div style="position: relative;">
+          <img src="Images/Jeet_Tutoring.jpg" alt="Jeet Patel Tutoring" 
+               style="width: 100%; height: auto; border-radius: 20px; 
+                      box-shadow: 0 15px 50px rgba(245, 158, 11, 0.3); 
+                      border: 3px solid rgba(245, 158, 11, 0.3);
+                      transition: all 0.4s ease;"
+               onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 20px 60px rgba(245, 158, 11, 0.5)'"
+               onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 15px 50px rgba(245, 158, 11, 0.3)'">
+          <div style="position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 0.5rem 1rem; border-radius: 15px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">
+            <i class="fas fa-graduation-cap"></i> Active Tutor
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div>
+              <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.3rem;">Peer Tutor</h3>
+              <p style="color: var(--color-text-muted); margin: 0; font-size: 1rem;">University of Illinois Chicago</p>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+              <div style="width: 8px; height: 8px; background: #f59e0b; border-radius: 50%;"></div>
+              <p style="font-size: 1.1rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                <strong style="color: var(--color-text);">MSLC (Math & Science Learning Center):</strong> Bio 110
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 8px; height: 8px; background: #f59e0b; border-radius: 50%;"></div>
+              <p style="font-size: 1.1rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                <strong style="color: var(--color-text);">ASAP (Academic Support & Achievement Program):</strong> Math 90, Math 110, Math 121, Math 180
+              </p>
+            </div>
+          </div>
+
+          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+            Passionate about helping students excel in mathematics and biology. I provide one-on-one and group tutoring sessions, 
+            breaking down complex concepts into digestible explanations. My approach focuses on building strong foundational 
+            understanding while developing problem-solving skills that extend beyond the classroom.
+          </p>
+
+          <!-- Stats -->
+          <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+            <div style="text-align: center; padding: 1rem; background: rgba(245, 158, 11, 0.1); border-radius: 15px; flex: 1; min-width: 120px; border: 1px solid rgba(245, 158, 11, 0.2);">
+              <div style="font-size: 2rem; font-weight: 700; color: #f59e0b; margin-bottom: 0.3rem;">5+</div>
+              <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Courses</div>
+            </div>
+            <div style="text-align: center; padding: 1rem; background: rgba(245, 158, 11, 0.1); border-radius: 15px; flex: 1; min-width: 120px; border: 1px solid rgba(245, 158, 11, 0.2);">
+              <div style="font-size: 2rem; font-weight: 700; color: #f59e0b; margin-bottom: 0.3rem;">100+</div>
+              <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Students Helped</div>
+            </div>
+            <div style="text-align: center; padding: 1rem; background: rgba(245, 158, 11, 0.1); border-radius: 15px; flex: 1; min-width: 120px; border: 1px solid rgba(245, 158, 11, 0.2);">
+              <div style="font-size: 2rem; font-weight: 700; color: #f59e0b; margin-bottom: 0.3rem;">2</div>
+              <div style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">Programs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Responsive Layout -->
+      <style>
+        @media (max-width: 968px) {
+          #tutoring .glass > div {
+            grid-template-columns: 1fr !important;
+          }
+          #tutoring .glass > div > div:first-child {
+            order: 2;
+          }
+          #tutoring .glass > div > div:last-child {
+            order: 1;
+          }
+        }
+      </style>
+    </div>
+  </section>
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="animate-on-scroll">
