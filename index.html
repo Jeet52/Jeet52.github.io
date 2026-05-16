@@ -282,6 +282,28 @@
       font-weight: 300; margin-bottom: 1rem; max-width: 560px;
     }
 
+
+    /* ---- LOGOS ---- */
+    .tl-logo {
+      width: 64px; height: 64px; background: #fff;
+      border: 1px solid var(--rule); border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      padding: 8px; margin-bottom: 1rem; overflow: hidden;
+      flex-shrink: 0;
+    }
+    .tl-logo img {
+      width: 100%; height: 100%; object-fit: contain;
+    }
+    .research-logo {
+      width: 56px; height: 56px; background: #fff;
+      border: 1px solid var(--rule); border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      padding: 7px; margin-bottom: 1rem; overflow: hidden;
+    }
+    .research-logo img {
+      width: 100%; height: 100%; object-fit: contain;
+    }
+
     /* ---- PROJECTS ---- */
     .filter-row {
       display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem;
@@ -503,10 +525,13 @@
 
     /* ---- SCROLL REVEAL ---- */
     .reveal {
-      opacity: 0; transform: translateY(24px);
+      opacity: 1; transform: none;
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.in { opacity: 1; transform: none; }
+    .js-loaded .reveal {
+      opacity: 0; transform: translateY(24px);
+    }
+    .js-loaded .reveal.in { opacity: 1; transform: none; }
 
     /* ---- RESEARCH ---- */
     .research-grid {
@@ -833,6 +858,7 @@
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-meta">
+          <div class="tl-logo"><img src="Images/SDS_Logo.png" alt="Sumptuous Data Sciences"></div>
           <div class="tl-date">Jul – Aug 2025</div>
           <div class="tl-company">Sumptuous Data Sciences</div>
           <span class="tl-type">Remote</span>
@@ -847,6 +873,7 @@
       </div>
       <div class="tl-item">
         <div class="tl-meta">
+          <div class="tl-logo"><img src="Images/IT_Expert_Logo.png" alt="IT Expert System"></div>
           <div class="tl-date">Jun – Aug 2025</div>
           <div class="tl-company">IT Expert System, Inc</div>
           <span class="tl-type">Hybrid</span>
@@ -861,6 +888,7 @@
       </div>
       <div class="tl-item">
         <div class="tl-meta">
+          <div class="tl-logo"><img src="Images/NIU_Logo.png" alt="Northern Illinois University"></div>
           <div class="tl-date">May – Aug 2022</div>
           <div class="tl-company">Northern Illinois University</div>
           <span class="tl-type">On-site</span>
@@ -885,6 +913,7 @@
     </div>
     <div class="research-grid">
       <div class="research-card">
+        <div class="research-logo"><img src="Images/NASA_Logo.png" alt="NASA MIRO"></div>
         <div class="research-lab">Dec 2025 – Present · Hybrid</div>
         <h3 class="research-title">NASA MIRO Center for In-Space Manufacturing</h3>
         <p class="research-dept">Department of Mechanical and Industrial Engineering, College of Engineering</p>
@@ -894,6 +923,7 @@
         </div>
       </div>
       <div class="research-card">
+        <div class="research-logo"><img src="Images/LujanLab.png" alt="Lujan Laboratory"></div>
         <div class="research-lab">Jan 2026 – Present · On-site</div>
         <h3 class="research-title">Lujan Laboratory</h3>
         <p class="research-dept">Department of Anatomy and Cell Biology, College of Medicine</p>
@@ -903,6 +933,7 @@
         </div>
       </div>
       <div class="research-card">
+        <div class="research-logo"><img src="Images/WTSE.png" alt="Wearable Tech Lab"></div>
         <div class="research-lab">Jan 2026 – Present</div>
         <h3 class="research-title">Wearable Technology & Sensory Enhancement Lab</h3>
         <p class="research-dept">Department of Biomedical Engineering, College of Engineering & Medicine</p>
@@ -1162,11 +1193,17 @@
       document.getElementById('back-top').classList.toggle('vis', window.scrollY > 400);
     });
 
-    // Scroll reveal
+    // Scroll reveal — only hide elements once JS is confirmed running
+    document.body.classList.add('js-loaded');
     const revealObs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+    // Immediately reveal anything already in view on load
+    document.querySelectorAll('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add('in');
+    });
 
     // Nav highlight
     const navLinks = document.querySelectorAll('.nav-links a');
