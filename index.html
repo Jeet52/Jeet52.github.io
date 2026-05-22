@@ -187,6 +187,10 @@
       margin-bottom: 4rem; padding-bottom: 1.5rem;
       border-bottom: 1px solid var(--rule);
     }
+    .section-header.centered {
+      flex-direction: column; align-items: center; text-align: center; gap: 0.5rem;
+    }
+    .section-header.centered .section-num { margin-top: 0; }
     .section-num {
       font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint);
       letter-spacing: 0.08em; flex-shrink: 0; margin-top: 0.4rem;
@@ -250,7 +254,7 @@
     .tag.gold { background: rgba(184,134,11,0.08); color: var(--gold); border-color: rgba(184,134,11,0.2); }
 
     /* ---- TIMELINE ---- */
-    .timeline { position: relative; }
+    .timeline { position: relative; max-width: 860px; }
     .tl-item {
       display: grid; grid-template-columns: 200px 1fr;
       gap: 3rem; padding: 3rem 0; border-top: 1px solid var(--rule);
@@ -382,7 +386,7 @@
     /* ---- TESTIMONIAL ---- */
     .testimonial-wrap {
       border: 1px solid var(--rule); background: var(--paper-warm);
-      padding: 4rem; max-width: 860px;
+      padding: 4rem; max-width: 860px; margin: 0 auto;
     }
     .testimonial-quote {
       font-family: var(--serif); font-size: clamp(1.2rem, 2.5vw, 1.6rem);
@@ -909,7 +913,7 @@
   <!-- Research -->
   <hr class="section-rule">
   <section id="research" class="reveal">
-    <div class="section-header">
+    <div class="section-header centered">
       <span class="section-num">04</span>
       <h2 class="section-title">Research</h2>
     </div>
@@ -985,7 +989,7 @@
   <!-- Testimonials -->
   <hr class="section-rule">
   <section id="testimonials" class="reveal">
-    <div class="section-header">
+    <div class="section-header centered">
       <span class="section-num">06</span>
       <h2 class="section-title">Testimonials</h2>
     </div>
@@ -1009,7 +1013,7 @@
   <!-- Achievements -->
   <hr class="section-rule">
   <section id="achievements" class="reveal">
-    <div class="section-header">
+    <div class="section-header centered">
       <span class="section-num">07</span>
       <h2 class="section-title">Achievements</h2>
     </div>
@@ -1040,7 +1044,7 @@
   <!-- Projects -->
   <hr class="section-rule">
   <section id="projects" class="reveal">
-    <div class="section-header">
+    <div class="section-header centered">
       <span class="section-num">08</span>
       <h2 class="section-title">Projects</h2>
     </div>
