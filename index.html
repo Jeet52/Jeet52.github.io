@@ -26,8 +26,6 @@
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'DM Sans', system-ui, sans-serif;
       --mono: 'DM Mono', monospace;
-      --col: 72px;
-      --gutter: 24px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,7 +36,49 @@
     ::-webkit-scrollbar-track { background: var(--paper-tint); }
     ::-webkit-scrollbar-thumb { background: var(--ink-faint); }
 
-    /* NAV */
+    /* ── LOADING SCREEN ── */
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--ink);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.75rem;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+    .loader-monogram {
+      font-family: var(--serif); font-weight: 900; font-size: clamp(6rem, 16vw, 11rem);
+      letter-spacing: -6px; line-height: 1; color: var(--paper);
+      position: relative; overflow: hidden;
+    }
+    .loader-monogram .accent-letter { color: var(--accent); }
+    /* wipe-reveal curtain */
+    .loader-monogram::after {
+      content: ''; position: absolute; inset: 0;
+      background: var(--ink);
+      animation: curtain-lift 0.9s cubic-bezier(0.77,0,0.175,1) 0.35s forwards;
+    }
+    @keyframes curtain-lift {
+      0%   { transform: translateX(0%); }
+      100% { transform: translateX(105%); }
+    }
+
+    .loader-rule {
+      width: 0; height: 1px; background: var(--accent);
+      animation: rule-grow 1.1s cubic-bezier(0.4,0,0.2,1) 0.5s forwards;
+    }
+    @keyframes rule-grow { to { width: 220px; } }
+
+    .loader-label {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.3);
+      opacity: 0; animation: fade-up 0.5s ease 0.55s forwards;
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
@@ -63,7 +103,7 @@
     }
     .nav-cta:hover { background: var(--accent); border-color: var(--accent); }
 
-    /* HERO */
+    /* ── HERO ── */
     header {
       min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
       border-bottom: 1px solid var(--rule); margin-top: 60px;
@@ -112,7 +152,7 @@
     .hero-photo { width: 260px; height: 300px; object-fit: cover; border: 2px solid var(--rule); filter: grayscale(20%); }
     .photo-caption { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-soft); margin-top: 0.5rem; letter-spacing: 0.04em; }
 
-    /* SECTION SHELL */
+    /* ── SECTION SHELL ── */
     section { max-width: 1200px; margin: 0 auto; padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 5rem); }
     .section-rule { border: none; border-top: 1px solid var(--rule); max-width: 1200px; margin: 0 auto; }
     .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 4rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
@@ -121,7 +161,7 @@
     .section-num { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); letter-spacing: 0.08em; flex-shrink: 0; margin-top: 0.4rem; }
     .section-title { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -1.5px; color: var(--ink); line-height: 1; }
 
-    /* ABOUT */
+    /* ── ABOUT ── */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .about-body p { font-size: 1.1rem; line-height: 1.8; color: var(--ink-mid); margin-bottom: 1.5rem; font-weight: 300; }
     .about-body p strong { color: var(--ink); font-weight: 500; }
@@ -130,7 +170,7 @@
     .sidebar-value { font-size: 0.95rem; color: var(--ink-mid); font-weight: 300; }
     .sidebar-value strong { color: var(--ink); font-weight: 500; }
 
-    /* SKILLS */
+    /* ── SKILLS ── */
     .skills-masonry { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
     .skill-block { background: var(--paper); padding: 2.5rem; transition: background 0.2s; }
     .skill-block:hover { background: var(--paper-warm); }
@@ -143,7 +183,7 @@
     .tag.green { background: rgba(26,92,56,0.07); color: var(--green); border-color: rgba(26,92,56,0.2); }
     .tag.gold { background: rgba(184,134,11,0.08); color: var(--gold); border-color: rgba(184,134,11,0.2); }
 
-    /* TIMELINE */
+    /* ── TIMELINE ── */
     .timeline { position: relative; max-width: 860px; margin: 0 auto; }
     .tl-item { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 3rem 0; border-top: 1px solid var(--rule); transition: background 0.2s; }
     .tl-item:hover { background: var(--paper-warm); margin: 0 -2rem; padding: 3rem 2rem; }
@@ -154,10 +194,37 @@
     .tl-desc { font-size: 0.95rem; line-height: 1.75; color: var(--ink-mid); font-weight: 300; margin-bottom: 1rem; max-width: 560px; }
     .tl-logo { width: 96px; height: 96px; background: #fff; border: 1px solid var(--rule); border-radius: 4px; display: flex; align-items: center; justify-content: center; padding: 10px; margin-bottom: 1rem; overflow: hidden; flex-shrink: 0; }
     .tl-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+    /* ── RESEARCH ── */
+    .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+    .research-card { background: var(--paper); padding: 2.5rem; transition: background 0.2s; text-align: center; }
+    .research-card .tags { justify-content: center; }
+    .research-card:hover { background: var(--paper-warm); }
+    .research-lab { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
+    .research-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.2; }
+    .research-dept { font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 1.5rem; font-style: italic; font-weight: 300; }
     .research-logo { width: 88px; height: 88px; background: #fff; border: 1px solid var(--rule); border-radius: 4px; display: flex; align-items: center; justify-content: center; padding: 10px; margin-bottom: 1rem; overflow: hidden; margin-left: auto; margin-right: auto; }
     .research-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .research-bullets { list-style: none; text-align: left; margin-top: 0.75rem; }
+    .research-bullets li { font-size: 0.85rem; line-height: 1.65; color: var(--ink-mid); font-weight: 300; padding: 0.3rem 0; padding-left: 1rem; position: relative; }
+    .research-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
 
-    /* PROJECTS */
+    /* ── TUTORING CARDS ── */
+    .tutor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+    .tutor-card { background: var(--paper); padding: 2.5rem; transition: background 0.2s; text-align: center; }
+    .tutor-card:hover { background: var(--paper-warm); }
+    .tutor-card .tags { justify-content: center; }
+    .tutor-logo { width: 88px; height: 88px; background: #fff; border: 1px solid var(--rule); border-radius: 4px; display: flex; align-items: center; justify-content: center; padding: 10px; margin: 0 auto 1rem; overflow: hidden; }
+    .tutor-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .tutor-logo-initials { font-family: var(--serif); font-size: 1.4rem; font-weight: 900; color: var(--ink-soft); }
+    .tutor-period { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
+    .tutor-card-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.2; }
+    .tutor-card-role { font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 1.5rem; font-style: italic; font-weight: 300; }
+    .tutor-bullets { list-style: none; text-align: left; margin-top: 0.75rem; }
+    .tutor-bullets li { font-size: 0.85rem; line-height: 1.65; color: var(--ink-mid); font-weight: 300; padding: 0.3rem 0 0.3rem 1rem; position: relative; }
+    .tutor-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
+
+    /* ── PROJECTS ── */
     .filter-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
     .filter-pill { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; padding: 0.4rem 0.9rem; border: 1px solid var(--rule); background: transparent; color: var(--ink-soft); cursor: pointer; transition: all 0.2s; }
     .filter-pill:hover, .filter-pill.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
@@ -181,7 +248,7 @@
     .badge-blue { background: rgba(26,61,124,0.07); color: var(--blue); border: 1px solid rgba(26,61,124,0.2); }
     .badge-green { background: rgba(26,92,56,0.07); color: var(--green); border: 1px solid rgba(26,92,56,0.2); }
 
-    /* TESTIMONIAL */
+    /* ── TESTIMONIAL ── */
     .testimonial-wrap { border: 1px solid var(--rule); background: var(--paper-warm); padding: 4rem; max-width: 860px; margin: 0 auto; }
     .testimonial-quote { font-family: var(--serif); font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-style: italic; font-weight: 400; line-height: 1.6; color: var(--ink); margin-bottom: 2rem; }
     .testimonial-quote::before { content: '\201C'; font-size: 4rem; color: var(--accent); line-height: 0; vertical-align: -1.5rem; margin-right: 0.3rem; font-family: var(--serif); }
@@ -190,7 +257,7 @@
     .testimonial-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
     .testimonial-role { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); letter-spacing: 0.04em; }
 
-    /* ACHIEVEMENTS */
+    /* ── ACHIEVEMENTS ── */
     .achievement-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); margin-bottom: 1px; }
     .ach-left { padding: 3.5rem; border-right: 1px solid var(--rule); display: flex; flex-direction: column; justify-content: center; }
     .ach-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; background: var(--gold); color: var(--paper); margin-bottom: 2rem; width: fit-content; }
@@ -200,7 +267,6 @@
     .ach-right { padding: 3.5rem; background: var(--paper-warm); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
     .cert-img { max-width: 300px; width: 100%; border: 1px solid var(--rule); filter: sepia(10%); }
 
-    /* CHANCELLOR AWARD - video + award items */
     .chancellor-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); border-top: none; }
     .ach-badge-blue { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; background: var(--blue); color: var(--paper); margin-bottom: 2rem; width: fit-content; }
     .chancellor-right { padding: 3.5rem; background: var(--paper-warm); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
@@ -210,7 +276,7 @@
     .award-item-icon { width: 56px; height: 56px; border: 1px solid var(--rule); background: var(--paper); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
     .award-item-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); text-align: center; }
 
-    /* CONTACT */
+    /* ── CONTACT ── */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
     .contact-info-title { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; color: var(--ink); margin-bottom: 1rem; }
     .contact-info-desc { font-size: 1rem; color: var(--ink-mid); font-weight: 300; line-height: 1.75; margin-bottom: 2.5rem; }
@@ -225,96 +291,58 @@
     .form-input:focus, .form-textarea:focus { border-color: var(--ink); }
     .form-input::placeholder, .form-textarea::placeholder { color: var(--ink-faint); }
 
-    /* FOOTER */
-    footer { border-top: 1px solid var(--rule); padding: 3rem clamp(1.5rem, 5vw, 5rem); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
-    .footer-left { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); letter-spacing: 0.04em; }
-    .footer-socials { display: flex; gap: 1rem; }
-    .footer-socials a { width: 38px; height: 38px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; color: var(--ink-soft); text-decoration: none; font-size: 0.9rem; transition: all 0.2s; }
-    .footer-socials a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    /* ── CERT BLOCK ── */
+    .cert-block { display: flex; align-items: flex-start; gap: 2rem; padding: 2.5rem; background: var(--paper); border: 1px solid var(--rule); transition: background 0.2s; }
+    .cert-block:hover { background: var(--paper-warm); }
+    .cert-issuer { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.4rem; }
+    .cert-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .cert-date { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); }
 
-    /* BACK TO TOP */
-    #back-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--ink); color: var(--paper); border: none; cursor: pointer; font-size: 0.85rem; opacity: 0; transform: translateY(20px); transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
-    #back-top.vis { opacity: 1; transform: translateY(0); }
-    #back-top:hover { background: var(--accent); }
-
-    /* SCROLL REVEAL */
-    .reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
-    .js-loaded .reveal { opacity: 0; transform: translateY(24px); }
-    .js-loaded .reveal.in { opacity: 1; transform: none; }
-
-    /* RESEARCH */
-    .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-    .research-card { background: var(--paper); padding: 2.5rem; transition: background 0.2s; text-align: center; }
-    .research-card .tags { justify-content: center; }
-    .research-card:hover { background: var(--paper-warm); }
-    .research-lab { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
-    .research-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.2; }
-    .research-dept { font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 1.5rem; font-style: italic; font-weight: 300; }
-    .research-body { font-size: 0.88rem; line-height: 1.7; color: var(--ink-mid); font-weight: 300; text-align: left; }
-    .research-bullets { list-style: none; text-align: left; margin-top: 0.75rem; }
-    .research-bullets li { font-size: 0.85rem; line-height: 1.65; color: var(--ink-mid); font-weight: 300; padding: 0.3rem 0; padding-left: 1rem; position: relative; }
-    .research-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
-
-    /* MARQUEE */
+    /* ── MARQUEE ── */
     .marquee-wrap { overflow: hidden; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 1rem 0; background: var(--paper-tint); }
     .marquee-track { display: flex; gap: 3rem; width: max-content; animation: marquee 20s linear infinite; }
     .marquee-item { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
     .marquee-item::before { content: '✦ '; color: var(--accent); }
     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* LEADERSHIP & DEVELOPMENT */
-    .leadership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 4rem; }
-    .leadership-block { background: var(--paper); padding: 3rem; transition: background 0.2s; }
-    .leadership-block:hover { background: var(--paper-warm); }
-    .leadership-block-full { grid-column: 1 / -1; }
-    .leadership-eye { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
-    .leadership-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--ink); margin-bottom: 1rem; }
-    .leadership-desc { font-size: 0.9rem; line-height: 1.75; color: var(--ink-mid); font-weight: 300; }
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--rule); padding: 3rem clamp(1.5rem, 5vw, 5rem); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-left { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); letter-spacing: 0.04em; }
+    .footer-socials { display: flex; gap: 1rem; }
+    .footer-socials a { width: 38px; height: 38px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; color: var(--ink-soft); text-decoration: none; font-size: 0.9rem; transition: all 0.2s; }
+    .footer-socials a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
-    /* CLIFTONSTRENGTHS */
-    .strengths-eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.5rem; }
+    /* ── BACK TO TOP ── */
+    #back-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--ink); color: var(--paper); border: none; cursor: pointer; font-size: 0.85rem; opacity: 0; transform: translateY(20px); transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+    #back-top.vis { opacity: 1; transform: translateY(0); }
+    #back-top:hover { background: var(--accent); }
 
-    /* TUTORING */
-    .tutor-wrap { display: grid; grid-template-columns: auto 1fr; gap: 4rem; align-items: start; }
-    .tutor-photo { width: 240px; height: 300px; object-fit: cover; border: 1px solid var(--rule); filter: grayscale(15%); }
-    .tutor-eye { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
-    .tutor-title { font-family: var(--serif); font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; color: var(--ink); margin-bottom: 1.5rem; }
-    .tutor-desc { font-size: 0.95rem; line-height: 1.8; color: var(--ink-mid); font-weight: 300; margin-bottom: 2rem; }
-    .tutor-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 2rem; }
-    .tutor-stat { background: var(--paper); padding: 1.5rem; text-align: center; }
-    .tutor-stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 900; color: var(--ink); line-height: 1; }
-    .tutor-stat-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.4rem; }
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .js-loaded .reveal { opacity: 0; transform: translateY(24px); }
+    .js-loaded .reveal.in { opacity: 1; transform: none; }
 
-    /* CERT CARD */
-    .cert-block { display: flex; align-items: flex-start; gap: 2rem; padding: 2.5rem; background: var(--paper); border: 1px solid var(--rule); transition: background 0.2s; }
-    .cert-block:hover { background: var(--paper-warm); }
-    .cert-icon { width: 56px; height: 56px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; color: var(--ink-soft); }
-    .cert-info {}
-    .cert-issuer { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.4rem; }
-    .cert-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
-    .cert-date { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); }
-
-    /* NOTIFICATIONS */
+    /* ── TOAST ── */
     .toast { position: fixed; top: 80px; right: 2rem; z-index: 1000; background: var(--ink); color: var(--paper); padding: 1rem 1.5rem; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em; border-left: 3px solid var(--accent); animation: toast-in 0.3s ease; max-width: 320px; }
     .toast.success { border-left-color: var(--green); }
     .toast.error { border-left-color: var(--accent); }
     @keyframes toast-in { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
 
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       header { grid-template-columns: 1fr; }
       .hero-right { display: none; }
-      .about-grid, .contact-grid, .achievement-panel, .chancellor-panel, #leadership > div { grid-template-columns: 1fr; }
+      .about-grid, .contact-grid, .achievement-panel, .chancellor-panel { grid-template-columns: 1fr; }
       .tl-item { grid-template-columns: 1fr; gap: 1rem; }
       .projects-grid { grid-template-columns: 1fr; }
-      .tutor-wrap { grid-template-columns: 1fr; }
-      .tutor-photo { width: 100%; height: 260px; }
+      .tutor-grid { grid-template-columns: 1fr; }
       nav .nav-links { display: none; }
       .ach-right, .chancellor-right { padding: 2rem; }
     }
     @media (max-width: 600px) {
       .hero-h1 { font-size: 3rem; }
       .section-title { font-size: 2rem; }
+      .tutor-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -328,6 +356,13 @@
 </script>
 
 <body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-monogram">J<span class="accent-letter">P</span></div>
+    <div class="loader-rule"></div>
+    <div class="loader-label">Data Analyst · UIC 2026</div>
+  </div>
 
   <!-- Nav -->
   <nav>
@@ -376,18 +411,19 @@
         <img src="Images/Patel_Jeet.jpg" alt="Jeet Patel" class="hero-photo">
         <p class="photo-caption">UIC, Chicago IL — 2026</p>
       </div>
+      <!-- Updated stats: Research Labs / Internships / Projects -->
       <div class="hero-stats">
         <div class="stat-box">
           <div class="stat-num">3+</div>
+          <div class="stat-label">Research Labs</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">5+</div>
           <div class="stat-label">Internships</div>
         </div>
         <div class="stat-box">
           <div class="stat-num">12+</div>
           <div class="stat-label">Projects</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">5+</div>
-          <div class="stat-label">Certs</div>
         </div>
       </div>
     </div>
@@ -447,12 +483,12 @@
           <div class="sidebar-value"><strong>May 2026</strong></div>
         </div>
         <div class="sidebar-block">
-          <div class="sidebar-label">Location</div>
-          <div class="sidebar-value"><strong>Chicago, IL</strong></div>
-        </div>
-        <div class="sidebar-block">
           <div class="sidebar-label">Research Labs</div>
           <div class="sidebar-value">NASA MIRO · Luján Laboratory · Wearable Technology & Sensory Enhancement Lab</div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tutoring</div>
+          <div class="sidebar-value">MSLC · ASAP · Discovery Partners Institute (DPI)</div>
         </div>
         <div class="sidebar-block">
           <div class="sidebar-label">Focus Areas</div>
@@ -601,16 +637,15 @@
     </div>
     <div class="research-grid">
 
-      <!-- NASA MIRO -->
       <div class="research-card">
         <div class="research-logo"><img src="Images/NASA_Logo.png" alt="NASA MIRO"></div>
         <div class="research-lab">Dec 2025 – May 2026 · Hybrid</div>
         <h3 class="research-title">NASA MIRO Center for In-Space Manufacturing</h3>
         <p class="research-dept">Department of Mechanical and Industrial Engineering, College of Engineering</p>
         <ul class="research-bullets">
-          <li>Conducted A×B factorial experiments using ANOVA with full LINE diagnostics (linearity, independence, normality, equal variance) to advance space materials research.</li>
+          <li>Conducted A×B factorial experiments using ANOVA with full LINE diagnostics to advance space materials research.</li>
           <li>Applied multiple linear regression to model Ultimate Tensile Strength across experimental conditions.</li>
-          <li>Built interactive dashboards in Power BI and Tableau to support research presentations and stakeholder communication.</li>
+          <li>Built interactive dashboards in Power BI and Tableau to support research presentations.</li>
           <li>Presented findings at the UIC Computational Research Symposium.</li>
         </ul>
         <div class="tags" style="margin-top:1.5rem">
@@ -618,35 +653,30 @@
         </div>
       </div>
 
-      <!-- Lujan Lab -->
       <div class="research-card">
         <div class="research-logo"><img src="Images/LujanLab.png" alt="Lujan Laboratory"></div>
         <div class="research-lab">Jan 2026 – Present · On-site</div>
         <h3 class="research-title">Luján Laboratory</h3>
         <p class="research-dept">Department of Anatomy and Cell Biology, College of Medicine</p>
         <ul class="research-bullets">
-          <li>Analyzed EEG datasets to study human decision-making under varying conditions — after wins vs. losses, and during easy vs. difficult tasks.</li>
-          <li>Performed <strong>Tensor Component Analysis (TCA)</strong> on high-dimensional neural data structured as <em>channel × time × trials</em> to identify latent patterns in brain activity across regions and time.</li>
-          <li>Investigated differences in neural responses related to cognitive effort and behavioral resistance across conditions.</li>
-          <li>Built predictive models in TensorFlow and Python to identify neural factors influencing addiction treatment response and outcomes.</li>
+          <li>Analyzed EEG datasets to study human decision-making under varying conditions.</li>
+          <li>Performed <strong>Tensor Component Analysis (TCA)</strong> on high-dimensional neural data structured as <em>channel × time × trials</em> to identify latent patterns in brain activity.</li>
+          <li>Built predictive models in TensorFlow and Python to identify neural factors influencing addiction treatment response.</li>
         </ul>
         <div class="tags" style="margin-top:1.5rem">
           <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">TCA</span><span class="tag">EEG</span><span class="tag">Arduino</span>
         </div>
       </div>
 
-      <!-- Wearable Tech Lab -->
       <div class="research-card">
         <div class="research-logo"><img src="Images/WTSE.png" alt="Wearable Tech Lab"></div>
         <div class="research-lab">Jan 2026 – May 2026</div>
         <h3 class="research-title">Wearable Technology & Sensory Enhancement Lab</h3>
         <p class="research-dept">Department of Biomedical Engineering, College of Engineering & Medicine</p>
         <ul class="research-bullets">
-          <li>Designed and developed a CNC-based sensor characterization robot using G-code and laser displacement sensors to generate high-precision palate alignment data for stroke patient tongue rehabilitation.</li>
-          <li>Diagnosed, troubleshot, and optimized hardware and software to ensure consistent and reliable system operation.</li>
-          <li>Analyzed sensor data and benchmarked it against human performance metrics to validate system accuracy.</li>
-          <li>Generated and visualized performance metrics using <strong>capacitance heatmaps</strong>, spatial error heatmaps, and <strong>Bland–Altman plots</strong> in R to assess accuracy, agreement, and spatial consistency.</li>
-          <li>Quantified system precision by analyzing within-trial and between-trial variance to evaluate repeatability and reproducibility.</li>
+          <li>Designed a CNC-based sensor characterization robot using G-code for stroke patient tongue rehabilitation.</li>
+          <li>Generated <strong>capacitance heatmaps</strong>, spatial error heatmaps, and <strong>Bland–Altman plots</strong> in R to assess accuracy and spatial consistency.</li>
+          <li>Quantified system precision by analyzing within-trial and between-trial variance.</li>
         </ul>
         <div class="tags" style="margin-top:1.5rem">
           <span class="tag">R</span><span class="tag">G-Code</span><span class="tag">Bland–Altman</span><span class="tag">Heatmaps</span><span class="tag">Sensors</span>
@@ -656,107 +686,11 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <hr class="section-rule">
-  <section id="testimonials" class="reveal">
-    <div class="section-header centered">
-      <span class="section-num">05</span>
-      <h2 class="section-title">Testimonials</h2>
-    </div>
-    <div class="testimonial-wrap">
-      <p class="testimonial-quote">
-        I've had the pleasure of working with Jeet, and I can confidently say he is a hardworking and talented IT professional. His passion for data analysis, web development, and mobile development is evident in every project he takes on. Jeet is a quick learner who consistently adapts to new tools and technologies, often going the extra mile to meet tight deadlines and evolving project demands. One of Jeet's greatest strengths is his collaborative nature — he communicates effectively and contributes positively to any team dynamic. His ability to pick up complex concepts quickly, combined with his dedication and adaptability, makes him a valuable asset to any organization.
-      </p>
-      <div class="testimonial-footer">
-        <div class="testimonial-avatar">HK</div>
-        <div>
-          <div class="testimonial-name">Harry K</div>
-          <div class="testimonial-role">Director of Business Development · IT Expert System, Inc · August 2025</div>
-        </div>
-        <div style="margin-left: auto;">
-          <span class="tl-type">Direct Supervisor</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Achievements -->
-  <hr class="section-rule">
-  <section id="achievements" class="reveal">
-    <div class="section-header centered">
-      <span class="section-num">06</span>
-      <h2 class="section-title">Achievements</h2>
-    </div>
-
-    <!-- SparkHacks -->
-    <div class="achievement-panel">
-      <div class="ach-left">
-        <span class="ach-badge"><i class="fas fa-trophy"></i> Hackathon Winner</span>
-        <h3 class="ach-title">UIC SparkHacks<br>Winner</h3>
-        <p class="ach-subtitle">SparkHacks Favorite Award · 2025</p>
-        <p class="ach-desc">Won the prestigious "SparkHacks Favorite" award for developing <em>Outing Otters</em> — a revolutionary social app designed for introverts, featuring innovative achievement systems, comfortable social connections, and intuitive event hosting that prioritizes authentic interaction.</p>
-        <div class="tags" style="margin-bottom:2rem">
-          <span class="tag">Swift</span>
-          <span class="tag">iOS</span>
-          <span class="tag">Figma</span>
-          <span class="tag">UI/UX</span>
-          <span class="tag">User Research</span>
-        </div>
-        <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="btn-primary" target="_blank">
-          <i class="fab fa-github"></i> View Project Code
-        </a>
-      </div>
-      <div class="ach-right">
-        <img src="Images/SparkHacks_Certificate.jpg" alt="SparkHacks Certificate" class="cert-img">
-        <a href="#" class="btn-outline" onclick="showNotification('Certificate downloaded!', 'success')">↓ Download Certificate</a>
-      </div>
-    </div>
-
-    <!-- Chancellor's Award -->
-    <div class="chancellor-panel">
-      <div class="ach-left">
-        <span class="ach-badge-blue"><i class="fas fa-award"></i> University Honor</span>
-        <h3 class="ach-title">Chancellor's Student<br>Service Award</h3>
-        <p class="ach-subtitle">54th Annual Chancellor's Student Service & Leadership Awards · April 2026</p>
-        <p class="ach-desc">Honored at UIC's 54th Annual Chancellor's Student Service and Leadership Awards, sponsored by Student Leadership and Civic Engagement. Recognized for outstanding commitment to student success through peer tutoring at the Math and Science Learning Center (MSLC) and the Academic Support and Achievement Program (ASAP), as well as active involvement in leadership development programs.</p>
-        <div class="tags" style="margin-bottom:2rem">
-          <span class="tag">Service Award</span>
-          <span class="tag">Cord</span>
-          <span class="tag">Pin</span>
-          <span class="tag">MSLC</span>
-          <span class="tag">ASAP</span>
-        </div>
-      </div>
-      <div class="chancellor-right">
-        <!-- Replace src with your actual video file path, e.g. "Videos/chancellors_handshake.mp4" -->
-        <video class="award-video" controls poster="Images/Patel_Jeet.jpg">
-          <source src="Videos/chancellors_award.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="award-items">
-          <div class="award-item">
-            <div class="award-item-icon">🏅</div>
-            <div class="award-item-label">Award</div>
-          </div>
-          <div class="award-item">
-            <div class="award-item-icon">🎓</div>
-            <div class="award-item-label">Cord</div>
-          </div>
-          <div class="award-item">
-            <div class="award-item-icon">📌</div>
-            <div class="award-item-label">Pin</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
   <!-- Projects -->
   <hr class="section-rule">
   <section id="projects" class="reveal">
     <div class="section-header centered">
-      <span class="section-num">07</span>
+      <span class="section-num">05</span>
       <h2 class="section-title">Projects</h2>
     </div>
     <div class="filter-row">
@@ -825,43 +759,170 @@
     <div id="noResults" style="display:none; text-align:center; padding:4rem 0; color:var(--ink-faint); font-family:var(--mono); font-size:0.8rem; letter-spacing:0.06em;">NO RESULTS FOUND</div>
   </section>
 
-  <!-- Tutoring -->
+  <!-- Testimonials -->
+  <hr class="section-rule">
+  <section id="testimonials" class="reveal">
+    <div class="section-header centered">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Testimonials</h2>
+    </div>
+    <div class="testimonial-wrap">
+      <p class="testimonial-quote">
+        I've had the pleasure of working with Jeet, and I can confidently say he is a hardworking and talented IT professional. His passion for data analysis, web development, and mobile development is evident in every project he takes on. Jeet is a quick learner who consistently adapts to new tools and technologies, often going the extra mile to meet tight deadlines and evolving project demands. One of Jeet's greatest strengths is his collaborative nature — he communicates effectively and contributes positively to any team dynamic. His ability to pick up complex concepts quickly, combined with his dedication and adaptability, makes him a valuable asset to any organization.
+      </p>
+      <div class="testimonial-footer">
+        <div class="testimonial-avatar">HK</div>
+        <div>
+          <div class="testimonial-name">Harry K</div>
+          <div class="testimonial-role">Director of Business Development · IT Expert System, Inc · August 2025</div>
+        </div>
+        <div style="margin-left: auto;">
+          <span class="tl-type">Direct Supervisor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <hr class="section-rule">
+  <section id="achievements" class="reveal">
+    <div class="section-header centered">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Achievements</h2>
+    </div>
+
+    <!-- SparkHacks — "Download Certificate" removed -->
+    <div class="achievement-panel">
+      <div class="ach-left">
+        <span class="ach-badge"><i class="fas fa-trophy"></i> Hackathon Winner</span>
+        <h3 class="ach-title">UIC SparkHacks<br>Winner</h3>
+        <p class="ach-subtitle">SparkHacks Favorite Award · 2025</p>
+        <p class="ach-desc">Won the prestigious "SparkHacks Favorite" award for developing <em>Outing Otters</em> — a revolutionary social app designed for introverts, featuring innovative achievement systems, comfortable social connections, and intuitive event hosting that prioritizes authentic interaction.</p>
+        <div class="tags" style="margin-bottom:2rem">
+          <span class="tag">Swift</span>
+          <span class="tag">iOS</span>
+          <span class="tag">Figma</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">User Research</span>
+        </div>
+        <a href="https://github.com/Jeet52/Outing-Otter-Hackathon-Project" class="btn-primary" target="_blank">
+          <i class="fab fa-github"></i> View Project Code
+        </a>
+      </div>
+      <div class="ach-right">
+        <img src="Images/SparkHacks_Certificate.jpg" alt="SparkHacks Certificate" class="cert-img">
+      </div>
+    </div>
+
+    <!-- Chancellor's Award -->
+    <div class="chancellor-panel">
+      <div class="ach-left">
+        <span class="ach-badge-blue"><i class="fas fa-award"></i> University Honor</span>
+        <h3 class="ach-title">Chancellor's Student<br>Service Award</h3>
+        <p class="ach-subtitle">54th Annual Chancellor's Student Service & Leadership Awards · April 2026</p>
+        <p class="ach-desc">Honored at UIC's 54th Annual Chancellor's Student Service and Leadership Awards, sponsored by Student Leadership and Civic Engagement. Recognized for outstanding commitment to student success through peer tutoring at the Math and Science Learning Center (MSLC) and the Academic Support and Achievement Program (ASAP), as well as active involvement in leadership development programs.</p>
+        <div class="tags" style="margin-bottom:2rem">
+          <span class="tag">Service Award</span>
+          <span class="tag">Cord</span>
+          <span class="tag">Pin</span>
+          <span class="tag">MSLC</span>
+          <span class="tag">ASAP</span>
+        </div>
+      </div>
+      <div class="chancellor-right">
+        <video class="award-video" controls poster="Images/Patel_Jeet.jpg">
+          <source src="Videos/chancellors_award.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="award-items">
+          <div class="award-item">
+            <div class="award-item-icon">🏅</div>
+            <div class="award-item-label">Award</div>
+          </div>
+          <div class="award-item">
+            <div class="award-item-icon">🎓</div>
+            <div class="award-item-label">Cord</div>
+          </div>
+          <div class="award-item">
+            <div class="award-item-icon">📌</div>
+            <div class="award-item-label">Pin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Tutoring — 3 cards: MSLC, ASAP, DPI -->
   <hr class="section-rule">
   <section id="tutoring" class="reveal">
     <div class="section-header centered">
       <span class="section-num">08</span>
       <h2 class="section-title">Tutoring</h2>
     </div>
-    <div class="tutor-wrap">
-      <img src="Images/Jeet_Tutoring.jpg" alt="Jeet Patel Tutoring" class="tutor-photo">
-      <div class="tutor-content">
-        <div class="tutor-eye">University of Illinois Chicago</div>
-        <h3 class="tutor-title">Peer Tutor — Mathematics &amp; Biology</h3>
-        <div class="tutor-stats">
-          <div class="tutor-stat">
-            <div class="tutor-stat-num">5+</div>
-            <div class="tutor-stat-label">Courses</div>
-          </div>
-          <div class="tutor-stat">
-            <div class="tutor-stat-num">100+</div>
-            <div class="tutor-stat-label">Students</div>
-          </div>
-          <div class="tutor-stat">
-            <div class="tutor-stat-num">2</div>
-            <div class="tutor-stat-label">Programs</div>
-          </div>
+    <div class="tutor-grid">
+
+      <!-- MSLC -->
+      <div class="tutor-card">
+        <div class="tutor-logo">
+          <img src="Images/UIC_Logo.png" alt="UIC MSLC"
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'tutor-logo-initials\'>MSLC</span>'">
         </div>
-        <p class="tutor-desc">Providing one-on-one and group tutoring through the MSLC (Math & Science Learning Center) and ASAP (Academic Support & Achievement Program), covering Bio 110, Math 90, 110, 121, and 180 (Calculus I). My approach focuses on building foundational understanding while developing problem-solving instincts that extend beyond any single course. This commitment to student success was recognized with the <strong>Chancellor's Student Service Award</strong> at UIC's 54th Annual Leadership Ceremony.</p>
-        <div class="tags">
-          <span class="tag">MSLC · Bio 110</span>
-          <span class="tag">ASAP · Math 90, 110, 121, 180</span>
-          <span class="tag accent">Chancellor's Award Recipient</span>
+        <div class="tutor-period">2024 – Present · On-site</div>
+        <h3 class="tutor-card-title">Math & Science Learning Center</h3>
+        <p class="tutor-card-role">Peer Tutor — Mathematics & Biology · University of Illinois Chicago</p>
+        <ul class="tutor-bullets">
+          <li>Provided drop-in and scheduled tutoring for Bio 110, Math 90, 110, 121, and 180 (Calculus I).</li>
+          <li>Supported 100+ students with one-on-one and group sessions focused on foundational understanding.</li>
+          <li>Developed reusable problem sets and visual aids to accelerate student comprehension.</li>
+        </ul>
+        <div class="tags" style="margin-top:1.5rem">
+          <span class="tag">Bio 110</span><span class="tag">Math 90</span><span class="tag">Math 110</span><span class="tag">Math 121</span><span class="tag">Calculus I</span>
         </div>
       </div>
+
+      <!-- ASAP -->
+      <div class="tutor-card">
+        <div class="tutor-logo">
+          <img src="Images/UIC_Logo.png" alt="UIC ASAP"
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'tutor-logo-initials\'>ASAP</span>'">
+        </div>
+        <div class="tutor-period">2024 – Present · On-site</div>
+        <h3 class="tutor-card-title">Academic Support & Achievement Program</h3>
+        <p class="tutor-card-role">Peer Tutor — Mathematics · University of Illinois Chicago</p>
+        <ul class="tutor-bullets">
+          <li>Served students in the ASAP program with targeted academic support in math courses.</li>
+          <li>Tailored sessions to individual learning styles, closing knowledge gaps and building confidence.</li>
+          <li>Recognized with the <strong>Chancellor's Student Service Award</strong> for this commitment.</li>
+        </ul>
+        <div class="tags" style="margin-top:1.5rem">
+          <span class="tag accent">Chancellor's Award</span><span class="tag">Math Support</span><span class="tag">ASAP Program</span>
+        </div>
+      </div>
+
+      <!-- DPI -->
+      <div class="tutor-card">
+        <div class="tutor-logo">
+          <img src="Images/DPI_Logo.png" alt="Discovery Partners Institute"
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'tutor-logo-initials\'>DPI</span>'">
+        </div>
+        <div class="tutor-period">Jun – Aug 2026 · Harold Washington College</div>
+        <h3 class="tutor-card-title">Discovery Partners Institute</h3>
+        <p class="tutor-card-role">Lead Instructor — Swift & iOS Development · University of Illinois</p>
+        <ul class="tutor-bullets">
+          <li>Teaching Swift and iOS app development to high school students and incoming college freshmen.</li>
+          <li>Designing curriculum pacing and whole-group & individual learning experiences.</li>
+          <li>Preparing scholars to earn the <strong>Swift Associate Certification</strong> through UIC Sandbox Lab.</li>
+        </ul>
+        <div class="tags" style="margin-top:1.5rem">
+          <span class="tag accent">Swift</span><span class="tag accent">Xcode</span><span class="tag">Curriculum Design</span><span class="tag">Pre-College Ed</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Leadership & Development -->
+  <!-- Swift & Instruction -->
   <hr class="section-rule">
   <section id="leadership" class="reveal">
     <div class="section-header centered">
@@ -895,10 +956,21 @@
         </div>
       </div>
 
-      <!-- Swift Associate Certificate -->
+      <!-- Swift Associate Certificate — with image -->
       <div class="cert-block" style="flex-direction:column; align-items:center; justify-content:center; gap:1.5rem; padding:3rem; background:var(--paper-warm); text-align:center;">
-        <div style="width:80px; height:80px; background:#f05123; border-radius:18px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-          <i class="fab fa-swift" style="font-size:2.2rem; color:#fff;"></i>
+        <!-- Swift certificate image — swap src for your actual image path -->
+        <img
+          src="Images/Swift_Certificate.jpg"
+          alt="App Development with Swift Associate Certificate"
+          style="max-width:320px; width:100%; border:1px solid var(--rule); filter:sepia(8%); display:block;"
+          onerror="this.style.display='none'; document.getElementById('swift-fallback').style.display='flex';"
+        >
+        <!-- Fallback icon shown only if image fails to load -->
+        <div id="swift-fallback" style="display:none; flex-direction:column; align-items:center; gap:1rem;">
+          <div style="width:80px; height:80px; background:#f05123; border-radius:18px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="fab fa-swift" style="font-size:2.2rem; color:#fff;"></i>
+          </div>
+          <div style="font-family:var(--mono); font-size:0.72rem; color:var(--ink-faint); letter-spacing:0.06em;">Certificate image coming soon</div>
         </div>
         <div>
           <div class="cert-issuer" style="margin-bottom:0.4rem;">Apple · Certiport</div>
@@ -915,7 +987,6 @@
       </div>
 
     </div>
-
   </section>
 
   <!-- Contact -->
@@ -981,10 +1052,19 @@
   </button>
 
   <script>
+    /* ── LOADER ── */
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 1800);
+    });
+
+    /* ── SCROLL / BACK TO TOP ── */
     window.addEventListener('scroll', () => {
       document.getElementById('back-top').classList.toggle('vis', window.scrollY > 400);
     });
 
+    /* ── SCROLL REVEAL ── */
     document.body.classList.add('js-loaded');
     const revealObs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
@@ -995,6 +1075,7 @@
       if (rect.top < window.innerHeight) el.classList.add('in');
     });
 
+    /* ── NAV ACTIVE ── */
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section[id], header[id]');
     const navObs = new IntersectionObserver(entries => {
@@ -1008,6 +1089,7 @@
     }, { threshold: 0.3 });
     sections.forEach(s => navObs.observe(s));
 
+    /* ── PROJECT FILTER ── */
     const searchBox = document.getElementById('searchBox');
     const filterPills = document.querySelectorAll('.filter-pill');
     const projCards = document.querySelectorAll('.proj-card');
@@ -1037,6 +1119,7 @@
     }));
     searchBox.addEventListener('input', () => { currentSearch = searchBox.value.toLowerCase(); filterProjects(); });
 
+    /* ── CONTACT FORM ── */
     document.getElementById('contactForm').addEventListener('submit', async e => {
       e.preventDefault();
       const btn = e.target.querySelector('button[type=submit]');
