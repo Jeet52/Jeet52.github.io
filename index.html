@@ -304,7 +304,7 @@
     @media (max-width: 900px) {
       header { grid-template-columns: 1fr; }
       .hero-right { display: none; }
-      .about-grid, .contact-grid, .achievement-panel, .chancellor-panel { grid-template-columns: 1fr; }
+      .about-grid, .contact-grid, .achievement-panel, .chancellor-panel, #leadership > div { grid-template-columns: 1fr; }
       .tl-item { grid-template-columns: 1fr; gap: 1rem; }
       .projects-grid { grid-template-columns: 1fr; }
       .tutor-wrap { grid-template-columns: 1fr; }
@@ -341,7 +341,7 @@
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#tutoring">Tutoring</a></li>
-      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#leadership">Swift & DPI</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Hire Me →</a>
@@ -359,6 +359,16 @@
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="#contact" class="btn-outline">Get In Touch</a>
         <button onclick="downloadPortfolio()" class="btn-outline">↓ Resume</button>
+      </div>
+      <div style="margin-top:2rem;">
+        <p style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.65rem;">CliftonStrengths</p>
+        <div class="tags">
+          <span class="tag gold">Learner</span>
+          <span class="tag gold">Activator</span>
+          <span class="tag gold">Positivity</span>
+          <span class="tag gold">Communication</span>
+          <span class="tag gold">Achiever</span>
+        </div>
       </div>
     </div>
     <div class="hero-right">
@@ -856,50 +866,54 @@
   <section id="leadership" class="reveal">
     <div class="section-header centered">
       <span class="section-num">09</span>
-      <h2 class="section-title">Leadership &amp; Development</h2>
+      <h2 class="section-title">Swift &amp; Instruction</h2>
     </div>
 
-    <!-- Certifications -->
-    <div style="margin-bottom:4rem;">
-      <p class="strengths-eyebrow" style="text-align:left; margin-bottom:1.5rem;">Certifications</p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule);">
-        <div class="cert-block">
-          <div class="cert-icon"><i class="fab fa-apple"></i></div>
-          <div class="cert-info">
-            <div class="cert-issuer">Apple · Coursera</div>
-            <div class="cert-name">Swift Programming Certificate</div>
-            <div class="cert-date">iOS Development · SwiftUI · Xcode</div>
-          </div>
-        </div>
-        <div class="cert-block">
-          <div class="cert-icon" style="font-size:1rem; font-weight:700; font-family:var(--mono); color:var(--blue);">KN</div>
-          <div class="cert-info">
-            <div class="cert-issuer">KNIME</div>
-            <div class="cert-name">Data Science Professional Certificate</div>
-            <div class="cert-date">Issued Jan 2026 · AI for Business</div>
-          </div>
-        </div>
-        <div class="cert-block">
-          <div class="cert-icon" style="font-size:0.9rem; font-weight:700; font-family:var(--mono); color:var(--gold);">WR</div>
-          <div class="cert-info">
-            <div class="cert-issuer">Wolfram Research</div>
-            <div class="cert-name">ML Statistical Foundations Professional Certificate</div>
-            <div class="cert-date">Issued Jan 2026 · Calculus, Linear Algebra, Statistics</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); border:1px solid var(--rule);">
 
-    <!-- CliftonStrengths -->
-    <div>
-      <p class="strengths-eyebrow" style="text-align:left; margin-bottom:1.5rem;">CliftonStrengths — Top 5</p>
-      <div class="tags">
-        <span class="tag gold">Learner</span>
-        <span class="tag gold">Activator</span>
-        <span class="tag gold">Positivity</span>
-        <span class="tag gold">Communication</span>
-        <span class="tag gold">Achiever</span>
+      <!-- DPI Lead Instructor -->
+      <div class="cert-block" style="flex-direction:column; gap:1.5rem; padding:3rem;">
+        <div style="display:flex; align-items:flex-start; gap:1.5rem;">
+          <div style="width:72px; height:72px; flex-shrink:0; border:1px solid var(--rule); background:var(--paper); display:flex; align-items:center; justify-content:center; padding:8px; border-radius:4px; overflow:hidden;">
+            <img src="Images/DPI_Logo.png" alt="Discovery Partners Institute" style="width:100%; height:100%; object-fit:contain;" onerror="this.parentElement.innerHTML='<span style=\'font-family:var(--mono);font-size:0.65rem;font-weight:700;color:var(--blue);text-align:center;line-height:1.2;\'>DPI</span>'">
+          </div>
+          <div>
+            <div class="cert-issuer">Discovery Partners Institute · University of Illinois</div>
+            <div class="cert-name">Lead Instructor — Programming in Swift</div>
+            <div class="cert-date">Jun – Aug 2026 · Harold Washington College, Chicago</div>
+          </div>
+        </div>
+        <p style="font-size:0.9rem; line-height:1.75; color:var(--ink-mid); font-weight:300;">
+          Teaching Swift and iOS app development to high school students and incoming college freshmen as part of the Digital Scholars summer pre-college program. Responsible for curriculum pacing, designing whole-group and individual learning experiences, and preparing scholars to earn the <strong>Swift Associate Certification</strong> through UIC Sandbox Lab.
+        </p>
+        <div class="tags">
+          <span class="tag accent">Swift</span>
+          <span class="tag accent">Xcode</span>
+          <span class="tag">Curriculum Design</span>
+          <span class="tag">Pre-College Ed</span>
+          <span class="tag">UIC Sandbox Lab</span>
+        </div>
       </div>
+
+      <!-- Swift Associate Certificate -->
+      <div class="cert-block" style="flex-direction:column; align-items:center; justify-content:center; gap:1.5rem; padding:3rem; background:var(--paper-warm); text-align:center;">
+        <div style="width:80px; height:80px; background:#f05123; border-radius:18px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <i class="fab fa-swift" style="font-size:2.2rem; color:#fff;"></i>
+        </div>
+        <div>
+          <div class="cert-issuer" style="margin-bottom:0.4rem;">Apple · Certiport</div>
+          <div class="cert-name">App Development with Swift</div>
+          <div style="font-family:var(--serif); font-size:1rem; font-style:italic; color:var(--ink-soft); margin-bottom:0.6rem;">Associate</div>
+          <div class="cert-date">Issued November 17, 2025 · Valid 5 years</div>
+          <div style="font-family:var(--mono); font-size:0.65rem; color:var(--ink-faint); margin-top:0.4rem; letter-spacing:0.04em;">Verify: waqQA-H9Fq · verify.certiport.com</div>
+        </div>
+        <div class="tags" style="justify-content:center;">
+          <span class="tag">SwiftUI</span>
+          <span class="tag">Xcode</span>
+          <span class="tag">iOS Development</span>
+        </div>
+      </div>
+
     </div>
 
   </section>
