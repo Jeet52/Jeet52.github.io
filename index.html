@@ -162,10 +162,10 @@
     }
     .hero-photo-wrap {
       margin-bottom: 2rem; position: relative; z-index: 1;
-      width: 160px;
+      width: 260px;
     }
     .hero-photo {
-      width: 160px; height: 160px; object-fit: cover;
+      width: 260px; height: 300px; object-fit: cover;
       border: 2px solid var(--rule); filter: grayscale(20%);
     }
     .photo-caption {
@@ -285,20 +285,21 @@
 
     /* ---- LOGOS ---- */
     .tl-logo {
-      width: 64px; height: 64px; background: #fff;
+      width: 96px; height: 96px; background: #fff;
       border: 1px solid var(--rule); border-radius: 4px;
       display: flex; align-items: center; justify-content: center;
-      padding: 8px; margin-bottom: 1rem; overflow: hidden;
+      padding: 10px; margin-bottom: 1rem; overflow: hidden;
       flex-shrink: 0;
     }
     .tl-logo img {
       width: 100%; height: 100%; object-fit: contain;
     }
     .research-logo {
-      width: 56px; height: 56px; background: #fff;
+      width: 88px; height: 88px; background: #fff;
       border: 1px solid var(--rule); border-radius: 4px;
       display: flex; align-items: center; justify-content: center;
-      padding: 7px; margin-bottom: 1rem; overflow: hidden;
+      padding: 10px; margin-bottom: 1rem; overflow: hidden;
+      margin-left: auto; margin-right: auto;
     }
     .research-logo img {
       width: 100%; height: 100%; object-fit: contain;
@@ -540,8 +541,9 @@
     }
     .research-card {
       background: var(--paper); padding: 2.5rem;
-      transition: background 0.2s;
+      transition: background 0.2s; text-align: center;
     }
+    .research-card .tags { justify-content: center; }
     .research-card:hover { background: var(--paper-warm); }
     .research-lab {
       font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em;
