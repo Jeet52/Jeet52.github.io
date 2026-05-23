@@ -36,7 +36,7 @@
     ::-webkit-scrollbar-track { background: var(--paper-tint); }
     ::-webkit-scrollbar-thumb { background: var(--ink-faint); }
 
-    /* ── LOADING SCREEN ── */
+    /* LOADER */
     #loader {
       position: fixed; inset: 0; z-index: 9999;
       background: var(--ink);
@@ -44,41 +44,28 @@
       transition: opacity 0.7s ease, visibility 0.7s ease;
     }
     #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-
     .loader-monogram {
       font-family: var(--serif); font-weight: 900; font-size: clamp(6rem, 16vw, 11rem);
       letter-spacing: -6px; line-height: 1; color: var(--paper);
       position: relative; overflow: hidden;
     }
     .loader-monogram .accent-letter { color: var(--accent); }
-    /* wipe-reveal curtain */
     .loader-monogram::after {
       content: ''; position: absolute; inset: 0;
       background: var(--ink);
       animation: curtain-lift 0.9s cubic-bezier(0.77,0,0.175,1) 0.35s forwards;
     }
-    @keyframes curtain-lift {
-      0%   { transform: translateX(0%); }
-      100% { transform: translateX(105%); }
-    }
-
-    .loader-rule {
-      width: 0; height: 1px; background: var(--accent);
-      animation: rule-grow 1.1s cubic-bezier(0.4,0,0.2,1) 0.5s forwards;
-    }
+    @keyframes curtain-lift { 0% { transform: translateX(0%); } 100% { transform: translateX(105%); } }
+    .loader-rule { width: 0; height: 1px; background: var(--accent); animation: rule-grow 1.1s cubic-bezier(0.4,0,0.2,1) 0.5s forwards; }
     @keyframes rule-grow { to { width: 220px; } }
-
     .loader-label {
       font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.2em;
       text-transform: uppercase; color: rgba(255,255,255,0.3);
       opacity: 0; animation: fade-up 0.5s ease 0.55s forwards;
     }
-    @keyframes fade-up {
-      from { opacity: 0; transform: translateY(6px); }
-      to   { opacity: 1; transform: none; }
-    }
+    @keyframes fade-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
@@ -103,7 +90,7 @@
     }
     .nav-cta:hover { background: var(--accent); border-color: var(--accent); }
 
-    /* ── HERO ── */
+    /* HERO */
     header {
       min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
       border-bottom: 1px solid var(--rule); margin-top: 60px;
@@ -133,7 +120,6 @@
       text-decoration: none; border: 1px solid var(--rule); transition: all 0.2s; cursor: pointer; font-weight: 500;
     }
     .btn-outline:hover { border-color: var(--ink); }
-
     .hero-right {
       padding: clamp(3rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem);
       display: flex; flex-direction: column; justify-content: flex-end;
@@ -152,7 +138,7 @@
     .hero-photo { width: 260px; height: 300px; object-fit: cover; border: 2px solid var(--rule); filter: grayscale(20%); }
     .photo-caption { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-soft); margin-top: 0.5rem; letter-spacing: 0.04em; }
 
-    /* ── SECTION SHELL ── */
+    /* SECTION SHELL */
     section { max-width: 1200px; margin: 0 auto; padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 5rem); }
     .section-rule { border: none; border-top: 1px solid var(--rule); max-width: 1200px; margin: 0 auto; }
     .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 4rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
@@ -161,7 +147,7 @@
     .section-num { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); letter-spacing: 0.08em; flex-shrink: 0; margin-top: 0.4rem; }
     .section-title { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -1.5px; color: var(--ink); line-height: 1; }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .about-body p { font-size: 1.1rem; line-height: 1.8; color: var(--ink-mid); margin-bottom: 1.5rem; font-weight: 300; }
     .about-body p strong { color: var(--ink); font-weight: 500; }
@@ -170,7 +156,7 @@
     .sidebar-value { font-size: 0.95rem; color: var(--ink-mid); font-weight: 300; }
     .sidebar-value strong { color: var(--ink); font-weight: 500; }
 
-    /* ── SKILLS ── */
+    /* SKILLS */
     .skills-masonry { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
     .skill-block { background: var(--paper); padding: 2.5rem; transition: background 0.2s; }
     .skill-block:hover { background: var(--paper-warm); }
@@ -183,7 +169,7 @@
     .tag.green { background: rgba(26,92,56,0.07); color: var(--green); border-color: rgba(26,92,56,0.2); }
     .tag.gold { background: rgba(184,134,11,0.08); color: var(--gold); border-color: rgba(184,134,11,0.2); }
 
-    /* ── TIMELINE ── */
+    /* TIMELINE */
     .timeline { position: relative; max-width: 860px; margin: 0 auto; }
     .tl-item { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 3rem 0; border-top: 1px solid var(--rule); transition: background 0.2s; }
     .tl-item:hover { background: var(--paper-warm); margin: 0 -2rem; padding: 3rem 2rem; }
@@ -195,7 +181,7 @@
     .tl-logo { width: 96px; height: 96px; background: #fff; border: 1px solid var(--rule); border-radius: 4px; display: flex; align-items: center; justify-content: center; padding: 10px; margin-bottom: 1rem; overflow: hidden; flex-shrink: 0; }
     .tl-logo img { width: 100%; height: 100%; object-fit: contain; }
 
-    /* ── RESEARCH ── */
+    /* RESEARCH */
     .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
     .research-card { background: var(--paper); padding: 2.5rem; transition: background 0.2s; text-align: center; }
     .research-card .tags { justify-content: center; }
@@ -209,26 +195,45 @@
     .research-bullets li { font-size: 0.85rem; line-height: 1.65; color: var(--ink-mid); font-weight: 300; padding: 0.3rem 0; padding-left: 1rem; position: relative; }
     .research-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
 
-    /* ── TUTORING CARDS ── */
-    .tutor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-    .tutor-card { background: var(--paper); padding: 2.5rem; transition: background 0.2s; text-align: center; }
-    .tutor-card:hover { background: var(--paper-warm); }
-    .tutor-card .tags { justify-content: center; }
-    .tutor-logo { width: 88px; height: 88px; background: #fff; border: 1px solid var(--rule); border-radius: 4px; display: flex; align-items: center; justify-content: center; padding: 10px; margin: 0 auto 1rem; overflow: hidden; }
-    .tutor-logo img { width: 100%; height: 100%; object-fit: contain; }
-    .tutor-logo-initials { font-family: var(--serif); font-size: 1.4rem; font-weight: 900; color: var(--ink-soft); }
-    .tutor-period { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
-    .tutor-card-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.2; }
-    .tutor-card-role { font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 1.5rem; font-style: italic; font-weight: 300; }
-    .tutor-bullets { list-style: none; text-align: left; margin-top: 0.75rem; }
-    .tutor-bullets li { font-size: 0.85rem; line-height: 1.65; color: var(--ink-mid); font-weight: 300; padding: 0.3rem 0 0.3rem 1rem; position: relative; }
-    .tutor-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
+    /* TUTORING — unified big section */
+    .tutor-unified {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border: 1px solid var(--rule); background: var(--rule);
+    }
+    .tutor-photo-side {
+      position: relative; overflow: hidden; min-height: 520px;
+    }
+    .tutor-photo-side img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(15%);
+    }
+    .tutor-photo-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(13,13,13,0.75));
+      padding: 2rem;
+    }
+    .tutor-photo-caption {
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+    }
+    .tutor-content-side {
+      background: var(--paper); padding: 3.5rem;
+      display: flex; flex-direction: column; justify-content: center; gap: 0;
+    }
+    .tutor-program { padding: 1.75rem 0; border-bottom: 1px solid var(--rule); }
+    .tutor-program:first-child { padding-top: 0; }
+    .tutor-program:last-child { border-bottom: none; padding-bottom: 0; }
+    .tutor-program-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
+    .tutor-program-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .tutor-program-badge { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.6rem; border: 1px solid var(--rule); color: var(--ink-soft); white-space: nowrap; flex-shrink: 0; }
+    .tutor-program-role { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 0.6rem; }
+    .tutor-courses { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.5rem; }
 
-    /* ── PROJECTS ── */
+    /* PROJECTS */
     .filter-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
     .filter-pill { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; padding: 0.4rem 0.9rem; border: 1px solid var(--rule); background: transparent; color: var(--ink-soft); cursor: pointer; transition: all 0.2s; }
     .filter-pill:hover, .filter-pill.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-    .search-input { flex: 1; min-width: 200px; padding: 0.4rem 1rem; border: 1px solid var(--rule); background: transparent; font-family: var(--sans); font-size: 0.85rem; color: var(--ink); outline: none; }
+    .search-input { flex: 1; min-width: 200px; padding: 0.4rem 1rem; border: 1px solid var(--rule); background: transparent; font-family: var(--sans); font-size: 0.85rem; color: var(--ink); outline: none; transition: border-color 0.2s; }
     .search-input:focus { border-color: var(--ink); }
     .search-input::placeholder { color: var(--ink-faint); }
     .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
@@ -248,7 +253,7 @@
     .badge-blue { background: rgba(26,61,124,0.07); color: var(--blue); border: 1px solid rgba(26,61,124,0.2); }
     .badge-green { background: rgba(26,92,56,0.07); color: var(--green); border: 1px solid rgba(26,92,56,0.2); }
 
-    /* ── TESTIMONIAL ── */
+    /* TESTIMONIAL */
     .testimonial-wrap { border: 1px solid var(--rule); background: var(--paper-warm); padding: 4rem; max-width: 860px; margin: 0 auto; }
     .testimonial-quote { font-family: var(--serif); font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-style: italic; font-weight: 400; line-height: 1.6; color: var(--ink); margin-bottom: 2rem; }
     .testimonial-quote::before { content: '\201C'; font-size: 4rem; color: var(--accent); line-height: 0; vertical-align: -1.5rem; margin-right: 0.3rem; font-family: var(--serif); }
@@ -257,7 +262,7 @@
     .testimonial-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
     .testimonial-role { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); letter-spacing: 0.04em; }
 
-    /* ── ACHIEVEMENTS ── */
+    /* ACHIEVEMENTS */
     .achievement-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); margin-bottom: 1px; }
     .ach-left { padding: 3.5rem; border-right: 1px solid var(--rule); display: flex; flex-direction: column; justify-content: center; }
     .ach-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; background: var(--gold); color: var(--paper); margin-bottom: 2rem; width: fit-content; }
@@ -265,9 +270,9 @@
     .ach-subtitle { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 1.5rem; }
     .ach-desc { font-size: 0.95rem; line-height: 1.75; color: var(--ink-mid); font-weight: 300; margin-bottom: 2rem; }
     .ach-right { padding: 3.5rem; background: var(--paper-warm); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
-    .cert-img { max-width: 300px; width: 100%; border: 1px solid var(--rule); filter: sepia(10%); }
+    .ach-photo { max-width: 340px; width: 100%; border: 1px solid var(--rule); object-fit: cover; display: block; }
 
-    .chancellor-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); border-top: none; }
+    .chancellor-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); border-top: none; margin-bottom: 1px; }
     .ach-badge-blue { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; background: var(--blue); color: var(--paper); margin-bottom: 2rem; width: fit-content; }
     .chancellor-right { padding: 3.5rem; background: var(--paper-warm); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
     .award-video { width: 100%; max-width: 340px; border: 1px solid var(--rule); aspect-ratio: 16/9; object-fit: cover; }
@@ -276,7 +281,13 @@
     .award-item-icon { width: 56px; height: 56px; border: 1px solid var(--rule); background: var(--paper); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
     .award-item-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); text-align: center; }
 
-    /* ── CONTACT ── */
+    /* SYMPOSIUM PANEL */
+    .symposium-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); border-top: none; }
+    .ach-badge-green { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; background: var(--green); color: var(--paper); margin-bottom: 2rem; width: fit-content; }
+    .symposium-right { padding: 0; background: var(--paper-tint); display: flex; align-items: stretch; overflow: hidden; }
+    .symposium-right img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(10%); min-height: 400px; }
+
+    /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
     .contact-info-title { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; color: var(--ink); margin-bottom: 1rem; }
     .contact-info-desc { font-size: 1rem; color: var(--ink-mid); font-weight: 300; line-height: 1.75; margin-bottom: 2.5rem; }
@@ -291,58 +302,59 @@
     .form-input:focus, .form-textarea:focus { border-color: var(--ink); }
     .form-input::placeholder, .form-textarea::placeholder { color: var(--ink-faint); }
 
-    /* ── CERT BLOCK ── */
+    /* CERT BLOCK */
     .cert-block { display: flex; align-items: flex-start; gap: 2rem; padding: 2.5rem; background: var(--paper); border: 1px solid var(--rule); transition: background 0.2s; }
     .cert-block:hover { background: var(--paper-warm); }
     .cert-issuer { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.4rem; }
     .cert-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
     .cert-date { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); }
 
-    /* ── MARQUEE ── */
+    /* MARQUEE */
     .marquee-wrap { overflow: hidden; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 1rem 0; background: var(--paper-tint); }
     .marquee-track { display: flex; gap: 3rem; width: max-content; animation: marquee 20s linear infinite; }
     .marquee-item { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
     .marquee-item::before { content: '✦ '; color: var(--accent); }
     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer { border-top: 1px solid var(--rule); padding: 3rem clamp(1.5rem, 5vw, 5rem); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
     .footer-left { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); letter-spacing: 0.04em; }
     .footer-socials { display: flex; gap: 1rem; }
     .footer-socials a { width: 38px; height: 38px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; color: var(--ink-soft); text-decoration: none; font-size: 0.9rem; transition: all 0.2s; }
     .footer-socials a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
-    /* ── BACK TO TOP ── */
+    /* BACK TO TOP */
     #back-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--ink); color: var(--paper); border: none; cursor: pointer; font-size: 0.85rem; opacity: 0; transform: translateY(20px); transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
     #back-top.vis { opacity: 1; transform: translateY(0); }
     #back-top:hover { background: var(--accent); }
 
-    /* ── SCROLL REVEAL ── */
+    /* SCROLL REVEAL */
     .reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
     .js-loaded .reveal { opacity: 0; transform: translateY(24px); }
     .js-loaded .reveal.in { opacity: 1; transform: none; }
 
-    /* ── TOAST ── */
+    /* TOAST */
     .toast { position: fixed; top: 80px; right: 2rem; z-index: 1000; background: var(--ink); color: var(--paper); padding: 1rem 1.5rem; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em; border-left: 3px solid var(--accent); animation: toast-in 0.3s ease; max-width: 320px; }
     .toast.success { border-left-color: var(--green); }
     .toast.error { border-left-color: var(--accent); }
     @keyframes toast-in { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       header { grid-template-columns: 1fr; }
       .hero-right { display: none; }
-      .about-grid, .contact-grid, .achievement-panel, .chancellor-panel { grid-template-columns: 1fr; }
+      .about-grid, .contact-grid, .achievement-panel, .chancellor-panel, .symposium-panel { grid-template-columns: 1fr; }
       .tl-item { grid-template-columns: 1fr; gap: 1rem; }
       .projects-grid { grid-template-columns: 1fr; }
-      .tutor-grid { grid-template-columns: 1fr; }
+      .tutor-unified { grid-template-columns: 1fr; }
+      .tutor-photo-side { min-height: 320px; }
       nav .nav-links { display: none; }
       .ach-right, .chancellor-right { padding: 2rem; }
+      .symposium-right img { min-height: 280px; }
     }
     @media (max-width: 600px) {
       .hero-h1 { font-size: 3rem; }
       .section-title { font-size: 2rem; }
-      .tutor-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -411,7 +423,6 @@
         <img src="Images/Patel_Jeet.jpg" alt="Jeet Patel" class="hero-photo">
         <p class="photo-caption">UIC, Chicago IL — 2026</p>
       </div>
-      <!-- Updated stats: Research Labs / Internships / Projects -->
       <div class="hero-stats">
         <div class="stat-box">
           <div class="stat-num">3+</div>
@@ -460,7 +471,6 @@
   </div>
 
   <!-- About -->
-  
   <section id="about" class="reveal">
     <div class="section-header centered">
       <span class="section-num">01</span>
@@ -636,7 +646,6 @@
       <h2 class="section-title">Research</h2>
     </div>
     <div class="research-grid">
-
       <div class="research-card">
         <div class="research-logo"><img src="Images/NASA_Logo.png" alt="NASA MIRO"></div>
         <div class="research-lab">Dec 2025 – May 2026 · Hybrid</div>
@@ -652,7 +661,6 @@
           <span class="tag">R</span><span class="tag">ANOVA</span><span class="tag">Linear Regression</span><span class="tag">Power BI</span><span class="tag">Tableau</span>
         </div>
       </div>
-
       <div class="research-card">
         <div class="research-logo"><img src="Images/LujanLab.png" alt="Lujan Laboratory"></div>
         <div class="research-lab">Jan 2026 – Present · On-site</div>
@@ -667,7 +675,6 @@
           <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">TCA</span><span class="tag">EEG</span><span class="tag">Arduino</span>
         </div>
       </div>
-
       <div class="research-card">
         <div class="research-logo"><img src="Images/WTSE.png" alt="Wearable Tech Lab"></div>
         <div class="research-lab">Jan 2026 – May 2026</div>
@@ -682,80 +689,86 @@
           <span class="tag">R</span><span class="tag">G-Code</span><span class="tag">Bland–Altman</span><span class="tag">Heatmaps</span><span class="tag">Sensors</span>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Tutoring — unified single section -->
   <hr class="section-rule">
   <section id="tutoring" class="reveal">
     <div class="section-header centered">
       <span class="section-num">05</span>
       <h2 class="section-title">Tutoring</h2>
     </div>
-    <div class="tutor-grid">
-
-      <!-- MSLC -->
-      <div class="tutor-card">
-        <div class="tutor-logo">
-          <img src="Images/UIC_Logo.png" alt="UIC MSLC"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'tutor-logo-initials\'>MSLC</span>'">
-        </div>
-        <div class="tutor-period">2024 – Present · On-site</div>
-        <h3 class="tutor-card-title">Math & Science Learning Center</h3>
-        <p class="tutor-card-role">Peer Tutor — Mathematics & Biology · University of Illinois Chicago</p>
-        <ul class="tutor-bullets">
-          <li>Provided drop-in and scheduled tutoring for Bio 110, Math 90, 110, 121, and 180 (Calculus I).</li>
-          <li>Supported 100+ students with one-on-one and group sessions focused on foundational understanding.</li>
-          <li>Developed reusable problem sets and visual aids to accelerate student comprehension.</li>
-        </ul>
-        <div class="tags" style="margin-top:1.5rem">
-          <span class="tag">Bio 110</span><span class="tag">Math 90</span><span class="tag">Math 110</span><span class="tag">Math 121</span><span class="tag">Calculus I</span>
+    <div class="tutor-unified">
+      <!-- Left: Photo -->
+      <div class="tutor-photo-side">
+        <img src="Images/tutoring_photo.png" alt="Jeet tutoring students">
+        <div class="tutor-photo-overlay">
+          <div class="tutor-photo-caption">UIC · Math & Science Learning Center · Chicago, IL</div>
         </div>
       </div>
+      <!-- Right: Program details -->
+      <div class="tutor-content-side">
 
-      <!-- ASAP -->
-      <div class="tutor-card">
-        <div class="tutor-logo">
-          <img src="Images/UIC_Logo.png" alt="UIC ASAP"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'tutor-logo-initials\'>ASAP</span>'">
+        <div class="tutor-program">
+          <div class="tutor-program-header">
+            <div class="tutor-program-name">Math & Science Learning Center</div>
+            <span class="tutor-program-badge">2024 – Present</span>
+          </div>
+          <div class="tutor-program-role">Peer Tutor — Mathematics & Biology · University of Illinois Chicago</div>
+          <p style="font-size:0.88rem; line-height:1.7; color:var(--ink-mid); font-weight:300; margin-bottom:0.75rem;">
+            Provided drop-in and scheduled tutoring for 100+ students across one-on-one and group sessions, developing reusable problem sets and visual aids to accelerate comprehension.
+          </p>
+          <div class="tutor-courses">
+            <span class="tag">Bio 110</span>
+            <span class="tag">Math 90</span>
+            <span class="tag">Math 110</span>
+            <span class="tag">Math 121</span>
+            <span class="tag">Calculus I (180)</span>
+          </div>
         </div>
-        <div class="tutor-period">2024 – Present · On-site</div>
-        <h3 class="tutor-card-title">Academic Support & Achievement Program</h3>
-        <p class="tutor-card-role">Peer Tutor — Mathematics · University of Illinois Chicago</p>
-        <ul class="tutor-bullets">
-          <li>Served students in the ASAP program with targeted academic support in math courses.</li>
-          <li>Tailored sessions to individual learning styles, closing knowledge gaps and building confidence.</li>
-          <li>Recognized with the <strong>Chancellor's Student Service Award</strong> for this commitment.</li>
-        </ul>
-        <div class="tags" style="margin-top:1.5rem">
-          <span class="tag accent">Chancellor's Award</span><span class="tag">Math Support</span><span class="tag">ASAP Program</span>
+
+        <div class="tutor-program">
+          <div class="tutor-program-header">
+            <div class="tutor-program-name">Academic Support & Achievement Program</div>
+            <span class="tutor-program-badge">2024 – Present</span>
+          </div>
+          <div class="tutor-program-role">Peer Tutor — Mathematics · University of Illinois Chicago</div>
+          <p style="font-size:0.88rem; line-height:1.7; color:var(--ink-mid); font-weight:300; margin-bottom:0.75rem;">
+            Delivered targeted academic support tailored to individual learning styles, closing knowledge gaps and building student confidence. Recognized with the <strong style="color:var(--ink)">Chancellor's Student Service Award</strong> for this commitment.
+          </p>
+          <div class="tutor-courses">
+            <span class="tag">Math 90</span>
+            <span class="tag">Math 110</span>
+            <span class="tag">Math 121</span>
+            <span class="tag">Math 170</span>
+            <span class="tag">Math 180</span>
+            <span class="tag accent">Chancellor's Award</span>
+          </div>
         </div>
+
+        <div class="tutor-program">
+          <div class="tutor-program-header">
+            <div class="tutor-program-name">Discovery Partners Institute: Digital Scholars</div>
+            <span class="tutor-program-badge">Jun – Aug 2026</span>
+          </div>
+          <div class="tutor-program-role">Lead Instructor — Swift & iOS Development · Harold Washington College</div>
+          <p style="font-size:0.88rem; line-height:1.7; color:var(--ink-mid); font-weight:300; margin-bottom:0.75rem;">
+            Teaching Swift and iOS app development to high school students and incoming college freshmen. Designing curriculum pacing and learning experiences, preparing scholars to earn the <strong style="color:var(--ink)">Swift Associate Certification</strong> through UIC Sandbox Lab.
+          </p>
+          <div class="tutor-courses">
+            <span class="tag accent">Swift</span>
+            <span class="tag accent">Xcode</span>
+            <span class="tag">Curriculum Design</span>
+            <span class="tag">Pre-College Ed</span>
+          </div>
+        </div>
+
       </div>
-
-      <!-- DPI -->
-      <div class="tutor-card">
-        <div class="tutor-logo">
-          <img src="Images/DPI_Logo.png" alt="Discovery Partners Institute"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'tutor-logo-initials\'>DPI</span>'">
-        </div>
-        <div class="tutor-period">Jun – Aug 2026 · Harold Washington College</div>
-        <h3 class="tutor-card-title">Discovery Partners Institute</h3>
-        <p class="tutor-card-role">Lead Instructor — Swift & iOS Development · University of Illinois</p>
-        <ul class="tutor-bullets">
-          <li>Teaching Swift and iOS app development to high school students and incoming college freshmen.</li>
-          <li>Designing curriculum pacing and whole-group & individual learning experiences.</li>
-          <li>Preparing scholars to earn the <strong>Swift Associate Certification</strong> through UIC Sandbox Lab.</li>
-        </ul>
-        <div class="tags" style="margin-top:1.5rem">
-          <span class="tag accent">Swift</span><span class="tag accent">Xcode</span><span class="tag">Curriculum Design</span><span class="tag">Pre-College Ed</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- Swift & Instruction -->
+  <!-- Projects -->
   <hr class="section-rule">
   <section id="projects" class="reveal">
     <div class="section-header centered">
@@ -860,7 +873,7 @@
       <h2 class="section-title">Achievements</h2>
     </div>
 
-    <!-- SparkHacks — "Download Certificate" removed -->
+    <!-- SparkHacks — photo instead of certificate -->
     <div class="achievement-panel">
       <div class="ach-left">
         <span class="ach-badge"><i class="fas fa-trophy"></i> Hackathon Winner</span>
@@ -879,7 +892,7 @@
         </a>
       </div>
       <div class="ach-right">
-        <img src="Images/SparkHacks_Certificate.jpg" alt="SparkHacks Certificate" class="cert-img">
+        <img src="Images/sparkhacks_photo.png" alt="SparkHacks Team Photo" class="ach-photo">
       </div>
     </div>
 
@@ -920,9 +933,30 @@
       </div>
     </div>
 
+    <!-- Computational Research Symposium -->
+    <div class="symposium-panel">
+      <div class="ach-left">
+        <span class="ach-badge-green"><i class="fas fa-microscope"></i> Academic Presentation</span>
+        <h3 class="ach-title">UIC Computational<br>Research Symposium</h3>
+        <p class="ach-subtitle">NASA MIRO Center for In-Space Manufacturing · Spring 2026</p>
+        <p class="ach-desc">Presented original research findings from the NASA MIRO Center for In-Space Manufacturing at the UIC Computational Research Symposium. Showcased statistical analysis of A×B factorial experiments using ANOVA and multiple linear regression to model Ultimate Tensile Strength of materials under simulated space manufacturing conditions. Research supported by the NASA Minority University Research and Education Project (MUREP) Institutional Research Opportunity (MIRO) initiative.</p>
+        <div class="tags" style="margin-bottom:2rem">
+          <span class="tag">NASA MIRO</span>
+          <span class="tag">ANOVA</span>
+          <span class="tag">Linear Regression</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Academic Presentation</span>
+          <span class="tag">R</span>
+        </div>
+      </div>
+      <div class="symposium-right">
+        <img src="Images/symposium_photo.png" alt="UIC Computational Research Symposium Presentation">
+      </div>
+    </div>
+
   </section>
 
-  <!-- Tutoring — 3 cards: MSLC, ASAP, DPI -->
+  <!-- Swift & Instruction -->
   <hr class="section-rule">
   <section id="leadership" class="reveal">
     <div class="section-header centered">
@@ -956,16 +990,14 @@
         </div>
       </div>
 
-      <!-- Swift Associate Certificate — with image -->
+      <!-- Swift Associate Certificate — image -->
       <div class="cert-block" style="flex-direction:column; align-items:center; justify-content:center; gap:1.5rem; padding:3rem; background:var(--paper-warm); text-align:center;">
-        <!-- Swift certificate image — swap src for your actual image path -->
         <img
-          src="Images/Swift_Certificate.jpg"
+          src="Images/Swift_Certificate.png"
           alt="App Development with Swift Associate Certificate"
           style="max-width:320px; width:100%; border:1px solid var(--rule); filter:sepia(8%); display:block;"
           onerror="this.style.display='none'; document.getElementById('swift-fallback').style.display='flex';"
         >
-        <!-- Fallback icon shown only if image fails to load -->
         <div id="swift-fallback" style="display:none; flex-direction:column; align-items:center; gap:1rem;">
           <div style="width:80px; height:80px; background:#f05123; border-radius:18px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
             <i class="fab fa-swift" style="font-size:2.2rem; color:#fff;"></i>
@@ -1010,7 +1042,7 @@
         </div>
         <div class="contact-detail">
           <i class="fas fa-envelope"></i>
-          <a href="mailto:contact@jeetpatel.dev">contact@jeetpatel.dev</a>
+          <a href="mailto:JeetPatel.CompSci@gmail.com">JeetPatel.CompSci@gmail.com</a>
         </div>
       </div>
       <div class="contact-form">
@@ -1043,7 +1075,7 @@
     <div class="footer-socials">
       <a href="https://github.com/Jeet52" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/jeetpatel52" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:contact@jeetpatel.dev" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:JeetPatel.CompSci@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
 
@@ -1052,19 +1084,19 @@
   </button>
 
   <script>
-    /* ── LOADER ── */
+    /* LOADER */
     window.addEventListener('load', () => {
       setTimeout(() => {
         document.getElementById('loader').classList.add('hidden');
       }, 1800);
     });
 
-    /* ── SCROLL / BACK TO TOP ── */
+    /* SCROLL / BACK TO TOP */
     window.addEventListener('scroll', () => {
       document.getElementById('back-top').classList.toggle('vis', window.scrollY > 400);
     });
 
-    /* ── SCROLL REVEAL ── */
+    /* SCROLL REVEAL */
     document.body.classList.add('js-loaded');
     const revealObs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
@@ -1075,7 +1107,7 @@
       if (rect.top < window.innerHeight) el.classList.add('in');
     });
 
-    /* ── NAV ACTIVE ── */
+    /* NAV ACTIVE */
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section[id], header[id]');
     const navObs = new IntersectionObserver(entries => {
@@ -1089,7 +1121,7 @@
     }, { threshold: 0.3 });
     sections.forEach(s => navObs.observe(s));
 
-    /* ── PROJECT FILTER ── */
+    /* PROJECT FILTER */
     const searchBox = document.getElementById('searchBox');
     const filterPills = document.querySelectorAll('.filter-pill');
     const projCards = document.querySelectorAll('.proj-card');
@@ -1119,7 +1151,7 @@
     }));
     searchBox.addEventListener('input', () => { currentSearch = searchBox.value.toLowerCase(); filterProjects(); });
 
-    /* ── CONTACT FORM ── */
+    /* CONTACT FORM */
     document.getElementById('contactForm').addEventListener('submit', async e => {
       e.preventDefault();
       const btn = e.target.querySelector('button[type=submit]');
